@@ -22,9 +22,7 @@ public class PlayerInput : MonoBehaviour
 
         float inputHorizontal = Input.GetAxis(inputAxisHorizontal);
         float inputVertical = Input.GetAxis(inputAxisVertical);
-        //if (inputHorizontal != 0 || inputVertical != 0) return;
-        print(inputVertical);
-        print(inputHorizontal);
+
         if (inputVertical > 0)
         {
             // Swipe up;
