@@ -2,34 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickable : MonoBehaviour
+public abstract class Pickable : MonoBehaviour
 {
-    public int Id;
-    public bool isSheep;
-    public bool isStun;
-
-    // Konstruktor
-    public Pickable()
-    {
-        isSheep = false;
-        isStun = false;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 3)
+        if (other.gameObject.layer == 3) // Pretpostavka da je sloj 3 rezervisan za igrača
         {
             Player player = other.gameObject.GetComponent<Player>();
-            if (player != null && isSheep)
+            if (player != null)
             {
-                player.numberOfSheep++; // Povecavamo skor igraca
-                this.gameObject.SetActive(false); // Deaktiviramo pickable objekat
-            }
-            if (player != null && isStun)
-            {
-                player.Stun(); // Stanujemo igraca
+                OnPickUp(player); // Pozivamo apstraktnu metodu OnPickUp
                 this.gameObject.SetActive(false); // Deaktiviramo pickable objekat
             }
         }
     }
+    protected abstract void OnPickUp(Player player); // Apstraktna metoda koja će biti pregažena u izvedenim klasama
 }
