@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -37,18 +35,18 @@ public class PlayerInput : MonoBehaviour
 
                 // Swipe up;
                 ICommand moveUp = _pMovement.MoveUpCommand;
-                _IM.AddCommand(moveUp, this);
+                if (_IM.AddCommand(moveUp, this))
+                {
+                    arrowsUI.AddInputArrow(arrowImagesSO.UpArrow);
+                }
 
-                arrowsUI.AddInputArrow(arrowImagesSO.UpArrow);
             }
             else if (Input.GetKeyDown(playerDownButton))
             {
                 _inputOver = false;
 
                 ICommand moveDown = _pMovement.MoveDownCommand;
-                _IM.AddCommand(moveDown, this);
-
-                arrowsUI.AddInputArrow(arrowImagesSO.DownArrow);
+                if (_IM.AddCommand(moveDown, this)) arrowsUI.AddInputArrow(arrowImagesSO.DownArrow);
             }
             else if (Input.GetKeyDown(playerRightButton))
             {
@@ -56,9 +54,7 @@ public class PlayerInput : MonoBehaviour
 
                 // Right swipe;
                 ICommand moveRight = _pMovement.MoveRightCommand;
-                _IM.AddCommand(moveRight, this);
-
-                arrowsUI.AddInputArrow(arrowImagesSO.RightArrow);
+                if (_IM.AddCommand(moveRight, this)) arrowsUI.AddInputArrow(arrowImagesSO.RightArrow);
             }
             else if (Input.GetKeyDown(playerLeftButton))
             {
@@ -66,9 +62,7 @@ public class PlayerInput : MonoBehaviour
 
                 // Left swipe
                 ICommand moveLeft = _pMovement.MoveLeftCommand;
-                _IM.AddCommand(moveLeft, this);
-
-                arrowsUI.AddInputArrow(arrowImagesSO.LeftArrow);
+                if (_IM.AddCommand(moveLeft, this)) arrowsUI.AddInputArrow(arrowImagesSO.LeftArrow);
             }
 
         }
