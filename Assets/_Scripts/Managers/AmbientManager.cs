@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AmbientManager : MonoBehaviour
 {
-    [Range(0, 1)] public double DreamSlider;
+    [SerializeField][Range(0, 1)] public double DreamSlider;
     public Material SkyboxMaterial;
     [SerializeField] private Color _dreamColor;
     [SerializeField] private Color _nightmareColor;
@@ -11,6 +11,8 @@ public class AmbientManager : MonoBehaviour
     private float _transitionTimer = 0f;
     private bool _transitioning = false;
     private Color _targetColor;
+
+    private GameManager _gameManager = GameManager.Instance;
 
     private void Start()
     {
@@ -46,7 +48,7 @@ public class AmbientManager : MonoBehaviour
     private void ManageTransition()
     {
         // Interpolate between the dream and nightmare colors based on the DreamSlider value
-        Color targetColor = Color.Lerp(_nightmareColor, _dreamColor, (float)DreamSlider);
+        Color targetColor = Color.Lerp(_nightmareColor, _dreamColor, (float)CalculateDreamSlider());
         StartTransition(targetColor);
     }
 
@@ -58,5 +60,14 @@ public class AmbientManager : MonoBehaviour
             _transitionTimer = 0f;
             _transitioning = true;
         }
+    }
+
+    //calculate dream slider
+    public double CalculateDreamSlider()
+    {
+        double dreamPoints = _gameManager.DreamPlayer.CalculateScore();
+        double nightmarePoints = _gameManager.NightmarePlayer.CalculateScore();
+        double totalPoints = dreamPoints + nightmarePoints;
+        return dreamPoints / totalPoints;
     }
 }

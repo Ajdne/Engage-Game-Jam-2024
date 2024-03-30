@@ -470,8 +470,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeForInput: 3
-  Phase: 0
-  round: 0
+  dreamPlayer: {fileID: 0}
+  nightmarePlayer: {fileID: 0}
 --- !u!4 &99533154
 Transform:
   m_ObjectHideFlags: 0
@@ -6458,9 +6458,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovementSO: {fileID: 11400000, guid: 061b3b1939db5bf4e998cbc6e46b54ad, type: 2}
-  audioSource: {fileID: 0}
-  jumpSound: {fileID: 0}
-  initialJumpSoundPitch: 0.6
+  modelTransform: {fileID: 0}
+  popParticles: {fileID: 0}
   stunParticles: {fileID: 0}
 --- !u!114 &1218587975
 MonoBehaviour:
@@ -9082,9 +9081,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovementSO: {fileID: 11400000, guid: 061b3b1939db5bf4e998cbc6e46b54ad, type: 2}
-  audioSource: {fileID: 0}
-  jumpSound: {fileID: 0}
-  initialJumpSoundPitch: 0.6
+  modelTransform: {fileID: 0}
+  popParticles: {fileID: 0}
   stunParticles: {fileID: 0}
 --- !u!4 &1700204173
 Transform:
