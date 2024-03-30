@@ -26,8 +26,7 @@ public class Tile : MonoBehaviour
         switch (teamId)
         {
             case 0:
-                this.transform.GetComponent<Renderer>().material.color = Color.white;
-                Debug.Log("Color white");
+                removeTilePaint();
                 break;
             case 1:
                 this.transform.GetComponent<Renderer>().material.color = Color.red;
@@ -39,6 +38,11 @@ public class Tile : MonoBehaviour
                 break;
         }
     }
+    public void removeTilePaint()
+    {
+        this.transform.GetComponent<Renderer>().material.color = Color.blue;
+        Debug.Log("Color removed");
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 3) // Pretpostavka da je sloj 3 rezervisan za igrača
@@ -49,6 +53,7 @@ public class Tile : MonoBehaviour
                 if (this.team != player.team)
                 {
                     paintTile(player.team);
+                    player.AddTilePoint();
                 }
             }
         }
