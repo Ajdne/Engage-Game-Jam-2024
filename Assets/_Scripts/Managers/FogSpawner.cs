@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class FogSpawner : MonoBehaviour
 {
-    Tile tile = new Tile();
-
+    private Tile tile = new Tile();
     public void spawnFog()
     {
-        Tile randomTile = SelectRandomTile(GameManager.Instance.tiles);
-        //stvoriti fog iznad ovog tilea
-    }
-    Tile SelectRandomTile(List<Tile> objectList)
-    {
+        //selektuj tile bez playera
         do
         {
-            int randomIndex = Random.Range(0, objectList.Count);
-            Tile tile = objectList[randomIndex];
+            tile = TileManager.SelectRandomTile();
         } while (tile.isPlayer);
 
-        return tile;
+        //stvoriti fog iznad ovog tilea
+        tile.isFoggy = true;
     }
+
 }

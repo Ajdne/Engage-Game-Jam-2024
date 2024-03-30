@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int timeForInput = 3;
     public int TimeForInput => timeForInput;
 
-    public List<Tile> tiles;
-
     #region Singleton
     private void Awake()
     {
