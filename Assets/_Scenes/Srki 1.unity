@@ -469,6 +469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5741d3a996e67e34aae7c026e6066a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Phase: 0
+  round: 0
 --- !u!4 &99533154
 Transform:
   m_ObjectHideFlags: 0
@@ -5999,8 +6001,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d0dc87490750b4d9af1c2baa65685d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAxisHorizontal: P1Horizontal
-  inputAxisVertical: P1Vertical
+  playerUpButton: 119
+  playerDownButton: 115
+  playerLeftButton: 97
+  playerRightButton: 100
 --- !u!114 &1218587976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8508,8 +8512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d0dc87490750b4d9af1c2baa65685d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAxisHorizontal: P2Horizontal
-  inputAxisVertical: P2Vertical
+  playerUpButton: 273
+  playerDownButton: 274
+  playerLeftButton: 276
+  playerRightButton: 275
 --- !u!114 &1700204172
 MonoBehaviour:
   m_ObjectHideFlags: 0

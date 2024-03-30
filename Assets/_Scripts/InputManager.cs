@@ -23,14 +23,8 @@ public class InputManager : MonoBehaviour
     [SerializeField] private Image[] p1InputImages;
     [SerializeField] private Image[] p2InputImages;
 
-    private Queue<ICommand> _p1Commands;
-    private Queue<ICommand> _p2Commands;
-
-    public InputManager()
-    {
-        _p1Commands = new Queue<ICommand>();
-        _p2Commands = new Queue<ICommand>();
-    }
+    private List<ICommand> _p1Commands = new();
+    private List<ICommand> _p2Commands = new();
 
     private void Awake()
     {
@@ -64,11 +58,11 @@ public class InputManager : MonoBehaviour
     {
         if (pInput == p1Input)
         {
-            _p1Commands.Enqueue(command);
+            _p1Commands.Add(command);
         }
         if (pInput == p2Input)
         {
-            _p2Commands.Enqueue(command);
+            _p2Commands.Add(command);
         }
     }
 
@@ -78,15 +72,13 @@ public class InputManager : MonoBehaviour
         {
             if (i < _p1Commands.Count)
             {
-                ICommand p1Command = _p1Commands.Dequeue();
-                print(p1Command);
-                p1Command.Execute();
+                print(_p1Commands[i]);
+                _p1Commands[i].Execute();
             }
             if (i < _p2Commands.Count)
             {
-                ICommand p2Command = _p2Commands.Dequeue();
-                print(p2Command);
-                p2Command.Execute();
+                print(_p2Commands[i]);
+                _p2Commands[i].Execute();
             }
             yield return new WaitForSeconds(1);
         }
