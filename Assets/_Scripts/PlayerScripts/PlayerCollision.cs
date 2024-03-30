@@ -15,5 +15,9 @@ public class PlayerCollision : MonoBehaviour
         {
             pMovement.UndoMove();
         }
+
+        // dodati da se na osnovu rotacije gubi određen br poena nek se ovde zove Player.LosePoints(var a) 
+        //gde je a direkcija u kojoj se igrač kretao kad su se sudarili, a var vrvt int
+        //mozda ne mora ovde da se zove funkcija, to ces ti Srki da odlucis
     }
 }

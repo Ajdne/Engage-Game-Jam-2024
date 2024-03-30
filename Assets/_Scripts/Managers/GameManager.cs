@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int timeForInput = 3;
     public int TimeForInput => timeForInput;
 
-    public int Phase;
-    public int round;
+    [SerializeField] private Player dreamPlayer;
+    public Player DreamPlayer => dreamPlayer;
+    [SerializeField] private Player nightmarePlayer;
+    public Player NightmarePlayer => nightmarePlayer;
 
     #region Singleton
     private void Awake()
@@ -24,22 +26,33 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-    private void Start()
-    {
-        Phase = 1;
-        round = 1;
-    }
     #endregion
 
-    // Metoda za promenu faze
-    public void ChangePhase()
+    private void Start()
     {
-        Phase++;
+        Phase.ResetGame();
     }
 
-    // Metoda za promenu runde
-    public void NextRound()
+    public void End()
     {
-        round++;
+        Debug.Log("Game Over");
+        CalculateWinner();
+        //EventManager.GameOverEvent?.Invoke();
+    }
+
+    private void CalculateWinner()
+    {
+        if (dreamPlayer.Points > nightmarePlayer.Points)
+        {
+            Debug.Log("Dream player wins");
+        }
+        else if (dreamPlayer.Points < nightmarePlayer.Points)
+        {
+            Debug.Log("Nightmare player wins");
+        }
+        else
+        {
+            Debug.Log("Paraliza sna Event");
+        }
     }
 }

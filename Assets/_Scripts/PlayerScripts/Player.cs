@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public double numberOfSheep; // Broj ovaca koje igrač poseduje
     public bool isStunned; // Da li je igrač paralizovan
 
+    public int Points;
+
     // Konstruktor
     public Player(int team)
     {
@@ -48,24 +50,21 @@ public class Player : MonoBehaviour
     // calculate score
     public int CalculateScore()
     {
-        return (int)numberOfTiles + (int)numberOfSheep;
+        Points = (int)numberOfTiles + (int)numberOfSheep;
+        return Points;
     }
 
-    public void LosePoints(Vector3 direction)
+    public void LosePoints(int direction) // 0 = forward, 1 = back , 2 = right/left
     {
-        if (direction == Vector3.forward)
+        if (direction == 0)
         {
             numberOfSheep *= 0.75;
         }
-        else if (direction == Vector3.back)
+        else if (direction == 1)
         {
             numberOfSheep *= 0.1;
         }
-        else if (direction == Vector3.left)
-        {
-            numberOfSheep *= 0.5;
-        }
-        else if (direction == Vector3.right)
+        else if (direction == 2)
         {
             numberOfSheep *= 0.5;
         }
