@@ -6,6 +6,12 @@ public class TileManager : MonoBehaviour
 {
     [SerializeField]
     public static List<Tile> tiles;
+    [SerializeField]
+    public GameObject Fog;
+    [SerializeField]
+    public GameObject Sheep;
+    [SerializeField]
+    public GameObject Stun;
 
     public static Tile SelectRandomTile()
     {
@@ -25,6 +31,7 @@ public class TileManager : MonoBehaviour
 
         //stvoriti fog iznad ovog tilea
         tile.isFoggy = true;
+        Instantiate(Fog, tile.transform.position, Quaternion.identity);
     }
     public void spawnSheep()
     {
@@ -37,6 +44,7 @@ public class TileManager : MonoBehaviour
 
         //stvoriti fog iznad ovog tilea
         tile.isPickable = true;
+        Instantiate(Sheep, tile.transform.position, Quaternion.identity);
     }
     public void spawnStun()
     {
@@ -49,5 +57,6 @@ public class TileManager : MonoBehaviour
 
         //stvoriti fog iznad ovog tilea
         tile.isStun = true;
+        Instantiate(Stun, tile.transform.position, Quaternion.identity);
     }
 }

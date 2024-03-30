@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
+    private void Start()
+    {
+        Phase = 1;
+        round = 1;
+    }
     #endregion
     public int Phase;
     public int round;
