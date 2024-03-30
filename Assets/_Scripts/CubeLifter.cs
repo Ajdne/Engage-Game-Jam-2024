@@ -38,6 +38,7 @@ public class CubeLifter : MonoBehaviour
                 })
                 ;
         }
+        TimersManager.SetTimer(this, 3f, delegate { EventManager.GameLoadedEvent?.Invoke(); });
     }
 
     private void LiftUpAllObjects()

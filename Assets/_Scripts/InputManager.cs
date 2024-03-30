@@ -7,7 +7,7 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager Instance;
 
-    private bool _canReadInput = true;
+    private bool _canReadInput;
     public bool CanReadInput { get => _canReadInput; }
 
     [SerializeField] private float inputTime = 10;
@@ -25,12 +25,21 @@ public class InputManager : MonoBehaviour
     {
         Instance = this;
     }
+    private void OnEnable()
+    {
+        EventManager.GameLoadedEvent += StartInputCoroutine;
+        EventManager.StartMovementEvent += StartCommandExecution;
+    }
+    private void OnDisable()
+    {
+        EventManager.GameLoadedEvent -= StartInputCoroutine;
+        EventManager.StartMovementEvent -= StartCommandExecution;
+    }
 
-    private void Start()
+    private void StartInputCoroutine()
     {
         StartCoroutine(InputCoroutine());
     }
-
     private IEnumerator InputCoroutine()
     {
         _canReadInput = true;
@@ -41,7 +50,6 @@ public class InputManager : MonoBehaviour
 
         yield return new WaitForSeconds(2);
 
-        StartCoroutine(ExecuteCommands());
 
         //for (int i = 0; i < functions.Count; i++)
         //{
@@ -67,7 +75,10 @@ public class InputManager : MonoBehaviour
         }
         return false;
     }
-
+    private void StartCommandExecution()
+    {
+        StartCoroutine(ExecuteCommands());
+    }
     private IEnumerator ExecuteCommands()
     {
         for (int i = 0; i < 5; i++)
