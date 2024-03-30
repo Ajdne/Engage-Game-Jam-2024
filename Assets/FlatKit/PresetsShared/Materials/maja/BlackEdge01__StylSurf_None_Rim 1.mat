@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SmoothRim02__StylSurf_None_Rim
+  m_Name: BlackEdge01__StylSurf_None_Rim 1
   m_Shader: {fileID: 4800000, guid: bee44b4a58655ee4cbff107302a3e131, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -36,8 +36,8 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 30, y: 15}
-        m_Offset: {x: 1.5, y: 1.7}
+        m_Scale: {x: 0, y: 0}
+        m_Offset: {x: 1, y: 1}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -72,8 +72,8 @@ Material:
         m_Offset: {x: 1.5, y: 1.7}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 30, y: 15}
-        m_Offset: {x: 1.5, y: 1.7}
+        m_Scale: {x: 0, y: 0}
+        m_Offset: {x: 1, y: 1}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -103,10 +103,10 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FlatRimAmount: 0.5
-    - _FlatRimEdgeSmoothness: 1
+    - _FlatRimEdgeSmoothness: 0.006
     - _FlatRimEnabled: 1
-    - _FlatRimLightAlign: 0.37
-    - _FlatRimSize: 0.561
+    - _FlatRimLightAlign: 0
+    - _FlatRimSize: 0.485
     - _FlatShadowsEnabled: 1
     - _FlatSmoothness: 0.362
     - _FlatSpecularEdgeSmoothness: 0.5
@@ -129,8 +129,8 @@ Material:
     - _GradientSpace: 0
     - _GradientStart: 1.17
     - _GradientTop: 10
-    - _LightContribution: 0.824
-    - _LightFalloffSize: 0.006
+    - _LightContribution: 0.5
+    - _LightFalloffSize: 0.0001
     - _LightmapDirectionPitch: 0
     - _LightmapDirectionYaw: 0
     - _Metallic: 0
@@ -184,7 +184,7 @@ Material:
     - _ColorShadows: {r: 0.37835297, g: 0.4602353, b: 0.72, a: 1}
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 4.9245777, g: 0, b: 0, a: 1}
-    - _FlatRimColor: {r: 0.3207547, g: 0.037824843, b: 0.11974363, a: 1}
+    - _FlatRimColor: {r: 0, g: 0, b: 0, a: 1}
     - _FlatSpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
