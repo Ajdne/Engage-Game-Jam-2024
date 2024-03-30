@@ -7,10 +7,14 @@ using UnityEngine.UI;
 public class PlayerInput : MonoBehaviour
 {
     private PlayerMovement _pMovement;
-    [SerializeField] private string inputAxisHorizontal;
-    [SerializeField] private string inputAxisVertical;
-    private InputManager _IM;
+    [Header("P1 Input Buttons")]
+    [SerializeField] private KeyCode playerUpButton;
+    [SerializeField] private KeyCode playerDownButton;
+    [SerializeField] private KeyCode playerLeftButton;
+    [SerializeField] private KeyCode playerRightButton;
 
+    private InputManager _IM;
+    private bool _inputOver = true;
 
     private void Start()
     {
@@ -22,50 +26,58 @@ public class PlayerInput : MonoBehaviour
     {
         if (!_pMovement.CanMove) return;
         if (!_IM.CanReadInput) return;
-
-
-        // PREDUGO TRAJE INPUT - OGRANICITI KLIK VREMENSKI
-        // PREDUGO TRAJE INPUT - OGRANICITI KLIK VREMENSKI
-        // PREDUGO TRAJE INPUT - OGRANICITI KLIK VREMENSKI
-
-
-        float inputHorizontal = Input.GetAxis(inputAxisHorizontal);
-        float inputVertical = Input.GetAxis(inputAxisVertical);
-
-        if (inputVertical > 0)
+        if (_inputOver)
         {
-            // Swipe up;
-            ICommand moveUp = _pMovement.MoveUpCommand;
-            _IM.AddCommand(moveUp, this);
+            if (Input.GetKeyDown(playerUpButton))
+            {
+                _inputOver = false;
 
-            //EventManager.JumpStartedEvent?.Invoke();
+                // Swipe up;
+                ICommand moveUp = _pMovement.MoveUpCommand;
+                _IM.AddCommand(moveUp, this);
+
+                //EventManager.JumpStartedEvent?.Invoke();
+            }
+            else if (Input.GetKeyDown(playerDownButton))
+            {
+                _inputOver = false;
+
+                ICommand moveDown = _pMovement.MoveDownCommand;
+                _IM.AddCommand(moveDown, this);
+            }
+            else if (Input.GetKeyDown(playerRightButton))
+            {
+                _inputOver = false;
+
+                // Right swipe;
+                ICommand moveRight = _pMovement.MoveRightCommand;
+                _IM.AddCommand(moveRight, this);
+
+                //EventManager.JumpStartedEvent?.Invoke();
+            }
+            else if (Input.GetKeyDown(playerLeftButton))
+            {
+                _inputOver = false;
+
+                // Left swipe
+                ICommand moveLeft = _pMovement.MoveLeftCommand;
+                _IM.AddCommand(moveLeft, this);
+
+                //EventManager.JumpStartedEvent?.Invoke();
+            }
+
         }
         else if (
-            inputVertical < 0
+            Input.GetKeyUp(playerUpButton)
+            || Input.GetKeyUp(playerDownButton)
+            || Input.GetKeyUp(playerRightButton)
+            || Input.GetKeyUp(playerLeftButton)
             )
         {
-            ICommand moveDown = _pMovement.MoveDownCommand;
-            _IM.AddCommand(moveDown, this);
+            print("Input over!");
+            _inputOver = true;
         }
-        else if (
-            inputHorizontal > 0
-            )
-        {
-            // Right swipe;
-            ICommand moveRight = _pMovement.MoveRightCommand;
-            _IM.AddCommand(moveRight, this);
 
-            //EventManager.JumpStartedEvent?.Invoke();
-        }
-        else if (
-            inputHorizontal < 0
-            )
-        {
-            // Left swipe
-            ICommand moveLeft = _pMovement.MoveLeftCommand;
-            _IM.AddCommand(moveLeft, this);
 
-            //EventManager.JumpStartedEvent?.Invoke();
-        }
     }
 }
