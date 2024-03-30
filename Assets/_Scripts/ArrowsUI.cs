@@ -10,11 +10,11 @@ public class ArrowsUI : MonoBehaviour
 
     private void OnEnable()
     {
-        //EventManager.InputTakenEvent += AddInputArrow;
+        EventManager.MovementOverEvent += ResetArrows;
     }
     private void OnDisable()
     {
-        //EventManager.InputTakenEvent -= AddInputArrow;
+        EventManager.MovementOverEvent -= ResetArrows;
     }
     private void Start()
     {
@@ -33,6 +33,15 @@ public class ArrowsUI : MonoBehaviour
             pInputImages[_currentImage].sprite = arrowSprite;
 
             _currentImage++;
+        }
+    }
+
+    private void ResetArrows()
+    {
+        _currentImage = 0;  // Reset counter
+        foreach (Image image in pInputImages)
+        {
+            image.enabled = false;
         }
     }
 }

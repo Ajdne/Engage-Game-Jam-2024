@@ -260,17 +260,6 @@ public class PlayerMovement : MonoBehaviour
         // Increment jump count
         jumpComboCount++;
 
-        //// MOVE RIGHT
-        //if (_endingVector.x > transform.position.x)
-        //{
-        //    transform.DORotate(new Vector3(0, -90, 0), playerMovementSO.NormalJumpDuration * 0.6f, RotateMode.Fast);
-        //}
-        //// MOVE LEFT
-        //else if (_endingVector.x < transform.position.x)
-        //{
-        //    transform.DORotate(new Vector3(0, 90, 0), playerMovementSO.NormalJumpDuration * 0.6f, RotateMode.Fast);
-        //}
-
         transform.DOJump(_startingVector, playerMovementSO.JumpPower / 2, 1, playerMovementSO.NormalJumpDuration * 0.6f)
             .OnComplete(() =>
             {

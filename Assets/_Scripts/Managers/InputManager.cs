@@ -10,7 +10,8 @@ public class InputManager : MonoBehaviour
     private bool _canReadInput;
     public bool CanReadInput { get => _canReadInput; }
 
-    [SerializeField] private float inputTime = 10;
+    [SerializeField] private int inputTime = 10;
+    public int InputTime => inputTime;
     [Space(20)]
     [SerializeField] private PlayerInput p1Input;
     [SerializeField] private PlayerInput p2Input;
@@ -20,6 +21,7 @@ public class InputManager : MonoBehaviour
 
     [Space(20)]
     [SerializeField] private int _maxInputs = 1;
+    [SerializeField] private float timeBetweenCommandExecutions = 0.5f;
 
     private void Awake()
     {
@@ -49,12 +51,6 @@ public class InputManager : MonoBehaviour
         _canReadInput = false;
 
         yield return new WaitForSeconds(2);
-
-
-        //for (int i = 0; i < functions.Count; i++)
-        //{
-        //    functions[i].Invoke();
-        //}
     }
 
     public bool AddCommand(ICommand command, PlayerInput pInput)
@@ -93,11 +89,15 @@ public class InputManager : MonoBehaviour
                 print(_p2Commands[i]);
                 _p2Commands[i].Execute();
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(timeBetweenCommandExecutions);
         }
 
         // Empty the Command lists
         _p1Commands.Clear();
         _p2Commands.Clear();
+
+        EventManager.MovementOverEvent?.Invoke();
+
+        StartInputCoroutine();
     }
 }

@@ -6,21 +6,23 @@ using UnityEngine;
 public class InputCountdownTimerUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI countdownText;
-    private GameManager _GM;
+    private InputManager _IM;
 
     private void OnEnable()
     {
         EventManager.GameLoadedEvent += StartCountdownCoroutine;
+        EventManager.MovementOverEvent += StartCountdownCoroutine;
     }
     private void OnDisable()
     {
         EventManager.GameLoadedEvent -= StartCountdownCoroutine;
+        EventManager.MovementOverEvent -= StartCountdownCoroutine;
     }
 
     private void Start()
     {
         countdownText.enabled = false;
-        _GM = GameManager.Instance;
+        _IM = InputManager.Instance;
     }
     private void StartCountdownCoroutine()
     {
@@ -31,7 +33,7 @@ public class InputCountdownTimerUI : MonoBehaviour
     {
         countdownText.enabled = true;
 
-        for (int i = _GM.TimeForInput; i > -1; i--)
+        for (int i = _IM.InputTime; i > -1; i--)
         {
             countdownText.text = i.ToString();
             countdownText.rectTransform.DOPunchScale(Vector3.one, 1f, 5);
