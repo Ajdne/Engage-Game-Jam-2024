@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17738253, g: 0.09308349, b: 0.5190474, a: 1}
+  m_IndirectSpecularColor: {r: 0.58885753, g: 0.3955797, b: 0.5832524, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1608,10 +1608,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f787428881e5443a4c4dc4faa61e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputTime: 3
+  inputTime: 10
   p1Input: {fileID: 0}
   p2Input: {fileID: 0}
   _maxInputs: 1
+  timeBetweenCommandExecutions: 0.5
 --- !u!114 &435307249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,7 +1719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5741d3a996e67e34aae7c026e6066a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeForInput: 3
   dreamPlayer: {fileID: 160707983}
   nightmarePlayer: {fileID: 456159238}
 --- !u!4 &435307251
@@ -1811,6 +1811,7 @@ MonoBehaviour:
   _dreamColor: {r: 0.8396226, g: 0.7239765, b: 0.7239765, a: 0}
   _nightmareColor: {r: 0.039729424, g: 0.07685643, b: 0.33962262, a: 0}
   _currentColor: {r: 0, g: 0, b: 0, a: 0}
+  _targetColor: {r: 0, g: 0, b: 0, a: 0}
   TransitionDuration: 1
 --- !u!1001 &624311732
 PrefabInstance:
@@ -2086,8 +2087,9 @@ MonoBehaviour:
   DreamSlider: 0
   SkyboxMaterial: {fileID: 2100000, guid: b4d1e1180d6b45d4eaa6f6b684d18e2b, type: 2}
   _dreamColor: {r: 1, g: 0.68301886, b: 0.9666204, a: 0}
-  _nightmareColor: {r: 0.3962264, g: 0.065040916, b: 0.17050757, a: 0}
-  _currentColor: {r: 0, g: 0, b: 0, a: 0}
+  _nightmareColor: {r: 0.35616562, g: 0, b: 0.6792453, a: 0}
+  _currentColor: {r: 1, g: 0.740566, b: 0.740566, a: 0}
+  _targetColor: {r: 1, g: 0.7216981, b: 0.7216981, a: 0}
   TransitionDuration: 1
 --- !u!1001 &1315540691
 PrefabInstance:
