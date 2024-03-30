@@ -6,18 +6,27 @@ using UnityEngine.UI;
 
 public class PlayerInput : MonoBehaviour
 {
-    private PlayerMovement pMovement;
+    private PlayerMovement _pMovement;
     [SerializeField] private string inputAxisHorizontal;
     [SerializeField] private string inputAxisVertical;
+    private InputManager _IM;
+
 
     private void Start()
     {
-        pMovement = GetComponent<PlayerMovement>();
+        _pMovement = GetComponent<PlayerMovement>();
+        _IM = InputManager.Instance;
     }
 
     private void Update()
     {
-        if (!pMovement.CanMove) return;
+        if (!_pMovement.CanMove) return;
+        if (!_IM.CanReadInput) return;
+
+
+        // PREDUGO TRAJE INPUT - OGRANICITI KLIK VREMENSKI
+        // PREDUGO TRAJE INPUT - OGRANICITI KLIK VREMENSKI
+        // PREDUGO TRAJE INPUT - OGRANICITI KLIK VREMENSKI
 
 
         float inputHorizontal = Input.GetAxis(inputAxisHorizontal);
@@ -26,7 +35,8 @@ public class PlayerInput : MonoBehaviour
         if (inputVertical > 0)
         {
             // Swipe up;
-            pMovement.JumpBackMovement();
+            ICommand moveUp = _pMovement.MoveUpCommand;
+            _IM.AddCommand(moveUp, this);
 
             //EventManager.JumpStartedEvent?.Invoke();
         }
@@ -34,14 +44,16 @@ public class PlayerInput : MonoBehaviour
             inputVertical < 0
             )
         {
-            pMovement.JumpMovement();
+            ICommand moveDown = _pMovement.MoveDownCommand;
+            _IM.AddCommand(moveDown, this);
         }
         else if (
             inputHorizontal > 0
             )
         {
             // Right swipe;
-            pMovement.SidewaysMovement(pMovement.transform.position + new Vector3(1, 0, 0));
+            ICommand moveRight = _pMovement.MoveRightCommand;
+            _IM.AddCommand(moveRight, this);
 
             //EventManager.JumpStartedEvent?.Invoke();
         }
@@ -50,7 +62,8 @@ public class PlayerInput : MonoBehaviour
             )
         {
             // Left swipe
-            pMovement.SidewaysMovement(pMovement.transform.position + new Vector3(-1, 0, 0));
+            ICommand moveLeft = _pMovement.MoveLeftCommand;
+            _IM.AddCommand(moveLeft, this);
 
             //EventManager.JumpStartedEvent?.Invoke();
         }

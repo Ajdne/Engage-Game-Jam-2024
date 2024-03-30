@@ -10,8 +10,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump Settings")]
     [SerializeField] private PlayerMovementSO playerMovementSO;
 
-    [Space(10)]
-    [SerializeField] private Animator animator;
     [Space(20)]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip jumpSound;
@@ -39,80 +37,38 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _startingVector;
     private Vector3 _endingVector;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
+    #region Move Commands
+    private MoveUpCommand _moveUpCommand;
+    public MoveUpCommand MoveUpCommand => _moveUpCommand;
+
+    private MoveDownCommand _moveDownCommand;
+    public MoveDownCommand MoveDownCommand => _moveDownCommand;
+
+    private MoveLeftCommand _moveLeftCommand;
+    public MoveLeftCommand MoveLeftCommand => _moveLeftCommand;
+    
+    private MoveRightCommand _moveRightCommand;
+    public MoveRightCommand MoveRightCommand => _moveRightCommand;
+    #endregion Move Commands
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
         _rb = gameObject.GetComponent<Rigidbody>();
 
-        //possibleMoves.Add(JumpMovement);
-        //possibleMoves.Add(SidewaysMovement);
+        _moveUpCommand = GetComponent<MoveUpCommand>();
+        _moveDownCommand = GetComponent<MoveDownCommand>();
+        _moveLeftCommand = GetComponent<MoveLeftCommand>();
+        _moveRightCommand = GetComponent<MoveRightCommand>();
     }
 
-    private void OnEnable()
-    {
-        //EventManager.JumpEvent += PlayJumpSound;
-    }
-
-    private void OnDisable()
-    {
-        //EventManager.JumpEvent -= PlayJumpSound;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == 6) // Stairs layer
-        {
-            transform.parent = other.transform;
-
-            //if (other.TryGetComponent(out Cracked cracked))
-            //{
-            //    cracked.WatchForPlayerJump();
-            //}
-        }
-    }
-
-    public void JumpMovement(Vector3 targetPos, float duration) // Called when interacting with pickables
-    {
-        _canMove = false;
-
-        _startingVector = transform.position;
-        _endingVector = targetPos;
-
-        transform.parent = null;
-        transform.DOKill();
-
-        // Increment jump count
-        jumpComboCount++;
-
-        // ComboJumpEvent?
-        //EventManager.JumpEvent?.Invoke(jumpComboCount);
-
-        transform.DOJump(_endingVector, playerMovementSO.JumpPower, 1, duration)
-            .OnComplete(() =>
-            {
-                FinishJump();
-            });
-
-        transform.DORotate(new Vector3(0, 0, 0), duration, RotateMode.Fast);
-    }
-
-    public void JumpMovement()  // Called as input movement method
+    public void MoveDown()  // Called as input movement method
     {
         _canMove = false;
 
         _startingVector = transform.position;
         _endingVector = transform.position + new Vector3(0, 0, -1);
 
-        transform.parent = null;
         transform.DOKill();
-
-        // Increment jump count
-        jumpComboCount++;
 
         // ComboJumpEvent?
         //EventManager.JumpEvent?.Invoke(jumpComboCount);
@@ -184,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
         _endingVector = pickablePos + jumpVect;
     }
 
-    public void JumpBackMovement()  // Called as input movement
+    public void MoveUp()  // Called as input movement
     {
         _canMove = false;
 
@@ -209,12 +165,12 @@ public class PlayerMovement : MonoBehaviour
         transform.DORotate(new Vector3(0, 180, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
     }
 
-    public void SidewaysMovement(Vector3 targetPos, float duration)
+    public void MoveLeft()     // Input method
     {
         _canMove = false;
 
         _startingVector = transform.position;
-        _endingVector = targetPos;
+        _endingVector = transform.position + new Vector3(-1, 0, 0);
 
         transform.parent = null;
         transform.DOKill();
@@ -223,29 +179,28 @@ public class PlayerMovement : MonoBehaviour
         jumpComboCount++;
 
         // MOVE RIGHT
-        if (targetPos.x > transform.position.x)
+        if (_endingVector.x > transform.position.x)
         {
-            transform.DORotate(new Vector3(0, -90, 0), duration, RotateMode.Fast);
+            transform.DORotate(new Vector3(0, -90, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
         }
         // MOVE LEFT
-        else if (targetPos.x < transform.position.x)
+        else if (_endingVector.x < transform.position.x)
         {
-            transform.DORotate(new Vector3(0, 90, 0), duration, RotateMode.Fast);
+            transform.DORotate(new Vector3(0, 90, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
         }
 
-        transform.DOJump(targetPos, playerMovementSO.JumpPower / 2, 1, duration)
+        transform.DOJump(_endingVector, playerMovementSO.JumpPower / 2, 1, playerMovementSO.NormalJumpDuration)
             .OnComplete(() =>
             {
                 FinishJump();
             });
     }
-
-    public void SidewaysMovement(Vector3 targetPos)     // Input method
+    public void MoveRight()     // Input method
     {
         _canMove = false;
 
         _startingVector = transform.position;
-        _endingVector = targetPos;
+        _endingVector = transform.position + new Vector3(1, 0, 0);
 
         transform.parent = null;
         transform.DOKill();
@@ -254,17 +209,17 @@ public class PlayerMovement : MonoBehaviour
         jumpComboCount++;
 
         // MOVE RIGHT
-        if (targetPos.x > transform.position.x)
+        if (_endingVector.x > transform.position.x)
         {
             transform.DORotate(new Vector3(0, -90, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
         }
         // MOVE LEFT
-        else if (targetPos.x < transform.position.x)
+        else if (_endingVector.x < transform.position.x)
         {
             transform.DORotate(new Vector3(0, 90, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
         }
 
-        transform.DOJump(targetPos, playerMovementSO.JumpPower / 2, 1, playerMovementSO.NormalJumpDuration)
+        transform.DOJump(_endingVector, playerMovementSO.JumpPower / 2, 1, playerMovementSO.NormalJumpDuration)
             .OnComplete(() =>
             {
                 FinishJump();
@@ -381,25 +336,6 @@ public class PlayerMovement : MonoBehaviour
     private void ChangeCanMove()
     {
         _canMove = !_canMove;
-    }
-
-    private void PlayAnimationAndStartEndingRun()
-    {
-        transform.parent = null;
-        animator.enabled = true;
-
-        //TimersManager.SetTimer(this, 2f, delegate
-        //{
-        //    EventManager.StartEndingRun?.Invoke();
-
-        //    //animator.enabled = false;   // So we can re-anble it later
-        //});
-    }
-
-    private void ActivateFinalCelebration()
-    {
-        animator.enabled = true;
-        //animator.Play("Jump");
     }
 
     public void ExplodeByBomb()

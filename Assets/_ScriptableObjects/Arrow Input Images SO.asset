@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d252cf6cf6ff6439790692f4880d7f, type: 3}
+  m_Name: Arrow Input Images SO
+  m_EditorClassIdentifier: 
+  upArrow: {fileID: 21300000, guid: 76da2992532344709b10b3a83488f9db, type: 3}
+  downArrow: {fileID: 21300000, guid: 542e7747006214d9480ef4dcf8d97026, type: 3}
+  leftArrow: {fileID: 21300000, guid: bdd67dd28533e46ae9d6debb4c6368b1, type: 3}
+  rightArrow: {fileID: 21300000, guid: 685cbd29cd0c74338bd3f2dae095ea2b, type: 3}

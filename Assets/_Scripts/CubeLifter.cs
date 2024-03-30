@@ -7,7 +7,7 @@ using UnityEngine;
 public class CubeLifter : MonoBehaviour
 {
     [SerializeField] private List<Transform> liftObjects = new();
-    [SerializeField] private List<float> _initialPositionsY = new();
+    private List<float> _initialPositionsY = new();
 
     private void Start()
     {
