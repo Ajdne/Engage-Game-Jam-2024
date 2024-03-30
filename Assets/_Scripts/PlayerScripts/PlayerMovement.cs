@@ -1,8 +1,6 @@
 using DG.Tweening;
 using System;
 using System.Collections.Generic;
-using Timers;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -28,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
     public bool IsStuned { get; set; }
 
     private Rigidbody _rb;
+    [Space(10)]
+    [SerializeField] private Transform modelTransform;
+    private Vector3 _initialModelScale;
+    [SerializeField] private ParticleSystem popParticles;
 
     [Space(10)]
     [SerializeField] private GameObject stunParticles;
@@ -46,19 +48,40 @@ public class PlayerMovement : MonoBehaviour
 
     private MoveLeftCommand _moveLeftCommand;
     public MoveLeftCommand MoveLeftCommand => _moveLeftCommand;
-    
+
     private MoveRightCommand _moveRightCommand;
     public MoveRightCommand MoveRightCommand => _moveRightCommand;
     #endregion Move Commands
 
+    private void OnEnable()
+    {
+        EventManager.GameLoadedEvent += SpawnPlayerModel;
+    }
+    private void OnDisable()
+    {
+        EventManager.GameLoadedEvent -= SpawnPlayerModel;
+    }
     private void Start()
     {
+        // Save initial scale, to do the upscaling spawn effect
+        _initialModelScale = modelTransform.localScale;
+        modelTransform.localScale = Vector3.zero;
+
         _rb = gameObject.GetComponent<Rigidbody>();
 
         _moveUpCommand = GetComponent<MoveUpCommand>();
         _moveDownCommand = GetComponent<MoveDownCommand>();
         _moveLeftCommand = GetComponent<MoveLeftCommand>();
         _moveRightCommand = GetComponent<MoveRightCommand>();
+    }
+
+    private void SpawnPlayerModel()
+    {
+        modelTransform.DOScale(_initialModelScale, 0.5f);
+        Timers.TimersManager.SetTimer(this, 0.3f, delegate
+        {
+            popParticles.Play();
+        });
     }
 
     public void MoveDown()  // Called as input movement method
