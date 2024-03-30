@@ -11,7 +11,7 @@ public class Wall : MonoBehaviour
             if (!_trigerred)
             {
                 print("Im here");
-                pMovement.UndoJump();
+                pMovement.UndoMove();
                 _trigerred = true;
 
                 TimersManager.SetTimer(this, 0.5f, delegate ()
