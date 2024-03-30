@@ -14,4 +14,40 @@ public class TileManager : MonoBehaviour
 
         return tile;
     }
+    public void spawnFog()
+    {
+        Tile tile = new Tile();
+        //selektuj tile bez playera
+        do
+        {
+            tile = SelectRandomTile();
+        } while (tile.isPlayer);
+
+        //stvoriti fog iznad ovog tilea
+        tile.isFoggy = true;
+    }
+    public void spawnSheep()
+    {
+        Tile tile = new Tile();
+        //selektuj tile bez playera
+        do
+        {
+            tile = SelectRandomTile();
+        } while (tile.isPlayer || tile.isPickable || tile.isStun);
+
+        //stvoriti fog iznad ovog tilea
+        tile.isPickable = true;
+    }
+    public void spawnStun()
+    {
+        Tile tile = new Tile();
+        //selektuj tile bez playera
+        do
+        {
+            tile = SelectRandomTile();
+        } while (tile.isPlayer || tile.isPickable || tile.isStun);
+
+        //stvoriti fog iznad ovog tilea
+        tile.isStun = true;
+    }
 }

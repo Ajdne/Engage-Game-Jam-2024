@@ -11,6 +11,7 @@ public class Tile : MonoBehaviour
     public bool isIcy;
     public bool isPlayer;
     public bool isPickable;
+    public bool isStun;
     // Konstruktor
     public Tile()
     {
