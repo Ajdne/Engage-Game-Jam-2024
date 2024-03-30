@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AmbientManager : MonoBehaviour
@@ -7,25 +8,19 @@ public class AmbientManager : MonoBehaviour
     [SerializeField] private Color _dreamColor;
     [SerializeField] private Color _nightmareColor;
     [SerializeField] private Color _currentColor;
+    [SerializeField] private Color _targetColor;
     public float TransitionDuration = 1f;
     private float _transitionTimer = 0f;
     private bool _transitioning = false;
-    private Color _targetColor;
+    
+    private GameManager _gameManager;
 
-    private GameManager _gameManager = GameManager.Instance;
-
-    private void Start()
+    private void Awake()
     {
         RenderSettings.skybox = SkyboxMaterial;
         _currentColor = Color.Lerp(_nightmareColor, _dreamColor, (float)DreamSlider);
         // Set the initial sky color
         SkyboxMaterial.SetColor("_Tint", _currentColor);
-    }
-
-    private void Update()
-    {
-        HandleTransition();
-        ManageTransition();
     }
 
     private void HandleTransition()
@@ -35,8 +30,8 @@ public class AmbientManager : MonoBehaviour
             _transitionTimer += Time.deltaTime;
             float t = Mathf.Clamp01(_transitionTimer / TransitionDuration);
             _currentColor = Color.Lerp(_currentColor, _targetColor, t);
-            SkyboxMaterial.SetColor("_Tint", _currentColor);
-            RenderSettings.skybox.SetColor("_Tint", _currentColor);
+            SkyboxMaterial.SetColor("_SkyColor", _currentColor); // Update the skybox material color using the correct property name
+            RenderSettings.skybox = SkyboxMaterial;
 
             if (_transitionTimer >= TransitionDuration)
             {
@@ -45,11 +40,13 @@ public class AmbientManager : MonoBehaviour
         }
     }
 
+
     private void ManageTransition()
     {
         // Interpolate between the dream and nightmare colors based on the DreamSlider value
-        Color targetColor = Color.Lerp(_nightmareColor, _dreamColor, (float)CalculateDreamSlider());
+        Color targetColor = Color.Lerp(_nightmareColor, _dreamColor, (float)DreamSlider);
         StartTransition(targetColor);
+        Debug.Log("Managvao transition");
     }
 
     private void StartTransition(Color targetColor)
@@ -59,15 +56,29 @@ public class AmbientManager : MonoBehaviour
             _targetColor = targetColor;
             _transitionTimer = 0f;
             _transitioning = true;
+            Debug.Log("Startovao transition");
         }
     }
 
-    //calculate dream slider
-    public double CalculateDreamSlider()
+
+    //public void start
+    public void Start()
+    {
+        _gameManager = GameManager.Instance;
+    }
+
+    public void Update()
+    {
+        HandleTransition();
+        ManageTransition();
+    }
+
+    private double CalculateDreamSlider()
     {
         double dreamPoints = _gameManager.DreamPlayer.CalculateScore();
         double nightmarePoints = _gameManager.NightmarePlayer.CalculateScore();
         double totalPoints = dreamPoints + nightmarePoints;
+        Debug.Log("Izracunao dream slider");
         return dreamPoints / totalPoints;
     }
 }
