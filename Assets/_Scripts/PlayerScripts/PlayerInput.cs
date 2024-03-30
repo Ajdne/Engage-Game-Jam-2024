@@ -12,6 +12,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private KeyCode playerDownButton;
     [SerializeField] private KeyCode playerLeftButton;
     [SerializeField] private KeyCode playerRightButton;
+    [Space(10)]
+    [SerializeField] private ArrowsUI arrowsUI;
+    [SerializeField] private ArrowImagesSO arrowImagesSO;
 
     private InputManager _IM;
     private bool _inputOver = true;
@@ -36,7 +39,7 @@ public class PlayerInput : MonoBehaviour
                 ICommand moveUp = _pMovement.MoveUpCommand;
                 _IM.AddCommand(moveUp, this);
 
-                //EventManager.JumpStartedEvent?.Invoke();
+                arrowsUI.AddInputArrow(arrowImagesSO.UpArrow);
             }
             else if (Input.GetKeyDown(playerDownButton))
             {
@@ -44,6 +47,8 @@ public class PlayerInput : MonoBehaviour
 
                 ICommand moveDown = _pMovement.MoveDownCommand;
                 _IM.AddCommand(moveDown, this);
+
+                arrowsUI.AddInputArrow(arrowImagesSO.DownArrow);
             }
             else if (Input.GetKeyDown(playerRightButton))
             {
@@ -53,7 +58,7 @@ public class PlayerInput : MonoBehaviour
                 ICommand moveRight = _pMovement.MoveRightCommand;
                 _IM.AddCommand(moveRight, this);
 
-                //EventManager.JumpStartedEvent?.Invoke();
+                arrowsUI.AddInputArrow(arrowImagesSO.RightArrow);
             }
             else if (Input.GetKeyDown(playerLeftButton))
             {
@@ -63,7 +68,7 @@ public class PlayerInput : MonoBehaviour
                 ICommand moveLeft = _pMovement.MoveLeftCommand;
                 _IM.AddCommand(moveLeft, this);
 
-                //EventManager.JumpStartedEvent?.Invoke();
+                arrowsUI.AddInputArrow(arrowImagesSO.LeftArrow);
             }
 
         }
