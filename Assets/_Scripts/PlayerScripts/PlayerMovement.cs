@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerMovementSO playerMovementSO;
 
     [Space(20)]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip jumpSound;
-    [SerializeField] private float initialJumpSoundPitch = 0.6f;
+    //[SerializeField] private AudioSource audioSource;
+    //[SerializeField] private AudioClip jumpSound;
+    //[SerializeField] private float initialJumpSoundPitch = 0.6f;
     private bool _canMove = true; // Used to prevent the tweens from stacking up
     public bool CanMove { get => _canMove; }
 
@@ -105,64 +105,66 @@ public class PlayerMovement : MonoBehaviour
         transform.DORotate(new Vector3(0, 0, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
     }
 
-    public void DoubleJumpMovement(Vector3 targetPos, float duration)   // Same as JumpMovement, but double duration and jump power
-    {
-        _canMove = false;
+    #region OLD CODE - DOUBLE JUMP
+    //public void DoubleJumpMovement(Vector3 targetPos, float duration)   // Same as JumpMovement, but double duration and jump power
+    //{
+    //    _canMove = false;
 
-        _startingVector = transform.position;
-        _endingVector = targetPos;
+    //    _startingVector = transform.position;
+    //    _endingVector = targetPos;
 
-        transform.parent = null;
-        transform.DOKill();
+    //    transform.parent = null;
+    //    transform.DOKill();
 
-        // Increment jump count
-        jumpComboCount++;
+    //    // Increment jump count
+    //    jumpComboCount++;
 
-        // ComboJumpEvent?
-        //EventManager.JumpEvent?.Invoke(jumpComboCount);
+    //    // ComboJumpEvent?
+    //    //EventManager.JumpEvent?.Invoke(jumpComboCount);
 
-        transform.DORotate(new Vector3(0, 0, 0), duration * 2, RotateMode.Fast);
-    }
+    //    transform.DORotate(new Vector3(0, 0, 0), duration * 2, RotateMode.Fast);
+    //}
 
-    public void DoubleJumpBasedOnDirection(Vector3 pickablePos)    // Used for Sprint or Trampoline
-    {
-        _canMove = false;
+    //public void DoubleJumpBasedOnDirection(Vector3 pickablePos)    // Used for Sprint or Trampoline
+    //{
+    //    _canMove = false;
 
-        Vector3 jumpVect;
+    //    Vector3 jumpVect;
 
-        transform.parent = null;
-        transform.DOKill();
+    //    transform.parent = null;
+    //    transform.DOKill();
 
-        // Increment jump count
-        jumpComboCount++;
+    //    // Increment jump count
+    //    jumpComboCount++;
 
-        //EventManager.JumpEvent?.Invoke(jumpComboCount);
+    //    //EventManager.JumpEvent?.Invoke(jumpComboCount);
 
-        // Determine the direction the player is jumping and complete the rotation canceled by DOKill()
-        if (_startingVector.x - _endingVector.x < 0)
-        {
-            jumpVect = new Vector3(2, 0, 0);
-            transform.DORotate(new Vector3(0, -90, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
-        }
-        else if (_startingVector.x - _endingVector.x > 0)
-        {
-            jumpVect = new Vector3(-2, 0, 0);
-            transform.DORotate(new Vector3(0, 90, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
-        }
-        else if (_startingVector.z - _endingVector.z < 0)
-        {
-            jumpVect = new Vector3(0, 2, 2);
-            transform.DORotate(new Vector3(0, 180, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
-        }
-        else
-        {
-            jumpVect = new Vector3(0, -2, -2);
-            transform.DORotate(new Vector3(0, 0, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
-        }
+    //    // Determine the direction the player is jumping and complete the rotation canceled by DOKill()
+    //    if (_startingVector.x - _endingVector.x < 0)
+    //    {
+    //        jumpVect = new Vector3(2, 0, 0);
+    //        transform.DORotate(new Vector3(0, -90, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
+    //    }
+    //    else if (_startingVector.x - _endingVector.x > 0)
+    //    {
+    //        jumpVect = new Vector3(-2, 0, 0);
+    //        transform.DORotate(new Vector3(0, 90, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
+    //    }
+    //    else if (_startingVector.z - _endingVector.z < 0)
+    //    {
+    //        jumpVect = new Vector3(0, 2, 2);
+    //        transform.DORotate(new Vector3(0, 180, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
+    //    }
+    //    else
+    //    {
+    //        jumpVect = new Vector3(0, -2, -2);
+    //        transform.DORotate(new Vector3(0, 0, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
+    //    }
 
-        _endingVector = pickablePos + jumpVect;
-    }
-
+    //    _endingVector = pickablePos + jumpVect;
+    //}
+    #endregion OLD CODE - DOUBLE JUMP
+  
     public void MoveUp()  // Called as input movement
     {
         _canMove = false;
@@ -248,6 +250,33 @@ public class PlayerMovement : MonoBehaviour
                 FinishJump();
             });
     }
+    public void UndoJump()
+    {
+        _canMove = false;
+
+        transform.parent = null;
+        transform.DOKill();
+
+        // Increment jump count
+        jumpComboCount++;
+
+        // MOVE RIGHT
+        if (_endingVector.x > transform.position.x)
+        {
+            transform.DORotate(new Vector3(0, -90, 0), playerMovementSO.NormalJumpDuration * 0.6f, RotateMode.Fast);
+        }
+        // MOVE LEFT
+        else if (_endingVector.x < transform.position.x)
+        {
+            transform.DORotate(new Vector3(0, 90, 0), playerMovementSO.NormalJumpDuration * 0.6f, RotateMode.Fast);
+        }
+
+        transform.DOJump(_startingVector, playerMovementSO.JumpPower / 2, 1, playerMovementSO.NormalJumpDuration * 0.6f)
+            .OnComplete(() =>
+            {
+                FinishJump();
+            });
+    }
     private void FinishJump()
     {
         // Calling this to update score with combo jumps and reset the combo value.
@@ -257,6 +286,7 @@ public class PlayerMovement : MonoBehaviour
 
         ChangeCanMove();
     }
+
     private void InvokeJumpOverEvent()
     {
         EventManager.JumpOverEvent?.Invoke(jumpComboCount);
@@ -367,16 +397,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
     #region ------------- JUMP AUDIO ---------------
-    private void PlayJumpSound(int comboValue)
-    {
-        if (jumpSound != null)
-        {
-            // Change the pitch according to the number of jumps
-            audioSource.pitch = initialJumpSoundPitch + comboValue * 0.1f;
+    //private void PlayJumpSound(int comboValue)
+    //{
+    //    if (jumpSound != null)
+    //    {
+    //        // Change the pitch according to the number of jumps
+    //        audioSource.pitch = initialJumpSoundPitch + comboValue * 0.1f;
 
-            //audioSource.clip = jumpSound;
-            audioSource.PlayOneShot(jumpSound);
-        }
-    }
+    //        //audioSource.clip = jumpSound;
+    //        audioSource.PlayOneShot(jumpSound);
+    //    }
+    //}
     #endregion
 }
