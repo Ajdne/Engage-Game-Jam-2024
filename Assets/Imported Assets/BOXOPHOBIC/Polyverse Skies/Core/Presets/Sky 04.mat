@@ -12,7 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _BACKGROUNDMODE_COLORS
+  - _BACKGROUNDMODE_COMBINED
   - _ENABLECLOUDSROTATION_ON
   - _ENABLECLOUDS_ON
   - _ENABLEPATTERNOVERLAY_ON
@@ -41,7 +41,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: _CloudsRotation _EquatorHeight _MoonTexture
+  m_LockedProperties: _BackgroundExposure _CloudsRotation _EquatorHeight _MoonTexture
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -201,8 +201,8 @@ Material:
     m_Floats:
     - _BackgroundCat: 1
     - _BackgroundCubemapSpace: 0
-    - _BackgroundExposure: 1
-    - _BackgroundMode: 0
+    - _BackgroundExposure: 2.88
+    - _BackgroundMode: 2
     - _Banner: 1
     - _BuiltInFog: 1
     - _BumpScale: 1
@@ -210,7 +210,7 @@ Material:
     - _Clouds: 1
     - _CloudsAlpha: 0
     - _CloudsCat: 1
-    - _CloudsHeight: 0.025
+    - _CloudsHeight: -0.12
     - _CloudsIntensity: 1
     - _CloudsLitbySun: 0
     - _CloudsRotation: 0
@@ -246,8 +246,8 @@ Material:
     - _EnableSunMoonMask: 1
     - _EnableTwinkling: 1
     - _EqHeight: 0.419
-    - _EquatorHeight: 0.347
-    - _EquatorSmoothness: 0.327
+    - _EquatorHeight: 0.3
+    - _EquatorSmoothness: 0.53
     - _Exposure: 0
     - _Fade: 0
     - _Float0: -1
@@ -260,9 +260,9 @@ Material:
     - _Float6: 0.01
     - _FogCat: 1
     - _FogFill: 0
-    - _FogHeight: 0
+    - _FogHeight: 0.248
     - _FogIntensity: 0.518
-    - _FogSmoothness: 0.01
+    - _FogSmoothness: 0.872
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -271,11 +271,11 @@ Material:
     - _Mode: 0
     - _MoonCat: 1
     - _MoonIntensity: 1
-    - _MoonSize: 0.352
+    - _MoonSize: 0.412
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PatternCat: 1
-    - _PatternContrast: 0.773
+    - _PatternContrast: 0.914
     - _PatternOverlay: 1
     - _RoatationSpeed: 0.4
     - _Rotation: 0
@@ -283,8 +283,8 @@ Material:
     - _SkyPatternContrast: 0.99
     - _SkyPatternOverlay: 1
     - _SkyboxCat: 1
-    - _SkyboxOffset: -0.83
-    - _SkyboxRotation: 0
+    - _SkyboxOffset: -0.82
+    - _SkyboxRotation: 47
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -297,7 +297,7 @@ Material:
     - _StarsHeightMask: 0.134
     - _StarsHeigntMask: 1
     - _StarsHorizonMask: 1
-    - _StarsIntensity: 5
+    - _StarsIntensity: 4.14
     - _StarsLayer: 3
     - _StarsMaskPower: 1
     - _StarsRotation: 0
@@ -308,11 +308,11 @@ Material:
     - _SunIntensity: 1.74
     - _SunRadiusB: 0
     - _SunRadoisA: 0
-    - _SunSize: 0.693
+    - _SunSize: 0.806
     - _SunorMoon: 1
     - _TITLE: 1
     - _ToggleSwitch0: 0
-    - _TwinklingContrast: 0.82
+    - _TwinklingContrast: 0.65
     - _TwinklingScale: 0.2
     - _TwinklingSpeed: 0.05
     - _TwinklingTextureContrast: 1
@@ -334,26 +334,26 @@ Material:
     m_Colors:
     - _CloudLightColor: {r: 0.5620674, g: 0.6149295, b: 0.6764706, a: 1}
     - _CloudShadowColor: {r: 0.03952206, g: 0.12203295, b: 0.31617644, a: 1}
-    - _CloudsLightColor: {r: 0.8867924, g: 0.6065326, b: 0.70401424, a: 1}
+    - _CloudsLightColor: {r: 0.9622642, g: 0.9577252, b: 0.9593234, a: 1}
     - _CloudsRotationAxis: {r: 0, g: 1, b: 0, a: 0}
-    - _CloudsShadowColor: {r: 0.2655845, g: 0.13336597, b: 0.764151, a: 1}
+    - _CloudsShadowColor: {r: 0.4485582, g: 0.57082736, b: 0.9056604, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0, g: 0.5054344, b: 1, a: 0}
     - _Color1: {r: 1, g: 1, b: 1, a: 0}
     - _Color2: {r: 0.059472326, g: 0.25068596, b: 0.8088235, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Eq: {r: 1, g: 0.6769777, b: 0.330882, a: 0}
-    - _EquatorColor: {r: 0.9056604, g: 0.5254539, b: 0.65678716, a: 1}
+    - _EquatorColor: {r: 0.7783019, g: 0.90941364, b: 1, a: 1}
     - _Ground: {r: 0.4779411, g: 0.43111518, b: 0.23545504, a: 0}
-    - _GroundColor: {r: 1, g: 0.9669811, b: 0.9792103, a: 1}
+    - _GroundColor: {r: 1, g: 1, b: 1, a: 1}
     - _MoonColor: {r: 1, g: 1, b: 1, a: 1}
     - _Sky: {r: 0.6691177, g: 0.29519898, b: 0.29519898, a: 0}
-    - _SkyColor: {r: 0.10280259, g: 0, b: 0.7169812, a: 0}
+    - _SkyColor: {r: 0.9622642, g: 0.76708794, b: 0.94057804, a: 0}
     - _SkyboxRotationAxis: {r: 0, g: 1, b: 0, a: 0}
     - _Skycol: {r: 0.27941146, g: 0.64219046, b: 1, a: 0}
     - _StarsRotationAxis: {r: 0, g: 1, b: 0, a: 0}
     - _SunColor: {r: 0.49593174, g: 0.3984514, b: 0.6981132, a: 1}
-    - _Tint: {r: 0.039729424, g: 0.07685643, b: 0.33962262, a: 0}
+    - _Tint: {r: 0.35616562, g: 0, b: 0.6792453, a: 0}
     - _Vector1: {r: 0, g: 1, b: 1, a: 0}
     - _water: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_BuildTextureStacks: []
