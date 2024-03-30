@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public int Id;
     public int team; //0 = none; 1 = p1; 2 =p2;
     public int numberOfTiles; // Broj polja koja igrač poseduje
-    public int numberOfSheep; // Broj ovaca koje igrač poseduje
+    public double numberOfSheep; // Broj ovaca koje igrač poseduje
     public bool isStunned; // Da li je igrač paralizovan
 
     // Konstruktor
@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
         isStunned = false;
     }
 
+    #region Effects
     // Dodavanje poena za polja
     public void AddTilePoint()
     {
@@ -26,9 +27,9 @@ public class Player : MonoBehaviour
     }
 
     // Dodavanje poena za ovce
-    public void AddSheepPoint()
+    public void AddSheepPoint(int a)
     {
-        numberOfSheep++;
+        numberOfSheep += a;
     }
 
     // Paralizovanje igrača
@@ -41,5 +42,32 @@ public class Player : MonoBehaviour
     public void Unstun()
     {
         isStunned = false;
+    }
+    #endregion
+
+    // calculate score
+    public int CalculateScore()
+    {
+        return (int)numberOfTiles + (int)numberOfSheep;
+    }
+
+    public void LosePoints(Vector3 direction)
+    {
+        if (direction == Vector3.forward)
+        {
+            numberOfSheep *= 0.75;
+        }
+        else if (direction == Vector3.back)
+        {
+            numberOfSheep *= 0.1;
+        }
+        else if (direction == Vector3.left)
+        {
+            numberOfSheep *= 0.5;
+        }
+        else if (direction == Vector3.right)
+        {
+            numberOfSheep *= 0.5;
+        }
     }
 }
