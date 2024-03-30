@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,11 +14,6 @@ public class InputManager : MonoBehaviour
     [Space(20)]
     [SerializeField] private PlayerInput p1Input;
     [SerializeField] private PlayerInput p2Input;
-    [Space(10)]
-    [SerializeField] private ArrowImagesSO arrowImagesData;
-    [Space(10)]
-    [SerializeField] private Image[] p1InputImages;
-    [SerializeField] private Image[] p2InputImages;
 
     private List<ICommand> _p1Commands = new();
     private List<ICommand> _p2Commands = new();
