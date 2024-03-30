@@ -6,55 +6,61 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public int Id;
-    public int team; //0 = none; 1 = p1; 2 =p2;
+    private int _team; //0 = none; 1 = p1; 2 =p2;
     public bool isFoggy;
     public bool isIcy;
     public bool isPlayer;
     public bool isPickable;
     public bool isStun;
+
+    private Renderer _renderer; 
+
     // Konstruktor
     public Tile()
     {
-        team = 0;
+        _team = 0;
         isFoggy = false;
         isIcy = false;
         isPickable = false;
         isPlayer = false;
     }
-    public void paintTile(int teamId)
+    private void Start()
+    {
+        _renderer = GetComponent<Renderer>();
+    }
+
+    private void PaintTile(int teamId)
     {
         switch (teamId)
         {
             case 0:
-                removeTilePaint();
+                RemoveTilePaint();
                 break;
             case 1:
-                this.transform.GetComponent<Renderer>().material.color = Color.red;
+                _renderer.material.color = Color.red;
                 Debug.Log("Color red");
                 break;
             case 2:
-                this.transform.GetComponent<Renderer>().material.color = Color.blue;
+                _renderer.material.color = Color.blue;
                 Debug.Log("Color blue");
                 break;
         }
     }
-    public void removeTilePaint()
+
+    public void RemoveTilePaint()
     {
-        this.transform.GetComponent<Renderer>().material.color = Color.blue;
+        _renderer.material.color = Color.gray;
         Debug.Log("Color removed");
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 3) // Pretpostavka da je sloj 3 rezervisan za igrača
+        if(other.TryGetComponent(out Player player))
         {
-            Player player = other.gameObject.GetComponent<Player>();
-            if (player != null)
+            if(_team != player.Team)
             {
-                if (this.team != player.team)
-                {
-                    paintTile(player.team);
-                    player.AddTilePoint();
-                }
+                PaintTile(player.Team);
+                player.AddTilePoint();
             }
         }
     }

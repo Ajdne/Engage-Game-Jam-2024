@@ -5,7 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int Id;
-    public int team; //0 = none; 1 = p1; 2 =p2;
+    
+    [SerializeField] private int team; //0 = none; 1 = p1; 2 =p2;
+    public int Team => team;
+
     public int numberOfTiles; // Broj polja koja igrač poseduje
     public double numberOfSheep; // Broj ovaca koje igrač poseduje
     public bool isStunned; // Da li je igrač paralizovan
