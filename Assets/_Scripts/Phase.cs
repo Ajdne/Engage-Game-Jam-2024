@@ -68,4 +68,20 @@ public class Phase : MonoBehaviour
         CurrentPhase = 1;
         CurrentRound = 1;
     }
+
+    //make getter for everything
+    public static int GetCurrentPhase()
+    {
+        return CurrentPhase;
+    }
+
+    public static int GetCurrentRound()
+    {
+        return CurrentRound;
+    }
+
+    public static int GetMoveNumber()
+    {
+        return moveNumber;
+    }
 }
