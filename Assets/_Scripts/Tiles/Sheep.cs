@@ -7,5 +7,6 @@ public class Sheep : Pickable
     protected override void OnPickUp(Player player)
     {
         player.numberOfSheep++; // Povećavamo skor za ovce igrača
+        Debug.Log("Player " + player.Id + " got sheep");
     }
 }
