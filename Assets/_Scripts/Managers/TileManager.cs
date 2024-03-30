@@ -59,4 +59,8 @@ public class TileManager : MonoBehaviour
         tile.isStun = true;
         Instantiate(Stun, tile.transform.position, Quaternion.identity);
     }
+    public void paintTile(Tile tile, int teamId)
+    {
+
+    }
 }
