@@ -12,5 +12,11 @@ public class EventManager : MonoBehaviour
     public static Action<int> JumpOverEvent; // Invoked when the player is done moving
     public static Action MovementOverEvent; // Called when players finished moving
 
+    public static Action MoveOverEvent; // Move -> Round -> Phase -> Game
 
+    public static Action RoundOverEvent; 
+
+    public static Action PhaseOverEvent;
+
+    public static Action GameOverEvent;
 }
