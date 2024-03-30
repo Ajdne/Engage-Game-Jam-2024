@@ -19,4 +19,19 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+    public int Phase;
+    public int round;
+
+    // Metoda za promenu faze
+    public void ChangePhase()
+    {
+        Phase++;
+    }
+
+    // Metoda za promenu runde
+    public void NextRound()
+    {
+        round++;
+    }
+
 }
