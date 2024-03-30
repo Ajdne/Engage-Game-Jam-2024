@@ -18,6 +18,9 @@ public class InputManager : MonoBehaviour
     private List<ICommand> _p1Commands = new();
     private List<ICommand> _p2Commands = new();
 
+    [Space(20)]
+    [SerializeField] private int _maxInputs = 1;
+
     private void Awake()
     {
         Instance = this;
@@ -46,16 +49,23 @@ public class InputManager : MonoBehaviour
         //}
     }
 
-    public void AddCommand(ICommand command, PlayerInput pInput)
+    public bool AddCommand(ICommand command, PlayerInput pInput)
     {
-        if (pInput == p1Input)
+        if (pInput == p1Input
+            && _p1Commands.Count < _maxInputs
+            )
         {
             _p1Commands.Add(command);
+            return true;
         }
-        if (pInput == p2Input)
+        if (pInput == p2Input
+            && _p2Commands.Count < _maxInputs
+            )
         {
             _p2Commands.Add(command);
+            return true;
         }
+        return false;
     }
 
     private IEnumerator ExecuteCommands()
@@ -74,5 +84,9 @@ public class InputManager : MonoBehaviour
             }
             yield return new WaitForSeconds(1);
         }
+
+        // Empty the Command lists
+        _p1Commands.Clear();
+        _p2Commands.Clear();
     }
 }
