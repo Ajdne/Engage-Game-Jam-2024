@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int timeForInput = 3;
     public int TimeForInput => timeForInput;
 
+    public int Phase;
+    public int round;
+
     #region Singleton
     private void Awake()
     {
@@ -27,8 +30,6 @@ public class GameManager : MonoBehaviour
         round = 1;
     }
     #endregion
-    public int Phase;
-    public int round;
 
     // Metoda za promenu faze
     public void ChangePhase()
@@ -41,5 +42,4 @@ public class GameManager : MonoBehaviour
     {
         round++;
     }
-
 }
