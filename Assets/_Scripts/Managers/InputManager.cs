@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
     private List<ICommand> _p2Commands = new();
 
     [Space(20)]
-    [SerializeField] private int _maxInputs = 1;
+    [SerializeField] private PhaseManager PhaseManager;
     [SerializeField] private float timeBetweenCommandExecutions = 0.5f;
 
     private void Awake()
@@ -44,6 +44,8 @@ public class InputManager : MonoBehaviour
     }
     private IEnumerator InputCoroutine()
     {
+        yield return new WaitForSeconds(1);
+
         _canReadInput = true;
         yield return new WaitForSeconds(inputTime);
 
@@ -56,14 +58,14 @@ public class InputManager : MonoBehaviour
     public bool AddCommand(ICommand command, PlayerInput pInput)
     {
         if (pInput == p1Input
-            && _p1Commands.Count < _maxInputs
+            && _p1Commands.Count < PhaseManager.GetMaxMoves()
             )
         {
             _p1Commands.Add(command);
             return true;
         }
         if (pInput == p2Input
-            && _p2Commands.Count < _maxInputs
+            && _p2Commands.Count < PhaseManager.GetMaxMoves()
             )
         {
             _p2Commands.Add(command);
@@ -98,6 +100,7 @@ public class InputManager : MonoBehaviour
 
         EventManager.MovementOverEvent?.Invoke();
 
+        /////////////////////////////////////////
         StartInputCoroutine();
     }
 }

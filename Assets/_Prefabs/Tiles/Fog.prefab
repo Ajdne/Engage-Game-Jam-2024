@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8101438136508125002}
   - component: {fileID: 633735995727337606}
   - component: {fileID: 3638298171757268273}
-  - component: {fileID: 6912203330726022657}
+  - component: {fileID: 6033363666154738776}
   m_Layer: 0
   m_Name: Fog
   m_TagString: Untagged
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6912203330726022657
+--- !u!114 &6033363666154738776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,13 +115,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6122432299175515234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
+  m_Script: {fileID: 11500000, guid: bcb56fc65610806489a8cf56acda9093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
-  team: 0
-  isFoggy: 0
-  isIcy: 0
-  isPlayer: 0
-  isPickable: 0
-  isStun: 0

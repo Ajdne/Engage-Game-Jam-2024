@@ -242,7 +242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -485,7 +484,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -610,7 +608,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -628,6 +625,8 @@ GameObject:
   - component: {fileID: 99533153}
   - component: {fileID: 99533155}
   - component: {fileID: 99533156}
+  - component: {fileID: 99533157}
+  - component: {fileID: 99533158}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -774,8 +773,132 @@ MonoBehaviour:
   inputTime: 5
   p1Input: {fileID: 1218587975}
   p2Input: {fileID: 1700204171}
-  _maxInputs: 5
+  PhaseManager: {fileID: 99533158}
   timeBetweenCommandExecutions: 0.5
+--- !u!114 &99533157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99533152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c965c171d85ee72418a10e6eb1d45d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 179398914}
+  - {fileID: 1011935918}
+  - {fileID: 399909385}
+  - {fileID: 2112186176}
+  - {fileID: 792933009}
+  - {fileID: 747698085}
+  - {fileID: 1648431893}
+  - {fileID: 1226013952}
+  - {fileID: 685072563}
+  - {fileID: 1029674443}
+  - {fileID: 1035806899}
+  - {fileID: 1942007690}
+  - {fileID: 2045202588}
+  - {fileID: 392355852}
+  - {fileID: 1772417774}
+  - {fileID: 939939176}
+  - {fileID: 2044911930}
+  - {fileID: 1078448130}
+  - {fileID: 489261902}
+  - {fileID: 1355955961}
+  - {fileID: 1657502447}
+  - {fileID: 1532021882}
+  - {fileID: 855636275}
+  - {fileID: 3560377}
+  - {fileID: 1465769983}
+  - {fileID: 112065910}
+  - {fileID: 456473042}
+  - {fileID: 354964116}
+  - {fileID: 780139474}
+  - {fileID: 353440397}
+  - {fileID: 906429074}
+  - {fileID: 1252931682}
+  - {fileID: 73918030}
+  - {fileID: 1462670187}
+  - {fileID: 1260846696}
+  - {fileID: 67719622}
+  - {fileID: 1274219844}
+  - {fileID: 525367446}
+  - {fileID: 840937457}
+  - {fileID: 2025250917}
+  - {fileID: 431598026}
+  - {fileID: 2075839266}
+  - {fileID: 490404654}
+  - {fileID: 961217707}
+  - {fileID: 1715508264}
+  - {fileID: 566818267}
+  - {fileID: 1870230928}
+  - {fileID: 2018832410}
+  - {fileID: 664537723}
+  - {fileID: 569242181}
+  - {fileID: 1270583337}
+  - {fileID: 983347566}
+  - {fileID: 1588272021}
+  - {fileID: 1560733529}
+  - {fileID: 2110882035}
+  - {fileID: 1279591139}
+  - {fileID: 1042788674}
+  - {fileID: 2076927908}
+  - {fileID: 1028759195}
+  - {fileID: 1475656840}
+  - {fileID: 619456688}
+  - {fileID: 663501334}
+  - {fileID: 1383536417}
+  - {fileID: 1538591699}
+  - {fileID: 2001638835}
+  - {fileID: 2126604799}
+  - {fileID: 1840028925}
+  - {fileID: 1164781411}
+  - {fileID: 1626160510}
+  - {fileID: 1259019942}
+  - {fileID: 1929069126}
+  - {fileID: 1861839774}
+  - {fileID: 402098003}
+  - {fileID: 948972345}
+  - {fileID: 1712276018}
+  - {fileID: 758811045}
+  - {fileID: 236202912}
+  - {fileID: 1751565569}
+  - {fileID: 947810319}
+  - {fileID: 1597998668}
+  - {fileID: 1650495122}
+  Fog: {fileID: 6122432299175515234, guid: ceb564a2b4730394b835cb98b03dbe1b, type: 3}
+  Sheep: {fileID: 0}
+  Stun: {fileID: 0}
+--- !u!114 &99533158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99533152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232dcd88804ba9d4a8d31b8a16c7d25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phases:
+  - Rounds:
+    - MaxMoves: 1
+    - MaxMoves: 2
+    - MaxMoves: 2
+  - Rounds:
+    - MaxMoves: 1
+    - MaxMoves: 2
+    - MaxMoves: 2
+    - MaxMoves: 1
+    - MaxMoves: 2
+    - MaxMoves: 2
+  - Rounds: []
+  - Rounds: []
+  - Rounds: []
 --- !u!1 &112065905
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +1018,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -1461,7 +1583,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -1525,7 +1646,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38e324f2965ad4660b4aefaba2575df8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1567,7 +1688,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228196659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 0.5, z: 4.000011}
+  m_LocalPosition: {x: -9, y: 0.75, z: 4.000011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1729,7 +1850,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -2294,7 +2414,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -2419,7 +2538,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -2483,7 +2601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af5cab4be50a64b4ba5d2d40b2e9a260, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2738,7 +2856,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -2981,7 +3098,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -3152,7 +3268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -3395,7 +3510,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -3759,7 +3873,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -3930,7 +4043,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38e324f2965ad4660b4aefaba2575df8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4067,7 +4180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -4192,7 +4304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -4317,7 +4428,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -4442,7 +4552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -4567,7 +4676,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -4631,7 +4739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38e324f2965ad4660b4aefaba2575df8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4768,7 +4876,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -5011,7 +5118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -5136,7 +5242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -5431,7 +5536,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -5674,7 +5778,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -5799,7 +5902,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -6160,7 +6262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -6285,7 +6386,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -6459,7 +6559,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -6584,7 +6683,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -6930,7 +7028,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -7055,7 +7152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -7180,7 +7276,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -7305,7 +7400,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -7430,7 +7524,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -7673,7 +7766,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -8034,7 +8126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -8159,7 +8250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -8284,7 +8374,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -8409,7 +8498,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -8473,7 +8561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af5cab4be50a64b4ba5d2d40b2e9a260, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8610,7 +8698,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -8674,7 +8761,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38e324f2965ad4660b4aefaba2575df8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8811,7 +8898,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -9426,7 +9512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af5cab4be50a64b4ba5d2d40b2e9a260, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9563,7 +9649,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -10129,7 +10214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -10254,7 +10338,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -10379,7 +10462,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -10504,7 +10586,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -10629,7 +10710,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -10754,7 +10834,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -10879,7 +10958,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -11476,7 +11554,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -11540,7 +11617,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af5cab4be50a64b4ba5d2d40b2e9a260, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11677,7 +11754,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -12038,7 +12114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -12163,7 +12238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -12288,7 +12362,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -12538,7 +12611,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38e324f2965ad4660b4aefaba2575df8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12793,7 +12866,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -12918,7 +12990,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -13043,7 +13114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -13168,7 +13238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -13293,7 +13362,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -13325,7 +13393,7 @@ PrefabInstance:
     - target: {fileID: 8400113104248613977, guid: af59586f49d9a904bb0036f7637d8231,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -72.29999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8569403335742580628, guid: af59586f49d9a904bb0036f7637d8231,
         type: 3}
@@ -13556,7 +13624,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -13620,7 +13687,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af5cab4be50a64b4ba5d2d40b2e9a260, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13875,7 +13942,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -14000,7 +14066,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -14125,7 +14190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -14573,7 +14637,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -14698,7 +14761,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -14941,7 +15003,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -15005,7 +15066,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af5cab4be50a64b4ba5d2d40b2e9a260, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15142,7 +15203,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -15385,7 +15445,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -15510,7 +15569,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -15635,7 +15693,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -16114,7 +16171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -16351,7 +16407,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -16594,7 +16649,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -16719,7 +16773,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -16844,7 +16897,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -16969,7 +17021,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -17094,7 +17145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -17158,7 +17208,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a4b0b0225786041f38faf575890ea91a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38e324f2965ad4660b4aefaba2575df8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17295,7 +17345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -17420,7 +17469,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -17663,7 +17711,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -17788,7 +17835,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -17913,7 +17959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  team: 0
   isFoggy: 0
   isIcy: 0
   isPlayer: 0

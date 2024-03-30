@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Phase.ResetGame();
+        //PhaseManager.ResetGame();
     }
 
     public void End()

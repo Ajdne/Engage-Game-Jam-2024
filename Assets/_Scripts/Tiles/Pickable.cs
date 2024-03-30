@@ -8,8 +8,7 @@ public abstract class Pickable : MonoBehaviour
     {
         if (other.gameObject.layer == 3) // Pretpostavka da je sloj 3 rezervisan za igrača
         {
-            Player player = other.gameObject.GetComponent<Player>();
-            if (player != null)
+            if (other.gameObject.TryGetComponent<Player>(out Player player))
             {
                 OnPickUp(player); // Pozivamo apstraktnu metodu OnPickUp
                 this.gameObject.SetActive(false); // Deaktiviramo pickable objekat
