@@ -348,12 +348,12 @@ Material:
     - _GroundColor: {r: 1, g: 0.9669811, b: 0.9792103, a: 1}
     - _MoonColor: {r: 1, g: 1, b: 1, a: 1}
     - _Sky: {r: 0.6691177, g: 0.29519898, b: 0.29519898, a: 0}
-    - _SkyColor: {r: 0.1295243, g: 0, b: 0.6509434, a: 1}
+    - _SkyColor: {r: 0.10280259, g: 0, b: 0.7169812, a: 0}
     - _SkyboxRotationAxis: {r: 0, g: 1, b: 0, a: 0}
     - _Skycol: {r: 0.27941146, g: 0.64219046, b: 1, a: 0}
     - _StarsRotationAxis: {r: 0, g: 1, b: 0, a: 0}
     - _SunColor: {r: 0.49593174, g: 0.3984514, b: 0.6981132, a: 1}
-    - _Tint: {r: 0.9474717, g: 0.62925476, b: 0.89735854, a: 0}
+    - _Tint: {r: 0.039729424, g: 0.07685643, b: 0.33962262, a: 0}
     - _Vector1: {r: 0, g: 1, b: 1, a: 0}
     - _water: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_BuildTextureStacks: []
