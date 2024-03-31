@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -81,6 +82,11 @@ public class SpawnManager : MonoBehaviour
             tile.isStun = true;
             Instantiate(Stun, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }  
+    }
+    public void Spawner()
+    {
+        int currentPhase;
+        int currentRound;
     }
 
 }

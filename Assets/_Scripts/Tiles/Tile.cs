@@ -36,23 +36,41 @@ public class Tile : MonoBehaviour
         switch (teamId)
         {
             case 0:
-                RemoveTilePaint();
+                RemoveTilePaint(teamId);
                 break;
             case 1:
                 _renderer.material.color = Color.red;
-                Debug.Log("Color red");
+                if (_team == 2)
+                {
+                    GameManager.Instance.NightmarePlayer.numberOfTiles -= 1;
+                }
+                _team = 1;
+                GameManager.Instance.DreamPlayer.numberOfTiles += 1;
                 break;
             case 2:
                 _renderer.material.color = Color.blue;
-                Debug.Log("Color blue");
+                if (_team == 1)
+                {
+                    GameManager.Instance.DreamPlayer.numberOfTiles -= 1;
+                }
+                GameManager.Instance.NightmarePlayer.numberOfTiles += 1;
+                _team = 2;
                 break;
         }
     }
 
-    public void RemoveTilePaint()
+    public void RemoveTilePaint(int teamId)
     {
         _renderer.material.color = Color.gray;
-        Debug.Log("Color removed");
+        if (teamId == 1)
+        {
+            GameManager.Instance.DreamPlayer.numberOfTiles -= 1;
+        }
+        else if (teamId == 2)
+        {
+            GameManager.Instance.NightmarePlayer.numberOfTiles -= 1;
+        }
+        _team = 0;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -66,8 +84,15 @@ public class Tile : MonoBehaviour
             else if(_team != player.Team)
             {
                 PaintTile(player.Team);
-                player.AddTilePoint();
             }
+            isPlayer = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out Player player))
+        {
+            isPlayer = false;
         }
     }
 }
