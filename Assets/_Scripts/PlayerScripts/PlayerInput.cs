@@ -69,7 +69,6 @@ public class PlayerInput : MonoBehaviour
             || Input.GetKeyUp(playerLeftButton)
             )
         {
-            print("Input over!");
             _inputOver = true;
         }
 

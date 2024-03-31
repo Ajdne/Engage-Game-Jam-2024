@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour
     }
     private IEnumerator InputCoroutine()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
 
         _canReadInput = true;
         yield return new WaitForSeconds(inputTime);
@@ -52,7 +52,7 @@ public class InputManager : MonoBehaviour
         // Time for reading inputs is over
         _canReadInput = false;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
     }
 
     public bool AddCommand(ICommand command, PlayerInput pInput)
@@ -79,7 +79,7 @@ public class InputManager : MonoBehaviour
     }
     private IEnumerator ExecuteCommands()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < PhaseManager.GetMaxMoves(); i++)
         {
             if (i < _p1Commands.Count)
             {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5895602, g: 0.39631295, b: 0.58405143, a: 1}
+  m_IndirectSpecularColor: {r: 0.5900642, g: 0.39681983, b: 0.5844995, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   p1Input: {fileID: 1218587975}
   p2Input: {fileID: 1700204171}
   PhaseManager: {fileID: 99533158}
-  timeBetweenCommandExecutions: 0.5
+  timeBetweenCommandExecutions: 0.4
 --- !u!114 &99533157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14075,7 +14075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218587972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 1.5, z: 5}
+  m_LocalPosition: {x: -4, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14230,8 +14230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa55bd692ce0e04db5e4d4899a401a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DreamPlayer: {fileID: 0}
-  NightmarePlayer: {fileID: 0}
 --- !u!114 &1218587983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18992,7 +18990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700204170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 1.5, z: 8}
+  m_LocalPosition: {x: -4, y: 1.5, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19112,8 +19110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa55bd692ce0e04db5e4d4899a401a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DreamPlayer: {fileID: 1218587983}
-  NightmarePlayer: {fileID: 1700204181}
 --- !u!114 &1700204181
 MonoBehaviour:
   m_ObjectHideFlags: 0
