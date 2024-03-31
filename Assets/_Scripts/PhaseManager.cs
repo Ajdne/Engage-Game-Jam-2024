@@ -37,7 +37,6 @@ public class PhaseManager : MonoBehaviour
 
     public int GetMaxMoves()
     {
-        print("Rounds  " + phases[_currentPhase].Rounds[_currentRound]);
         return phases[_currentPhase].Rounds[_currentRound].MaxMoves;
     }
     public void NextRound()

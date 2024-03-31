@@ -14,6 +14,12 @@ public class Player : MonoBehaviour
 
     public int Points;
 
+    private CapsuleCollider _capCollider;
+    private void Start()
+    {
+        _capCollider = GetComponent<CapsuleCollider>();
+        _capCollider.enabled = false;
+    }
     // Konstruktor
     public Player(int team)
     {
@@ -23,6 +29,18 @@ public class Player : MonoBehaviour
         isStunned = false;
     }
 
+    private void OnEnable()
+    {
+        EventManager.GameLoadedEvent += ActivateCollider;
+    }
+    private void OnDisable()
+    {
+        EventManager.GameLoadedEvent -= ActivateCollider;
+    }
+    private void ActivateCollider()
+    {
+        _capCollider.enabled = true;
+    }
     #region Effects
     // Dodavanje poena za polja
     public void AddTilePoint()
