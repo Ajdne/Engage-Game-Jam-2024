@@ -83,12 +83,10 @@ public class InputManager : MonoBehaviour
         {
             if (i < _p1Commands.Count)
             {
-                print(_p1Commands[i]);
                 _p1Commands[i].Execute();
             }
             if (i < _p2Commands.Count)
             {
-                print(_p2Commands[i]);
                 _p2Commands[i].Execute();
             }
             yield return new WaitForSeconds(timeBetweenCommandExecutions);

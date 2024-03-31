@@ -643,8 +643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5741d3a996e67e34aae7c026e6066a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dreamPlayer: {fileID: 0}
-  nightmarePlayer: {fileID: 0}
+  dreamPlayer: {fileID: 1218587983}
+  nightmarePlayer: {fileID: 1700204181}
 --- !u!4 &99533154
 Transform:
   m_ObjectHideFlags: 0
@@ -1337,13 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d3932c1a1e5444694af9d5665e849a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pInputImages:
-  - {fileID: 1077581441}
-  - {fileID: 598613255}
-  - {fileID: 1514334148}
-  - {fileID: 477360905}
-  - {fileID: 204609627}
-  - {fileID: 2063221569}
+  arrowPrefab: {fileID: 0}
 --- !u!1 &138762087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,13 +3731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d3932c1a1e5444694af9d5665e849a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pInputImages:
-  - {fileID: 1634746617}
-  - {fileID: 1752317165}
-  - {fileID: 1035972838}
-  - {fileID: 1375671220}
-  - {fileID: 1162519397}
-  - {fileID: 355230277}
+  arrowPrefab: {fileID: 0}
 --- !u!1 &456473037
 GameObject:
   m_ObjectHideFlags: 0
@@ -9982,7 +9970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovementSO: {fileID: 11400000, guid: 061b3b1939db5bf4e998cbc6e46b54ad, type: 2}
   animator: {fileID: 1989063181}
-  modelTransform: {fileID: 467331482}
+  modelTransform: {fileID: 1989063179}
   popParticles: {fileID: 434827949}
   stunParticles: {fileID: 0}
 --- !u!114 &1218587975
