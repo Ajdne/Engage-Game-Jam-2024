@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.StopAudio();
         AudioManager.Instance.PlayEnd();
         CalculateWinner();
+        AmbientManager.Instance.ResetSkyboxMaterial();
 
         Time.timeScale = 0f;
     }
