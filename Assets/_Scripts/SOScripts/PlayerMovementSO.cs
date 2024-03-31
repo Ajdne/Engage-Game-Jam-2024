@@ -11,4 +11,7 @@ public class PlayerMovementSO : ScriptableObject
 
     [SerializeField] private float pickableJumpDuration = 0.5f;
     public float PickableJumpDuration { get => pickableJumpDuration; }
+
+    [SerializeField] private float slideDuration;
+    public float SlideDuration { get => slideDuration;}
 }

@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Jump Settings")]
     [SerializeField] private PlayerMovementSO playerMovementSO;
-
+    [SerializeField] private Animator animator;
     [Space(20)]
     //[SerializeField] private AudioSource audioSource;
     //[SerializeField] private AudioClip jumpSound;
@@ -271,8 +271,10 @@ public class PlayerMovement : MonoBehaviour
         // Calling this to update score with combo jumps and reset the combo value.
         InvokeJumpOverEvent();
 
-        _movesMade++;
-
+        if (transform.position.y > 1.51f)
+        {
+            transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
+        }    
         ChangeCanMove();
     }
 
@@ -282,6 +284,40 @@ public class PlayerMovement : MonoBehaviour
 
         // Reset the jump combo value
         jumpComboCount = 0;
+    }
+    public void SlideMovement(Vector3 iceTilePosition)
+    {
+        _canMove = false;
+
+        transform.parent = null;
+        transform.DOKill();
+
+        Vector3 moveVect;
+        if (_startingVector.x - _endingVector.x < 0)
+        {
+            moveVect = new Vector3(1, 0, 0);
+        }
+        else if (_startingVector.x - _endingVector.x > 0)
+        {
+            moveVect = new Vector3(-1, 0, 0);
+        }
+        else if (_startingVector.z - _endingVector.z < 0)
+        {
+            moveVect = new Vector3(0, 0, 1);
+            transform.DORotate(new Vector3(0, 180, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
+        }
+        else
+        {
+            moveVect = new Vector3(0, 0, -1);
+            transform.DORotate(new Vector3(0, 0, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
+        }
+
+        animator.Play("Slide");
+        transform.DOMove(iceTilePosition + moveVect + new Vector3(0, 1.5f, 0), playerMovementSO.SlideDuration)
+            .OnComplete(() =>
+            {
+                FinishJump();
+            });
     }
     public void DynamitePlungerJump(Vector3 targetPos)
     {

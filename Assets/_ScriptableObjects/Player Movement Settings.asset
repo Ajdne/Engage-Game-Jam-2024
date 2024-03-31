@@ -15,3 +15,4 @@ MonoBehaviour:
   jumpPower: 1.5
   normalJumpDuration: 0.35
   pickableJumpDuration: 0.5
+  slideDuration: 0.3

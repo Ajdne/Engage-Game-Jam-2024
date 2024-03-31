@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    public int Id;
     private int _team; //0 = none; 1 = p1; 2 =p2;
     public bool isFoggy;
-    public bool isIcy;
+
+    [SerializeField] private bool isIcy;
+    public bool IsIcy => isIcy;
+
     public bool isPlayer;
     public bool isPickable;
     public bool isStun;
@@ -57,7 +59,11 @@ public class Tile : MonoBehaviour
     {
         if(other.TryGetComponent(out Player player))
         {
-            if(_team != player.Team)
+            if(isIcy)
+            {
+                player.GetComponent<PlayerMovement>().SlideMovement(transform.position);
+            }
+            else if(_team != player.Team)
             {
                 PaintTile(player.Team);
                 player.AddTilePoint();
