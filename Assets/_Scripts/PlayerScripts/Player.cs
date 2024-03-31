@@ -86,4 +86,10 @@ public class Player : MonoBehaviour
         //lose 50% of points
         Points = Points / 2;
     }
+
+    //update
+    private void Update()
+    {
+        CalculateScore();
+    }
 }

@@ -1678,6 +1678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d3932c1a1e5444694af9d5665e849a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movePlaceholders: []
   arrows: []
 --- !u!1 &138762087
 GameObject:
@@ -5064,6 +5065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d3932c1a1e5444694af9d5665e849a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movePlaceholders: []
   arrows: []
 --- !u!1001 &453223837
 PrefabInstance:
@@ -16437,7 +16439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DreamSlider: 0
-  skyboxMaterial: {fileID: 0}
+  skyboxMaterial: {fileID: 2100000, guid: 0ff23603c187cd146bc65bf76e851175, type: 2}
   _dreamColor: {r: 0.9528302, g: 0.5339444, b: 0.5339444, a: 0}
   _nightmareColor: {r: 0.10409397, g: 0.1435059, b: 0.3207547, a: 0}
   _currentColor: {r: 0, g: 0, b: 0, a: 0}
