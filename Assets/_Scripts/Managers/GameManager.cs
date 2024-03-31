@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     public void End()
     {
         Debug.Log("Game Over");
+        AudioManager.Instance.StopAudio();
+        AudioManager.Instance.PlayEnd();
         CalculateWinner();
         //EventManager.GameOverEvent?.Invoke();
     }

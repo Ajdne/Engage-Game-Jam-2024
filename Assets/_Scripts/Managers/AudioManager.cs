@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayTheme()
     {
-        PlayAudio(0);
+        PlayAudio(audioClips[1]);
     }
 
     private void PlayAudio(int index)
@@ -22,6 +22,14 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.Stop();
     }
+    //make method playaudio(audioclip a)
+    public void PlayAudio(AudioClip audioClip)
+    {
+        audioSource.clip = audioClip;
+        audioSource.Play();
+    }
+    
+
 
     public void PauseAudio()
     {
@@ -66,6 +74,11 @@ public class AudioManager : MonoBehaviour
     int index;
     public void PlayStartGame()
     {
-        PlayAudio(1);
+        PlayAudio(audioClips[1]);
+    }
+
+    public void PlayEnd()
+    {
+        PlayAudio(audioClips[2]);
     }
 }
