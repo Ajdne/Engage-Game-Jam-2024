@@ -371,6 +371,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -528,6 +531,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -685,6 +691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -1322,6 +1331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -1784,6 +1796,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138762087}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &196785137 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8982020185485427809, guid: d91d64d8e26808c429404cfa4560654e,
+    type: 3}
+  m_PrefabInstance: {fileID: 508003834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &196785138 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3226396487355843486, guid: d91d64d8e26808c429404cfa4560654e,
@@ -1996,6 +2014,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -2338,6 +2359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -2495,6 +2519,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -2652,6 +2679,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -3026,6 +3056,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -3183,6 +3216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -3534,6 +3570,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -3809,6 +3848,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -4130,6 +4172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -4287,6 +4332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -4795,6 +4843,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -4952,6 +5003,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -5292,6 +5346,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -5449,6 +5506,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -5606,6 +5666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -5684,7 +5747,7 @@ PrefabInstance:
     - target: {fileID: 3226396487355843486, guid: d91d64d8e26808c429404cfa4560654e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 3226396487355843486, guid: d91d64d8e26808c429404cfa4560654e,
         type: 3}
@@ -5694,12 +5757,12 @@ PrefabInstance:
     - target: {fileID: 3226396487355843486, guid: d91d64d8e26808c429404cfa4560654e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 3226396487355843486, guid: d91d64d8e26808c429404cfa4560654e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.013757862
+      value: -0.7167672
       objectReference: {fileID: 0}
     - target: {fileID: 3226396487355843486, guid: d91d64d8e26808c429404cfa4560654e,
         type: 3}
@@ -5709,7 +5772,7 @@ PrefabInstance:
     - target: {fileID: 3226396487355843486, guid: d91d64d8e26808c429404cfa4560654e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99990535
+      value: 0.6973126
       objectReference: {fileID: 0}
     - target: {fileID: 3226396487355843486, guid: d91d64d8e26808c429404cfa4560654e,
         type: 3}
@@ -5724,7 +5787,7 @@ PrefabInstance:
     - target: {fileID: 3226396487355843486, guid: d91d64d8e26808c429404cfa4560654e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 181.577
+      value: 271.576
       objectReference: {fileID: 0}
     - target: {fileID: 3226396487355843486, guid: d91d64d8e26808c429404cfa4560654e,
         type: 3}
@@ -5932,6 +5995,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -6089,6 +6155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -6246,6 +6315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -6479,6 +6551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -6889,6 +6964,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -7046,6 +7124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -7238,6 +7319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -7395,6 +7479,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -7906,6 +7993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -8063,6 +8153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -8220,6 +8313,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -8426,6 +8522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -8804,6 +8903,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -8961,6 +9063,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -9118,6 +9223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -9511,6 +9619,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -9862,6 +9973,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -10213,6 +10327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -10370,6 +10487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -10867,6 +10987,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -11193,6 +11316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -11586,6 +11712,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -11949,6 +12078,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -12106,6 +12238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -12499,6 +12634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -12892,6 +13030,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -13049,6 +13190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -13206,6 +13350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -13557,6 +13704,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -13832,6 +13982,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -14251,6 +14404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -14408,6 +14564,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -14683,6 +14842,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -14923,6 +15085,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -15080,6 +15245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -15237,6 +15405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -15726,6 +15897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -15928,7 +16102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovementSO: {fileID: 11400000, guid: 061b3b1939db5bf4e998cbc6e46b54ad, type: 2}
-  animator: {fileID: 0}
+  animator: {fileID: 196785137}
   modelTransform: {fileID: 196785138}
   popParticles: {fileID: 1113419452}
   stunParticles: {fileID: 0}
@@ -16207,6 +16381,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -16482,6 +16659,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -16833,6 +17013,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -16990,6 +17173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -17147,8 +17333,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
-  isIcy: 1
+  isIcy: 0
   isPlayer: 0
   isPickable: 0
   isStun: 0
@@ -17304,6 +17493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -17461,6 +17653,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -17618,6 +17813,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -17775,6 +17973,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -17932,6 +18133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -18089,6 +18293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -18246,6 +18453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -18639,6 +18849,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -18796,6 +19009,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -19071,6 +19287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -19458,6 +19677,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -19789,6 +20011,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -20000,6 +20225,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -20157,6 +20385,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -20314,6 +20545,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -20547,6 +20781,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -20822,6 +21059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
@@ -20979,6 +21219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 0}
+  nightmareTileMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
