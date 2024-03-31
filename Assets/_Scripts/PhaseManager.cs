@@ -54,8 +54,22 @@ public class PhaseManager : MonoBehaviour
     }
     private void ChangePhase()
     {
-        if (_currentPhase < phases.Count-1)
+        if (_currentPhase < phases.Count-2)
         {
+            _currentPhase++;
+            EventManager.PhaseOverEvent?.Invoke();
+            AudioManager.Instance.PlayPhaseChange();
+        }
+        else if (_currentPhase == phases.Count-1) 
+        {
+            if(GameManager.Instance.DreamPlayer.CalculateScore() > GameManager.Instance.NightmarePlayer.CalculateScore())
+            {
+                //impelement realtime movement
+            }
+            else
+            {
+                //implement fast movement + falling
+            }
             _currentPhase++;
             EventManager.PhaseOverEvent?.Invoke();
             AudioManager.Instance.PlayPhaseChange();
