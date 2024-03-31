@@ -81,4 +81,9 @@ public class AudioManager : MonoBehaviour
     {
         PlayAudio(audioClips[2]);
     }
+
+    public void PlaySheepSound()
+    {
+        PlayAudio(audioClips[3]);
+    }
 }
