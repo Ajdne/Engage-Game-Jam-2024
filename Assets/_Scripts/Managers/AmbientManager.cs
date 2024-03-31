@@ -14,6 +14,9 @@ public class AmbientManager : MonoBehaviour
     private bool _transitioning = false;
     
     private GameManager _gameManager;
+    //phase manager filed
+    private PhaseManager _phaseManager;
+    
 
     private void Awake()
     {
@@ -40,13 +43,29 @@ public class AmbientManager : MonoBehaviour
         }
     }
 
-
     private void ManageTransition()
     {
         // Interpolate between the dream and nightmare colors based on the DreamSlider value
-        Color targetColor = Color.Lerp(_nightmareColor, _dreamColor, (float)CalculateDreamSlider());
+        Color targetColor;
+        if (PhaseManager.GetCurrentPhase() == 4)
+        {
+            // Slide the ambient fully to the player with more points
+            if (_gameManager.DreamPlayer.CalculateScore() > _gameManager.NightmarePlayer.CalculateScore())
+            {
+                targetColor = _dreamColor;
+            }
+            else
+            {
+                targetColor = _nightmareColor;
+            }
+        }
+        else
+        {
+            targetColor = Color.Lerp(_nightmareColor, _dreamColor, (float)CalculateDreamSlider());
+        }
+
         StartTransition(targetColor);
-        Debug.Log("Managvao transition");
+        Debug.Log("Managing transition");
     }
 
     private void StartTransition(Color targetColor)
@@ -56,15 +75,14 @@ public class AmbientManager : MonoBehaviour
             _targetColor = targetColor;
             _transitionTimer = 0f;
             _transitioning = true;
-            Debug.Log("Startovao transition");
+            Debug.Log("Starting transition");
         }
     }
 
-
-    //public void start
     public void Start()
     {
         _gameManager = GameManager.Instance;
+        _phaseManager = PhaseManager.Instance;
     }
 
     public void Update()
@@ -72,6 +90,7 @@ public class AmbientManager : MonoBehaviour
         HandleTransition();
         ManageTransition();
     }
+
 
     private double CalculateDreamSlider()
     {
@@ -81,4 +100,6 @@ public class AmbientManager : MonoBehaviour
         Debug.Log("Izracunao dream slider");
         return dreamPoints / totalPoints;
     }
+
+
 }
