@@ -38,24 +38,22 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.StopAudio();
         AudioManager.Instance.PlayEnd();
         CalculateWinner();
-        Time.timeScale = 0.0f;
+        new WaitForSecondsRealtime(2);
+        Time.timeScale = 0.2f;
     }
-    public int Winner;
     private void CalculateWinner()
     {
         if (dreamPlayer.Points > nightmarePlayer.Points)
         {
-            Debug.Log("Dream player wins");
-            Winner = 1;
+            UIManager.instance.Winner.text = "Nightmare wins";
         }
         else if (dreamPlayer.Points < nightmarePlayer.Points)
         {
-            Winner = 2;
-            Debug.Log("Nightmare player wins");
+            UIManager.instance.Winner.text = "Nightmare wins";
         }
         else
         {
-            Debug.Log("Paraliza sna Event");
+            UIManager.instance.Winner.text = "Sleep paralysis";
         }
     }
     private void OnEnable()

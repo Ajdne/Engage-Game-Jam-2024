@@ -93,7 +93,7 @@ public class SpawnManager : MonoBehaviour
             if (tile.isPlayer || tile.isPickable || tile.isStun || tile.IsIcy) return;
 
             tile.isStun = true;
-            Instantiate(Stun, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            Instantiate(Stun, tile.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
         }  
     }
     public void Spawner()
