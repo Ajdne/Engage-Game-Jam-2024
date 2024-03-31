@@ -6,15 +6,15 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "Arrow Input Images SO", menuName = "Scriptable Objects/Arrow Input Images")]
 public class ArrowImagesSO : ScriptableObject
 {
-    [SerializeField] private Sprite upArrow;
-    public Sprite UpArrow => upArrow;
+    [SerializeField] private GameObject upArrowPrefab;
+    public GameObject UpArrowPrefab => upArrowPrefab;
 
-    [SerializeField] private Sprite downArrow;
-    public Sprite DownArrow => downArrow;
+    [SerializeField] private GameObject downArrowPrefab;
+    public GameObject DownArrowPrefab => downArrowPrefab;
 
-    [SerializeField] private Sprite leftArrow;
-    public Sprite LeftArrow => leftArrow;
+    [SerializeField] private GameObject leftArrowPrefab;
+    public GameObject LeftArrowPrefab => leftArrowPrefab;
 
-    [SerializeField] private Sprite rightArrow;
-    public Sprite RightArrow => rightArrow;
+    [SerializeField] private GameObject rightArrowPrefab;
+    public GameObject RightArrowPrefab => rightArrowPrefab;
 }

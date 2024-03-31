@@ -5,43 +5,49 @@ using UnityEngine.UI;
 
 public class ArrowsUI : MonoBehaviour
 {
-    [SerializeField] private Image[] pInputImages;
-    private int _currentImage;
+    [SerializeField] private GameObject arrowPrefab;
+    private List<GameObject> arrows = new List<GameObject>();
+    private int currentArrowIndex;
 
     private void OnEnable()
     {
         EventManager.RoundOverEvent += ResetArrows;
     }
+
     private void OnDisable()
     {
         EventManager.RoundOverEvent -= ResetArrows;
     }
+
     private void Start()
     {
-        // Disable all images at start
-        foreach (Image image in pInputImages)
+        // Instantiate arrow gameobjects
+        for (int i = 0; i < arrows.Count; i++)
         {
-            image.enabled = false;
+            GameObject arrow = Instantiate(arrowPrefab, transform);
+            arrow.SetActive(false);
+            arrows.Add(arrow);
         }
     }
 
-    public void AddInputArrow(Sprite arrowSprite)
+    public void AddInputArrow(GameObject arrowPrefab)
     {
-        if (pInputImages.Length > _currentImage)
+        if (currentArrowIndex < arrows.Count)
         {
-            pInputImages[_currentImage].enabled = true;
-            pInputImages[_currentImage].sprite = arrowSprite;
+            GameObject arrow = arrows[currentArrowIndex];
+            arrow.SetActive(true);
+            arrow = arrowPrefab;
 
-            _currentImage++;
+            currentArrowIndex++;
         }
     }
 
     private void ResetArrows()
     {
-        _currentImage = 0;  // Reset counter
-        foreach (Image image in pInputImages)
+        currentArrowIndex = 0;  // Reset counter
+        foreach (GameObject arrow in arrows)
         {
-            image.enabled = false;
+            arrow.SetActive(false);
         }
     }
 }
