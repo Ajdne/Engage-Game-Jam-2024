@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField]
+    public Canvas winCanvas;
+    [SerializeField]
+    public TextMeshProUGUI Winner;
+
     //serializable textmeshpro button
     [SerializeField] private TextMeshProUGUI _scoreText;
 
@@ -14,6 +19,10 @@ public class UIManager : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
-    
+    public void EndScreen()
+    {
+        Winner.text = "Winner is Player " + GameManager.Instance.Winner;
+        winCanvas.gameObject.SetActive(true);
+    }
 
 }

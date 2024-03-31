@@ -74,7 +74,7 @@ public class PhaseManager : MonoBehaviour
             EventManager.PhaseOverEvent?.Invoke();
             AudioManager.Instance.PlayPhaseChange();
         }
-        else GameManager.Instance.End();
+        else EventManager.GameOverEvent?.Invoke();
     }
 
     //getphase currentphase
