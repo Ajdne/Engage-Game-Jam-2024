@@ -59,22 +59,8 @@ public class AmbientManager : MonoBehaviour
     {
         // Interpolate between the dream and nightmare colors based on the DreamSlider value
         Color targetColor;
-        if (PhaseManager.Instance.CurrentPhase == 4)
-        {
-            // Slide the ambient fully to the player with more points
-            if (_gameManager.DreamPlayer.CalculateScore() > _gameManager.NightmarePlayer.CalculateScore())
-            {
-                targetColor = _dreamColor;
-            }
-            else
-            {
-                targetColor = _nightmareColor;
-            }
-        }
-        else
-        {
-            targetColor = Color.Lerp(_nightmareColor, _dreamColor, (float)CalculateDreamSlider());
-        }
+
+        targetColor = Color.Lerp(_nightmareColor, _dreamColor, (float)DreamSlider);
 
         StartTransition(targetColor);
         Debug.Log("Managing transition");
@@ -105,13 +91,13 @@ public class AmbientManager : MonoBehaviour
     }
 
 
-    private double CalculateDreamSlider()
+    private void CalculateDreamSlider()
     {
         double dreamPoints = _gameManager.DreamPlayer.GetTileNumber();
         double nightmarePoints = _gameManager.NightmarePlayer.GetTileNumber();
         double totalPoints = dreamPoints + nightmarePoints;
         Debug.Log("Izracunao dream slider");
-        return dreamPoints / totalPoints;
+        DreamSlider = dreamPoints / totalPoints;
     }
 
     //singleton‚
