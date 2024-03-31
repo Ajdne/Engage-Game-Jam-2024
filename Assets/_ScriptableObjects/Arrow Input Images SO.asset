@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d252cf6cf6ff6439790692f4880d7f, type: 3}
   m_Name: Arrow Input Images SO
   m_EditorClassIdentifier: 
-  upArrowPrefab: {fileID: 5539075221755036087, guid: 4b3835ad33748304a8676b8951982453,
-    type: 3}
+  upArrowPrefab: {fileID: 21300000, guid: 76da2992532344709b10b3a83488f9db, type: 3}
   downArrowPrefab: {fileID: 5539075221755036087, guid: f6f8fbf98500c144eaebf75eb622b5ca,
     type: 3}
   leftArrowPrefab: {fileID: 5539075221755036087, guid: fd5bbbc8c585c304f8db3538fc1addba,

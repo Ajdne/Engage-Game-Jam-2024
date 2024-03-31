@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ArrowsUI : MonoBehaviour
 {
-    [SerializeField] private GameObject arrowPrefab;
-    private List<GameObject> arrows = new List<GameObject>();
+    //[SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private List<Image> arrows = new List<Image>();
     private int currentArrowIndex;
 
     private void OnEnable()
@@ -21,22 +21,22 @@ public class ArrowsUI : MonoBehaviour
 
     private void Start()
     {
-        // Instantiate arrow gameobjects
-        for (int i = 0; i < arrows.Count; i++)
-        {
-            GameObject arrow = Instantiate(arrowPrefab, transform);
-            arrow.SetActive(false);
-            arrows.Add(arrow);
-        }
+        ResetArrows();
+        //// Instantiate arrow gameobjects
+        //for (int i = 0; i < arrows.Count; i++)
+        //{
+        //    GameObject arrow = Instantiate(arrowPrefab, transform);
+        //    arrow.SetActive(false);
+        //    arrows.Add(arrow);
+        //}
     }
 
-    public void AddInputArrow(GameObject arrowPrefab)
+    public void AddInputArrow(Sprite arrowPrefab)
     {
         if (currentArrowIndex < arrows.Count)
         {
-            GameObject arrow = arrows[currentArrowIndex];
-            arrow.SetActive(true);
-            arrow = arrowPrefab;
+            Image arrow = arrows[currentArrowIndex];
+            arrow.sprite = arrowPrefab;
 
             currentArrowIndex++;
         }
@@ -45,9 +45,9 @@ public class ArrowsUI : MonoBehaviour
     private void ResetArrows()
     {
         currentArrowIndex = 0;  // Reset counter
-        foreach (GameObject arrow in arrows)
+        foreach (Image arrow in arrows)
         {
-            arrow.SetActive(false);
+            arrow.enabled = false;
         }
     }
 }

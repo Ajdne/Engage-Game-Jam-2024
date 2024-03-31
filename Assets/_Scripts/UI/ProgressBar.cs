@@ -6,11 +6,6 @@ using UnityEngine;
 [Serializable]
 public class ProgressBar : MonoBehaviour
 {
-    private void phase()
-    {
-        // Your code here
-    }
-
     [SerializeField]
     private GameObject phase1;
     [SerializeField]

@@ -45,7 +45,7 @@ public class SpawnManager : MonoBehaviour
             if (tile.isPlayer || tile.isFoggy) return;
 
             tile.isFoggy = true;
-            Instantiate(Fog, tile.transform.position, Quaternion.identity);
+            Instantiate(Fog, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }        
     }
     public void SpawnSheep()
