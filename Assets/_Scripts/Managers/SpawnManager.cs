@@ -31,16 +31,17 @@ public class SpawnManager : MonoBehaviour
     }
     public void SpawnFog()
     {
-        Tile tile = new Tile();
-        //selektuj tile bez playera
-        do
-        {
-            tile = SelectRandomTile();
-        } while (tile.isPlayer || tile.isFoggy);
+        int randomNumber = Random.Range(1, 4);
 
-        //stvoriti fog iznad ovog tilea
-        tile.isFoggy = true;
-        Instantiate(Fog, tile.transform.position, Quaternion.identity);
+        for (int i = 0; i < randomNumber; i++)
+        {
+            Tile tile = new Tile();
+            tile = SelectRandomTile();
+            if (tile.isPlayer || tile.isFoggy) return;
+
+            tile.isFoggy = true;
+            Instantiate(Fog, tile.transform.position, Quaternion.identity);
+        }        
     }
     private void Update()
     {
@@ -69,16 +70,17 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnStun()
     {
-        Tile tile = new Tile();
-        //selektuj tile bez playera
-        do
-        {
-            tile = SelectRandomTile();
-        } while (tile.isPlayer || tile.isPickable || tile.isStun);
+        int randomNumber = Random.Range(1, 3);
 
-        //stvoriti fog iznad ovog tilea
-        tile.isStun = true;
-        Instantiate(Stun, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        for (int i = 0; i < randomNumber; i++)
+        {
+            Tile tile = new Tile();
+            tile = SelectRandomTile();
+            if (tile.isPlayer || tile.isPickable || tile.isStun) return;
+
+            tile.isStun = true;
+            Instantiate(Stun, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        }  
     }
 
 }
