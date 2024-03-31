@@ -46,13 +46,6 @@ public class SpawnManager : MonoBehaviour
             Instantiate(Fog, tile.transform.position, Quaternion.identity);
         }        
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnFog();
-        }
-    }
     public void SpawnSheep()
     {
         int randomNumber = Random.Range(1, 5);
@@ -115,7 +108,7 @@ public class SpawnManager : MonoBehaviour
             case 3: //stan
                 SpawnStun();
                 break;
-            case 4: 
+            case 4: //rem faza
                 break;
         }
     }
