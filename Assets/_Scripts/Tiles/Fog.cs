@@ -7,5 +7,6 @@ public class Fog : Pickable
     protected override void OnPickUp(Player player)
     {
         Debug.Log("Clear fog");
+        ParticleManager.Instance.PlayFogParticle();
     }
 }

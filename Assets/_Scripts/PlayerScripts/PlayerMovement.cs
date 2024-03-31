@@ -313,6 +313,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         animator.Play("Slide");
+        ParticleManager.Instance.PlaySlideParticle();
         transform.DOMove(iceTilePosition + moveVect + new Vector3(0, 1.5f, 0), playerMovementSO.SlideDuration)
             .OnComplete(() =>
             {
