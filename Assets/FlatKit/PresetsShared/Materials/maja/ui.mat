@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - DR_CEL_EXTRA_ON
+  - DR_OUTLINE_ON
   - DR_RIM_ON
   - DR_SPECULAR_ON
   - _CELPRIMARYMODE_SINGLE
@@ -29,8 +30,7 @@ Material:
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
-  - SRPDEFAULTUNLIT
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -64,6 +64,8 @@ Material:
     - _GradientSize: 9.51
     - _LightContribution: 0.5
     - _LightFalloffSize: 0
+    - _OutlineEnabled: 1
+    - _OutlineWidth: 1
     - _SelfShadingSize: 0.443
     - _SelfShadingSizeExtra: 0.596
     - _ShadowEdgeSize: 0.434
@@ -83,4 +85,5 @@ Material:
     - _ColorShadows: {r: 0.5471698, g: 0.37346402, b: 0.26584196, a: 1}
     - _FlatRimColor: {r: 0, g: 0.032325886, b: 0.49056602, a: 1}
     - _FlatSpecularColor: {r: 0, g: 0.027783383, b: 0.6320754, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

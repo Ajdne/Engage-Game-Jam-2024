@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - DR_CEL_EXTRA_ON
+  - DR_OUTLINE_ON
   - DR_OUTLINE_SMOOTH_NORMALS
   - DR_RIM_ON
   - DR_SPECULAR_ON
@@ -31,8 +32,7 @@ Material:
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
-  - SRPDEFAULTUNLIT
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -64,7 +64,9 @@ Material:
     - _FlatnessExtra: 1
     - _GradientAngle: 0
     - _GradientSize: 10
+    - _OutlineEnabled: 1
     - _OutlineScale: 0.99
+    - _OutlineWidth: 1
     - _RimEnabled: 1
     - _SelfShadingSize: 0.701
     - _SelfShadingSizeExtra: 0.557
