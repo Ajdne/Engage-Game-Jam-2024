@@ -12,11 +12,11 @@ public class CameraShake : MonoBehaviour
     }
     private void OnEnable()
     {
-        EventManager.PhaseOverEvent += ShakeCamera;
+        //EventManager.PhaseOverEvent += ShakeCamera;
     }
     private void OnDisable()
     {
-        EventManager.PhaseOverEvent -= ShakeCamera;
+        //EventManager.PhaseOverEvent -= ShakeCamera;
     }
     public void ShakeCamera()
     {
