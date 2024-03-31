@@ -91,13 +91,16 @@ public class Tile : MonoBehaviour
     {
         if(other.TryGetComponent(out Player player))
         {
+            //put tile movement here
             if(isIcy)
             {
                 player.GetComponent<PlayerMovement>().SlideMovement(transform.position);
+                //add slide partcle
             }
             else if(_team != player.Team)
             {
                 PaintTile(player.Team);
+                //add paint particle
             }
             isPlayer = true;
             isPickable = false;

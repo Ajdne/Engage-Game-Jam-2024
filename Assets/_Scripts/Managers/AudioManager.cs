@@ -97,4 +97,10 @@ public class AudioManager : MonoBehaviour
     {
         PlayAudio(audioClips[4]);
     }
+
+    //play clock sound
+    public void PlayClockSound()
+    {
+        PlayAudio(audioClips[6]);
+    }
 }
