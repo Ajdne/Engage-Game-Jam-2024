@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1960295849721605822
 MonoBehaviour:
@@ -50,6 +50,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 8300000, guid: 57f3adde03df41846bd3ba724e278543, type: 3}
   - {fileID: 8300000, guid: 31df89ac6c0660e4daccb7935078827a, type: 3}
+  - {fileID: 8300000, guid: c9430cd1ef9af8344be896b0393e2b0c, type: 3}
 --- !u!82 &3817241193958561235
 AudioSource:
   m_ObjectHideFlags: 0
