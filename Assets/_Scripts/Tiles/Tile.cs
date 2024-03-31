@@ -53,7 +53,7 @@ public class Tile : MonoBehaviour
                 RemoveTilePaint(teamId);
                 break;
             case 1:
-                _renderer.material = nightmareTileMaterial;
+                _renderer.material = dreamTileMaterial;
                 if (_team == 2)
                 {
                     GameManager.Instance.NightmarePlayer.numberOfTiles -= 1;
@@ -62,7 +62,7 @@ public class Tile : MonoBehaviour
                 GameManager.Instance.DreamPlayer.numberOfTiles += 1;
                 break;
             case 2:
-                _renderer.material = dreamTileMaterial;
+                _renderer.material = nightmareTileMaterial;
                 if (_team == 1)
                 {
                     GameManager.Instance.DreamPlayer.numberOfTiles -= 1;

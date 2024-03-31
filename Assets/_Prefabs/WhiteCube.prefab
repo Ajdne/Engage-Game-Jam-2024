@@ -118,8 +118,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 2100000, guid: 6036b13a124cfe24d91fa4ef87bb0fbd, type: 2}
+  nightmareTileMaterial: {fileID: 2100000, guid: 6bad13b1be8212745a7a0e3201505928,
+    type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 6fcac0b57ad4c1544869da1dd2eed9c7, type: 2}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
   isPickable: 0
   isStun: 0
+  playerInstance: {fileID: 0}

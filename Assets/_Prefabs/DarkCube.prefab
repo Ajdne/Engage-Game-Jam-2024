@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &6136491573035436906
 MeshFilter:
@@ -118,8 +118,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTileMaterial: {fileID: 2100000, guid: 6036b13a124cfe24d91fa4ef87bb0fbd, type: 2}
+  nightmareTileMaterial: {fileID: 2100000, guid: 6bad13b1be8212745a7a0e3201505928,
+    type: 2}
+  defaultMaterial: {fileID: 2100000, guid: e441e3d0f7286de4cb682376f46c07e6, type: 2}
   isFoggy: 0
   isIcy: 0
   isPlayer: 0
   isPickable: 0
   isStun: 0
+  playerInstance: {fileID: 0}

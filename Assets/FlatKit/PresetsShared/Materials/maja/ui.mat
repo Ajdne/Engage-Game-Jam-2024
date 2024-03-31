@@ -65,7 +65,7 @@ Material:
     - _LightContribution: 0.5
     - _LightFalloffSize: 0
     - _OutlineEnabled: 1
-    - _OutlineWidth: 1
+    - _OutlineWidth: 0.8
     - _SelfShadingSize: 0.443
     - _SelfShadingSizeExtra: 0.596
     - _ShadowEdgeSize: 0.434
