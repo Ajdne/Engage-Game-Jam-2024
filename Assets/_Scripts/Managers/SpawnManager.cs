@@ -17,10 +17,12 @@ public class SpawnManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.RoundOverEvent += SpawnSheep;
+        EventManager.RoundOverEvent += Spawner;
     }
     private void OnDisable()
     {
         EventManager.RoundOverEvent -= SpawnSheep;
+        EventManager.RoundOverEvent -= Spawner;
     }
 
     public Tile SelectRandomTile()
@@ -44,13 +46,6 @@ public class SpawnManager : MonoBehaviour
             Instantiate(Fog, tile.transform.position, Quaternion.identity);
         }        
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnFog();
-        }
-    }
     public void SpawnSheep()
     {
         int randomNumber = Random.Range(1, 5);
@@ -66,6 +61,21 @@ public class SpawnManager : MonoBehaviour
             GameObject tisSheep = Instantiate(Sheep, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
 
             tisSheep.transform.Rotate(new Vector3(0, 90* Random.Range(1, 5), 0));
+        }
+    }
+    public void SpawnIce()
+    {
+        int randomNumber = Random.Range(1, 3);
+
+        for (int i = 0; i < randomNumber; i++)
+        {
+            Tile tile = new Tile();
+            tile = SelectRandomTile();
+            if (tile.isPlayer) return;
+
+            tile.Freeze();
+
+            GameObject thisIce = Instantiate(Sheep, tile.transform.position, Quaternion.identity);
         }
     }
 
@@ -85,8 +95,22 @@ public class SpawnManager : MonoBehaviour
     }
     public void Spawner()
     {
-        int currentPhase;
-        int currentRound;
+        int currentPhase = PhaseManager.Instance.CurrentPhase;
+        int currentRound = PhaseManager.Instance.CurrentRound;
+        switch (currentPhase)
+        {
+            case 1: //led
+                SpawnIce();
+                break;
+            case 2: //magla
+                SpawnFog();
+                break;
+            case 3: //stan
+                SpawnStun();
+                break;
+            case 4: //rem faza
+                break;
+        }
     }
 
 }

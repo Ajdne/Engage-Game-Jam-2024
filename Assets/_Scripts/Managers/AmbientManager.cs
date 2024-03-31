@@ -44,7 +44,7 @@ public class AmbientManager : MonoBehaviour
     private void ManageTransition()
     {
         // Interpolate between the dream and nightmare colors based on the DreamSlider value
-        Color targetColor = Color.Lerp(_nightmareColor, _dreamColor, (float)DreamSlider);
+        Color targetColor = Color.Lerp(_nightmareColor, _dreamColor, (float)CalculateDreamSlider());
         StartTransition(targetColor);
         Debug.Log("Managvao transition");
     }
