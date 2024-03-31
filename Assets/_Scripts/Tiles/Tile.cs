@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    [SerializeField] private Material dreamTileMaterial;
+    [SerializeField] private Material nightmareTileMaterial;
+
+    [SerializeField] private Material defaultMaterial;
+
     private int _team; //0 = none; 1 = p1; 2 =p2;
     public bool isFoggy;
 
@@ -36,6 +41,8 @@ public class Tile : MonoBehaviour
     private void Start()
     {
         _renderer = GetComponent<Renderer>();
+        //get material components from both players, i will add them through unity edito
+
     }
 
     private void PaintTile(int teamId)
@@ -46,7 +53,7 @@ public class Tile : MonoBehaviour
                 RemoveTilePaint(teamId);
                 break;
             case 1:
-                _renderer.material.color = Color.red;
+                _renderer.material = nightmareTileMaterial;
                 if (_team == 2)
                 {
                     GameManager.Instance.NightmarePlayer.numberOfTiles -= 1;
@@ -55,7 +62,7 @@ public class Tile : MonoBehaviour
                 GameManager.Instance.DreamPlayer.numberOfTiles += 1;
                 break;
             case 2:
-                _renderer.material.color = Color.blue;
+                _renderer.material = dreamTileMaterial;
                 if (_team == 1)
                 {
                     GameManager.Instance.DreamPlayer.numberOfTiles -= 1;
@@ -68,7 +75,7 @@ public class Tile : MonoBehaviour
 
     public void RemoveTilePaint(int teamId)
     {
-        _renderer.material.color = Color.gray;
+        _renderer.material = defaultMaterial;
         if (teamId == 1)
         {
             GameManager.Instance.DreamPlayer.numberOfTiles -= 1;

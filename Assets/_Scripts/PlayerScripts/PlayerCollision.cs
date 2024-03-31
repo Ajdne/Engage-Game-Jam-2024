@@ -15,6 +15,7 @@ public class PlayerCollision : MonoBehaviour
         {
             CameraShake.instance.ShakeCamera();
             AudioManager.Instance.PlayBumpSound();
+            GameManager.Instance.DreamPlayer.LosePoints();
             pMovement.UndoMove();
         }
 

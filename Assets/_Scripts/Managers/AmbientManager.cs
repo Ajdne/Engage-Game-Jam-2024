@@ -94,8 +94,8 @@ public class AmbientManager : MonoBehaviour
 
     private double CalculateDreamSlider()
     {
-        double dreamPoints = _gameManager.DreamPlayer.CalculateScore();
-        double nightmarePoints = _gameManager.NightmarePlayer.CalculateScore();
+        double dreamPoints = _gameManager.DreamPlayer.GetTileNumber();
+        double nightmarePoints = _gameManager.NightmarePlayer.GetTileNumber();
         double totalPoints = dreamPoints + nightmarePoints;
         Debug.Log("Izracunao dream slider");
         return dreamPoints / totalPoints;
