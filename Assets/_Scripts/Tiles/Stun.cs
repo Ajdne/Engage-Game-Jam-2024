@@ -8,6 +8,5 @@ public class Stun : Pickable
     {
         // Logika za stavljanje igrača u stanje paralize, ako je potrebno
         player.Stun();
-        Debug.Log("Player "+player.Id+" stun");
     }
 }
