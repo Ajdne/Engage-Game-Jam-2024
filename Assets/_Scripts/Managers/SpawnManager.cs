@@ -13,6 +13,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject Sheep;
     [SerializeField]
     public GameObject Stun;
+    [SerializeField]
+    public GameObject Ice;
 
     private void OnEnable()
     {
@@ -71,11 +73,11 @@ public class SpawnManager : MonoBehaviour
         {
             Tile tile = new Tile();
             tile = SelectRandomTile();
-            if (tile.isPlayer) return;
+            if (tile.isPlayer || tile.IsIcy) return;
 
             tile.Freeze();
 
-            GameObject thisIce = Instantiate(Sheep, tile.transform.position, Quaternion.identity);
+            GameObject thisIce = Instantiate(Ice, tile.transform.position, Quaternion.identity);
         }
     }
 
@@ -87,7 +89,7 @@ public class SpawnManager : MonoBehaviour
         {
             Tile tile = new Tile();
             tile = SelectRandomTile();
-            if (tile.isPlayer || tile.isPickable || tile.isStun) return;
+            if (tile.isPlayer || tile.isPickable || tile.isStun || tile.IsIcy) return;
 
             tile.isStun = true;
             Instantiate(Stun, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
