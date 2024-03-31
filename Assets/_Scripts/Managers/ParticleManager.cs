@@ -13,9 +13,9 @@ public class ParticleManager : MonoBehaviour
     
 
     //play bump particle
-    public void PlayBumpParticle()
+    public void PlayBumpParticle(Vector3 position)
     {
-        PlayParticle(_bumpParticle);
+        SpawnParticles(_bumpParticle, position);
     }
 
     //play slide particle
@@ -50,5 +50,10 @@ public class ParticleManager : MonoBehaviour
     private void PlayParticle(GameObject parPrefab)
     {
         Instantiate(parPrefab, Vector3.zero, Quaternion.identity);
+    }
+
+    public void SpawnParticles(GameObject particle, Vector3 position)
+    {
+        Instantiate(particle, position, Quaternion.identity);
     }
 }
