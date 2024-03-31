@@ -91,6 +91,7 @@ public class Tile : MonoBehaviour
                 PaintTile(player.Team);
             }
             isPlayer = true;
+            isPickable = false;
         }
     }
     private void OnTriggerExit(Collider other)
