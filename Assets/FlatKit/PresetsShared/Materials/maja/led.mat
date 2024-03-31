@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - DR_CEL_EXTRA_ON
+  - DR_OUTLINE_ON
   - DR_SPECULAR_ON
   - _ALPHAPREMULTIPLY_ON
   - _ALPHATEST_ON
@@ -34,7 +35,6 @@ Material:
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
-  - SRPDEFAULTUNLIT
   - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
@@ -143,10 +143,10 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _OutlineDepthOffset: 0
-    - _OutlineEnabled: 0
+    - _OutlineEnabled: 1
     - _OutlineScale: 1
     - _OutlineSpace: 0
-    - _OutlineWidth: 1
+    - _OutlineWidth: 2
     - _OverrideLightmapDir: 0
     - _OverrideShadows: 1
     - _OverrideShadowsEnabled: 1
@@ -177,12 +177,12 @@ Material:
     - _VertexExtrusionSmoothNormals: 0
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.48900855, g: 0.8243071, b: 0.9339623, a: 1}
+    - _BaseColor: {r: 0.35065857, g: 0.7965233, b: 0.9433962, a: 1}
     - _Color: {r: 0.27058828, g: 0.8507489, b: 1, a: 1}
     - _ColorCelShadow: {r: 0.38581347, g: 0.38787434, b: 0.9622642, a: 1}
     - _ColorDim: {r: 0, g: 0.8865156, b: 1, a: 1}
     - _ColorDimCurve: {r: 0.85, g: 0.85, b: 0.85, a: 0.85}
-    - _ColorDimExtra: {r: 0.629895, g: 0.6858755, b: 0.8962264, a: 1}
+    - _ColorDimExtra: {r: 0.65724456, g: 0.8025403, b: 0.9622642, a: 1}
     - _ColorDimSteps: {r: 0.85, g: 0.85, b: 0.85, a: 0.85}
     - _ColorGradient: {r: 0.65, g: 0.65, b: 0.65, a: 1}
     - _ColorSecondary: {r: 1, g: 0.55879205, b: 0, a: 1}
@@ -191,8 +191,8 @@ Material:
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 4.9245777, g: 0, b: 0, a: 1}
     - _FlatRimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _FlatSpecularColor: {r: 0.5283019, g: 0.17194732, b: 0.467404, a: 1}
+    - _FlatSpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
-    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _UnityShadowColor: {r: 0.65, g: 0.65, b: 0.65, a: 1}
   m_BuildTextureStacks: []

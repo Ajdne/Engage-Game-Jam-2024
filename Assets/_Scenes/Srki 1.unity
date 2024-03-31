@@ -953,7 +953,7 @@ MonoBehaviour:
   Fog: {fileID: 6122432299175515234, guid: ceb564a2b4730394b835cb98b03dbe1b, type: 3}
   Sheep: {fileID: 2076032479032514183, guid: 684ff30ed9eb89f48829d2261713e6e5, type: 3}
   Stun: {fileID: 0}
-  Ice: {fileID: 0}
+  Ice: {fileID: 2076032479032514183, guid: 684ff30ed9eb89f48829d2261713e6e5, type: 3}
 --- !u!114 &99533158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,6 +991,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2015035785}
     m_Modifications:
+    - target: {fileID: 428448353910597948, guid: e3e3e4c4091098147a9fffbf10dfd663,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 428448353910597948, guid: e3e3e4c4091098147a9fffbf10dfd663,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 428448353910597948, guid: e3e3e4c4091098147a9fffbf10dfd663,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6051521757047295034, guid: e3e3e4c4091098147a9fffbf10dfd663,
         type: 3}
       propertyPath: m_Name
@@ -998,9 +1013,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7146374498313833529, guid: e3e3e4c4091098147a9fffbf10dfd663,
         type: 3}
+      propertyPath: m_fontSize
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146374498313833529, guid: e3e3e4c4091098147a9fffbf10dfd663,
+        type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: e94e0d25852fdb541b55aac511634507,
+      objectReference: {fileID: 11400000, guid: 41bb53a8eb4b0e04db995f225f3c6165,
         type: 2}
     - target: {fileID: 7146374498313833529, guid: e3e3e4c4091098147a9fffbf10dfd663,
         type: 3}
@@ -1024,13 +1044,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7146374498313833529, guid: e3e3e4c4091098147a9fffbf10dfd663,
         type: 3}
+      propertyPath: m_fontSizeMax
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146374498313833529, guid: e3e3e4c4091098147a9fffbf10dfd663,
+        type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: e94e0d25852fdb541b55aac511634507, type: 2}
+      objectReference: {fileID: 8108021819318929829, guid: 41bb53a8eb4b0e04db995f225f3c6165,
+        type: 2}
     - target: {fileID: 7146374498313833529, guid: e3e3e4c4091098147a9fffbf10dfd663,
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190335
+      objectReference: {fileID: 0}
+    - target: {fileID: 7146374498313833529, guid: e3e3e4c4091098147a9fffbf10dfd663,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 7146374498313833529, guid: e3e3e4c4091098147a9fffbf10dfd663,
         type: 3}
@@ -1093,13 +1124,14 @@ PrefabInstance:
       value: -65.051
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8524614879738776769, guid: e3e3e4c4091098147a9fffbf10dfd663, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3e3e4c4091098147a9fffbf10dfd663, type: 3}
 --- !u!4 &106076540 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7252973271771343826, guid: e3e3e4c4091098147a9fffbf10dfd663,
+  m_CorrespondingSourceObject: {fileID: 6390751174398203520, guid: e3e3e4c4091098147a9fffbf10dfd663,
     type: 3}
   m_PrefabInstance: {fileID: 106076539}
   m_PrefabAsset: {fileID: 0}
@@ -19207,7 +19239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015035784}
   m_LocalRotation: {x: -0.23749964, y: -0.66602844, z: 0.23749965, w: 0.6660285}
-  m_LocalPosition: {x: -0.88, y: -8.2, z: 3.43}
+  m_LocalPosition: {x: -1.81, y: -7.43, z: 3.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

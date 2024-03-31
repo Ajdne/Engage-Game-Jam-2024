@@ -36,7 +36,7 @@ public class InputCountdownTimerUI : MonoBehaviour
         for (int i = _IM.InputTime; i > -1; i--)
         {
             countdownText.text = i.ToString();
-            countdownText.rectTransform.DOPunchScale(Vector3.one, 1f, 5);
+            countdownText.rectTransform.DOPunchScale(Vector3.one * 0.7f, 1f, 5);
             yield return new WaitForSeconds(1f);
         }
         countdownText.enabled = false;
