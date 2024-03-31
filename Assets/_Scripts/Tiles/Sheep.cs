@@ -8,5 +8,6 @@ public class Sheep : Pickable
     protected override void OnPickUp(Player player)
     {
         player.AddSheepPoint(sheepValue); // Povećavamo skor za ovce igrača
+        AudioManager.Instance.PlaySheepSound(); // Pokrećemo zvuk ovce
     }
 }
