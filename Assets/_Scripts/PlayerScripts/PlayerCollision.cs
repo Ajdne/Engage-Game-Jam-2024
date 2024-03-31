@@ -6,11 +6,12 @@ public class PlayerCollision : MonoBehaviour
 {
     private PlayerMovement pMovement;
 
-    [SerializeField] Player DreamPlayer;
-    [SerializeField] Player NightmarePlayer;
+
+    Player thisplayer;
     private void Start()
     {
         pMovement = GetComponent<PlayerMovement>();
+        thisplayer = GetComponent<Player>();
     }
     private void OnTriggerEnter(Collider collision)
     {
@@ -18,9 +19,8 @@ public class PlayerCollision : MonoBehaviour
         {
             CameraShake.instance.ShakeCamera();
             AudioManager.Instance.PlayBumpSound();
-            ParticleManager.Instance.PlayBumpParticle(GameManager.Instance.DreamPlayer.transform.position );
-            DreamPlayer.LosePoints();
-            NightmarePlayer.LosePoints();
+            ParticleManager.Instance.PlayBumpParticle(this.transform.position );
+            thisplayer.LosePoints();
 
             pMovement.UndoMove();
         }
