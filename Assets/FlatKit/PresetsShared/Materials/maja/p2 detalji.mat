@@ -73,10 +73,10 @@ Material:
     - _UnityShadowPower: 0.2
     - _VertexExtrusionSmoothNormals: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.13724476, b: 0.16981131, a: 1}
+    - _BaseColor: {r: 0.1709238, g: 0.21698111, b: 0.21506205, a: 1}
     - _Color: {r: 1, g: 0.27058828, b: 0.32003722, a: 1}
     - _ColorCelShadow: {r: 0.38581347, g: 0.38787434, b: 0.9622642, a: 1}
-    - _ColorDim: {r: 0.122997515, g: 0, b: 0.50980395, a: 1}
+    - _ColorDim: {r: 0.16056733, g: 0.12517801, b: 0.2735849, a: 1}
     - _ColorDimExtra: {r: 0, g: 0, b: 0, a: 1}
     - _ColorGradient: {r: 0.65, g: 0.65, b: 0.65, a: 1}
     - _ColorShadows: {r: 0.37835297, g: 0.4602353, b: 0.72, a: 1}
