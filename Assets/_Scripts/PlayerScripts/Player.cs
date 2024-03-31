@@ -85,12 +85,13 @@ public class Player : MonoBehaviour
     public void LosePoints()
     {
         //lose 50% of points
-        Points = Points / 2;
+        Points = (int)(Points * 0.5f);
     }
 
     //update
     private void Update()
     {
+        CalculateScore();
         scoreText.text = CalculateScore().ToString();
     }
 }

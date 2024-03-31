@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     private PlayerMovement pMovement;
+
+    [SerializeField] Player DreamPlayer;
+    [SerializeField] Player NightmarePlayer;
     private void Start()
     {
         pMovement = GetComponent<PlayerMovement>();
@@ -16,8 +19,8 @@ public class PlayerCollision : MonoBehaviour
             CameraShake.instance.ShakeCamera();
             AudioManager.Instance.PlayBumpSound();
             ParticleManager.Instance.PlayBumpParticle(GameManager.Instance.DreamPlayer.transform.position );
-            GameManager.Instance.DreamPlayer.LosePoints();
-            GameManager.Instance.NightmarePlayer.LosePoints();
+            DreamPlayer.LosePoints();
+            NightmarePlayer.LosePoints();
 
             pMovement.UndoMove();
         }

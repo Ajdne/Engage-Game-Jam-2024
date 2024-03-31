@@ -14230,6 +14230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa55bd692ce0e04db5e4d4899a401a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DreamPlayer: {fileID: 0}
+  NightmarePlayer: {fileID: 0}
 --- !u!114 &1218587983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19110,6 +19112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa55bd692ce0e04db5e4d4899a401a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DreamPlayer: {fileID: 1218587983}
+  NightmarePlayer: {fileID: 1700204181}
 --- !u!114 &1700204181
 MonoBehaviour:
   m_ObjectHideFlags: 0
