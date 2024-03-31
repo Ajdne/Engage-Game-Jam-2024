@@ -15,12 +15,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scoreText;
 
     //restart button (reload current scene with scenemanager)
+    private void Start()
+    {
+        winCanvas.enabled = false;
+    }
     public void Restart()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
     public void EndScreen()
     {
+        winCanvas.enabled = true;
         Winner.text = "Winner is Player " + GameManager.Instance.Winner;
         winCanvas.gameObject.SetActive(true);
     }
