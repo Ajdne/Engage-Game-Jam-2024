@@ -38,7 +38,7 @@ public class ProgressBar : MonoBehaviour
     [SerializeField] private Color startColor;
     [SerializeField] private Color endColor;
 
-
+    private int phaseCounter;
 
     //in start make everything endColor
     private void Start()
@@ -48,8 +48,36 @@ public class ProgressBar : MonoBehaviour
         phase3.GetComponent<Renderer>().material.color = startColor;
         phase4.GetComponent<Renderer>().material.color = startColor;
         phase5.GetComponent<Renderer>().material.color = startColor;
+        phaseOneStart();
     }
 
+    private void OnEnable()
+    {
+        EventManager.PhaseOverEvent += ChangePhase;
+    }
+    private void OnDisable()
+    {
+        EventManager.PhaseOverEvent -= ChangePhase;
+    }
+
+    private void ChangePhase()
+    {
+        switch (PhaseManager.Instance.CurrentPhase)
+        {
+            case 1:
+                phaseTwoStart();
+                break;
+            case 2:
+                phaseThreeStart();
+                break;
+            case 3:
+                phaseFourStart();
+                break;
+            case 4:
+                phaseFiveStart();
+                break;
+        }
+    }
 
     private void phaseOneStart()
     {
