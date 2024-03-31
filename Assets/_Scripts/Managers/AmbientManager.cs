@@ -47,7 +47,7 @@ public class AmbientManager : MonoBehaviour
     {
         // Interpolate between the dream and nightmare colors based on the DreamSlider value
         Color targetColor;
-        if (PhaseManager.GetCurrentPhase() == 4)
+        if (PhaseManager.Instance.CurrentPhase == 4)
         {
             // Slide the ambient fully to the player with more points
             if (_gameManager.DreamPlayer.CalculateScore() > _gameManager.NightmarePlayer.CalculateScore())

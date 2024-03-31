@@ -36,7 +36,6 @@ public class Tile : MonoBehaviour
     private void Start()
     {
         _renderer = GetComponent<Renderer>();
-        playerInstance = Player.Instance;
     }
 
     private void PaintTile(int teamId)

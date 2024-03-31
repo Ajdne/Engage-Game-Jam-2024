@@ -54,6 +54,7 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < randomNumber; i++)
         {
+            Debug.Log("Ovca");
             Tile tile = new Tile();
             tile = SelectRandomTile();
             if (tile.isPlayer || tile.isPickable || tile.isStun) return;
@@ -98,7 +99,7 @@ public class SpawnManager : MonoBehaviour
     public void Spawner()
     {
         int currentPhase = PhaseManager.Instance.CurrentPhase;
-        int currentRound = PhaseManager.Instance.CurrentRound;
+        //int currentRound = PhaseManager.Instance.CurrentRound;
         switch (currentPhase)
         {
             case 1: //led
