@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     //restart button (reload current scene with scenemanager)
     private void Start()
     {
-        winCanvas.enabled = false;
+        if(winCanvas) winCanvas.enabled = false;
     }
     public void Restart()
     {
