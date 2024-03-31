@@ -58,9 +58,17 @@ public class PhaseManager : MonoBehaviour
         {
             _currentPhase++;
             EventManager.PhaseOverEvent?.Invoke();
+            AudioManager.Instance.PlayPhaseChange();
         }
         else GameManager.Instance.End();
     }
+
+    //getphase currentphase
+    public static int GetCurrentPhase()
+    {
+        return Instance._currentPhase;
+    }
+    
 }
 
 [System.Serializable]
