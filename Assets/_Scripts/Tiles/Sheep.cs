@@ -11,4 +11,10 @@ public class Sheep : Pickable
         AudioManager.Instance.PlaySheepSound(); // Pokrećemo zvuk ovce
         ParticleManager.Instance.PlaySheepParticle(this.transform.position); // Pokrećemo česticu ovce
     }
+
+    //on awake, play particle
+    private void Awake()
+    {
+        ParticleManager.Instance.PlaySheepSpawnParticle(this.transform.position);
+    }
 }

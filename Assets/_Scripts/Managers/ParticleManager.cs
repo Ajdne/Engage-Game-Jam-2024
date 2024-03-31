@@ -12,6 +12,13 @@ public class ParticleManager : MonoBehaviour
     [SerializeField] private GameObject _fogParticle;
 
     [SerializeField] private GameObject _sheepParticle;
+    [SerializeField] private GameObject _sheepSpawnParticle;
+
+    //sheepspawnparticle
+    public void PlaySheepSpawnParticle(Vector3 position)
+    {
+        SpawnParticles(_sheepSpawnParticle, position);
+    }
     
 
     //play bump particle
