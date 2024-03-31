@@ -106,4 +106,10 @@ public class AudioManager : MonoBehaviour
     {
         PlayAudio(clockSound);
     }
+
+    //make start function, bc no sounds are playing at start
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 }

@@ -9,5 +9,6 @@ public class Sheep : Pickable
     {
         player.AddSheepPoint(sheepValue); // Povećavamo skor za ovce igrača
         AudioManager.Instance.PlaySheepSound(); // Pokrećemo zvuk ovce
+        ParticleManager.Instance.PlaySheepParticle(this.transform.position); // Pokrećemo česticu ovce
     }
 }

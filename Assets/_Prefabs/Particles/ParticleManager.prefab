@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8941765743207325373
 MonoBehaviour:
@@ -50,3 +50,4 @@ MonoBehaviour:
   _stunParticle: {fileID: 1846532664448058, guid: 100963389439e4546985781c82c3516d,
     type: 3}
   _fogParticle: {fileID: 187952, guid: 7da7824ad8f3cfe4cb98a3387c84ef88, type: 3}
+  _sheepParticle: {fileID: 187952, guid: cf21dcdce90865a4fac0bd9e46452dca, type: 3}

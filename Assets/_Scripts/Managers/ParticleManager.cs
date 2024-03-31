@@ -10,6 +10,8 @@ public class ParticleManager : MonoBehaviour
 
     [SerializeField] private GameObject _stunParticle;
     [SerializeField] private GameObject _fogParticle;
+
+    [SerializeField] private GameObject _sheepParticle;
     
 
     //play bump particle
@@ -19,21 +21,21 @@ public class ParticleManager : MonoBehaviour
     }
 
     //play slide particle
-    public void PlaySlideParticle()
+    public void PlaySlideParticle(Vector3 position)
     {
-        PlayParticle(_slideParticle);
+        SpawnParticles(_slideParticle, position);
     }
 
     //play stun particle
-    public void PlayStunParticle()
+    public void PlayStunParticle(Vector3 position)
     {
-        PlayParticle(_stunParticle);
+        SpawnParticles(_stunParticle, position);
     }
 
     // play fog particle
-    public void PlayFogParticle()
+    public void PlayFogParticle(Vector3 position)
     {
-        PlayParticle(_fogParticle);
+        SpawnParticles(_fogParticle, position);
     }
 
     private void Awake()
@@ -47,13 +49,15 @@ public class ParticleManager : MonoBehaviour
             Instance = this;
         }
     }
-    private void PlayParticle(GameObject parPrefab)
-    {
-        Instantiate(parPrefab, Vector3.zero, Quaternion.identity);
-    }
 
     public void SpawnParticles(GameObject particle, Vector3 position)
     {
         Instantiate(particle, position, Quaternion.identity);
+    }
+
+    //play sheep particle
+    public void PlaySheepParticle(Vector3 position)
+    {
+        SpawnParticles(_sheepParticle, position);
     }
 }
