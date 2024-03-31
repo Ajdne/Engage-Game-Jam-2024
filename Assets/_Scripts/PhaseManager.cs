@@ -64,9 +64,9 @@ public class PhaseManager : MonoBehaviour
     }
 
     //getphase currentphase
-    public Phase GetCurrentPhase()
+    public static int GetCurrentPhase()
     {
-        return phases[_currentPhase];
+        return Instance._currentPhase;
     }
     
 }
