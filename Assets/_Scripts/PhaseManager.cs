@@ -57,6 +57,7 @@ public class PhaseManager : MonoBehaviour
         if (_currentPhase < phases.Count-1)
         {
             _currentPhase++;
+            EventManager.PhaseOverEvent?.Invoke();
         }
         else GameManager.Instance.End();
     }

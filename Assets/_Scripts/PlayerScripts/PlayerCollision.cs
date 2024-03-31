@@ -13,6 +13,8 @@ public class PlayerCollision : MonoBehaviour
     {
         if(collision.gameObject.layer == 3) // player layer
         {
+            CameraShake.instance.ShakeCamera();
+            AudioManager.Instance.PlayBumpSound();
             pMovement.UndoMove();
         }
 
