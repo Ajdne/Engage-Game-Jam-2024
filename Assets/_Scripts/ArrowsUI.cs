@@ -51,6 +51,10 @@ public class ArrowsUI : MonoBehaviour
         {
             arrow.enabled = false;
         }
+        foreach (Image placeholder in movePlaceholders)
+        {
+            placeholder.enabled = false;
+        }
 
         int maxMoves = PhaseManager.Instance.GetMaxMoves();
         for (int i = 0; i < maxMoves; i++)
