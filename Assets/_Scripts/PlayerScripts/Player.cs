@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
     public void Stun()
     {
         isStunned = true;
+        
     }
 
     // Uklanjanje paralize
@@ -80,19 +81,9 @@ public class Player : MonoBehaviour
         return numberOfTiles;
     }
 
-    public void LosePoints(int direction) // 0 = forward, 1 = back , 2 = right/left
+    public void LosePoints()
     {
-        if (direction == 0)
-        {
-            numberOfSheep *= 0.75;
-        }
-        else if (direction == 1)
-        {
-            numberOfSheep *= 0.1;
-        }
-        else if (direction == 2)
-        {
-            numberOfSheep *= 0.5;
-        }
+        //lose 50% of points
+        Points = Points / 2;
     }
 }
