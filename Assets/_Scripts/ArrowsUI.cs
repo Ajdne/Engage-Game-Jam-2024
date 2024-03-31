@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ArrowsUI : MonoBehaviour
 {
     //[SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private List<Image> movePlaceholders = new List<Image>();
     [SerializeField] private List<Image> arrows = new List<Image>();
     private int currentArrowIndex;
 
@@ -35,6 +36,7 @@ public class ArrowsUI : MonoBehaviour
     {
         if (currentArrowIndex < arrows.Count)
         {
+            arrows[currentArrowIndex].enabled = true;
             Image arrow = arrows[currentArrowIndex];
             arrow.sprite = arrowPrefab;
 
@@ -48,6 +50,12 @@ public class ArrowsUI : MonoBehaviour
         foreach (Image arrow in arrows)
         {
             arrow.enabled = false;
+        }
+
+        int maxMoves = PhaseManager.Instance.GetMaxMoves();
+        for (int i = 0; i < maxMoves; i++)
+        {
+            movePlaceholders[i].enabled = true;
         }
     }
 }
