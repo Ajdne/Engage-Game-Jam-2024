@@ -51,3 +51,4 @@ MonoBehaviour:
     type: 3}
   _fogParticle: {fileID: 187952, guid: 7da7824ad8f3cfe4cb98a3387c84ef88, type: 3}
   _sheepParticle: {fileID: 187952, guid: cf21dcdce90865a4fac0bd9e46452dca, type: 3}
+  _sheepSpawnParticle: {fileID: 186306, guid: 968b28854f1390143aef3d93687fba56, type: 3}

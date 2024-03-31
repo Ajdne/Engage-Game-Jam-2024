@@ -62,6 +62,7 @@ public class SpawnManager : MonoBehaviour
             tile.isPickable = true;
 
             GameObject tisSheep = Instantiate(Sheep, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            ParticleManager.Instance.PlaySheepSpawnParticle(tile.transform.position);
 
             tisSheep.transform.Rotate(new Vector3(0, 90* Random.Range(1, 5), 0));
         }
