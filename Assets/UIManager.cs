@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        winCanvas.enabled = false;
     }
     [SerializeField]
     public Canvas winCanvas;
@@ -26,7 +27,7 @@ public class UIManager : MonoBehaviour
     }
     public void EndScreen()
     {
-        winCanvas.gameObject.SetActive(true);
+        winCanvas.enabled = true;
     }
     private void OnEnable()
     {

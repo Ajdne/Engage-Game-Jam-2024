@@ -996,15 +996,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phases:
   - Rounds:
-    - MaxMoves: 10
+    - MaxMoves: 1
   - Rounds:
-    - MaxMoves: 10
+    - MaxMoves: 1
   - Rounds:
-    - MaxMoves: 2
+    - MaxMoves: 1
   - Rounds:
-    - MaxMoves: 0
+    - MaxMoves: 1
   - Rounds:
-    - MaxMoves: 0
+    - MaxMoves: 1
 --- !u!1001 &106076539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2138,18 +2138,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &275543509 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 405318946647593851, guid: 87ea1acf6852ac542b2af816ef81e2e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 860974965}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &295463185
 GameObject:
   m_ObjectHideFlags: 0
@@ -9067,10 +9055,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3955464023894622980, guid: 87ea1acf6852ac542b2af816ef81e2e2,
+    - target: {fileID: 405318946647593851, guid: 87ea1acf6852ac542b2af816ef81e2e2,
         type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_fontStyle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 405318946647593851, guid: 87ea1acf6852ac542b2af816ef81e2e2,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 405318946647593851, guid: 87ea1acf6852ac542b2af816ef81e2e2,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4611320295543086031, guid: 87ea1acf6852ac542b2af816ef81e2e2,
         type: 3}
@@ -9182,20 +9180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8110726148562712669, guid: 87ea1acf6852ac542b2af816ef81e2e2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3955464023894622980, guid: 87ea1acf6852ac542b2af816ef81e2e2, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8110726148562712669, guid: 87ea1acf6852ac542b2af816ef81e2e2,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2123687091}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87ea1acf6852ac542b2af816ef81e2e2, type: 3}
 --- !u!1 &880404761
 GameObject:
@@ -16400,6 +16388,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Restart Button Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6688231442919426359, guid: af59586f49d9a904bb0036f7637d8231,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8400113104248613977, guid: af59586f49d9a904bb0036f7637d8231,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -21054,6 +21047,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -2.672681
       objectReference: {fileID: 0}
+    - target: {fileID: 1710262985228529951, guid: e860c083773c30546a7817b2b70e3a5a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df508abc54ff6be40996a8033c6e346a, type: 2}
     - target: {fileID: 1869863785636064069, guid: e860c083773c30546a7817b2b70e3a5a,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -21159,6 +21157,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8216915726336638417, guid: e860c083773c30546a7817b2b70e3a5a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df508abc54ff6be40996a8033c6e346a, type: 2}
     - target: {fileID: 8464624455826505653, guid: e860c083773c30546a7817b2b70e3a5a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22531,32 +22534,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108664477}
   m_CullTransparentMesh: 1
---- !u!1 &2123687085 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8110726148562712669, guid: 87ea1acf6852ac542b2af816ef81e2e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 860974965}
-  m_PrefabAsset: {fileID: 0}
---- !u!223 &2123687089 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 5410412025839247115, guid: 87ea1acf6852ac542b2af816ef81e2e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 860974965}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2123687091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123687085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97e657776b613624298c861f554ae120, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  winCanvas: {fileID: 2123687089}
-  Winner: {fileID: 275543509}
 --- !u!1001 &2127116272
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -54,13 +54,13 @@ public class PhaseManager : MonoBehaviour
     }
     private void ChangePhase()
     {
-        if (_currentPhase < phases.Count-2)
+        if (_currentPhase < phases.Count-1)
         {
             _currentPhase++;
             EventManager.PhaseOverEvent?.Invoke();
             AudioManager.Instance.PlayPhaseChange();
         }
-        else if (_currentPhase == phases.Count-1) 
+        /*else if (_currentPhase == phases.Count-1) 
         {
             if(GameManager.Instance.DreamPlayer.CalculateScore() > GameManager.Instance.NightmarePlayer.CalculateScore())
             {
@@ -73,7 +73,7 @@ public class PhaseManager : MonoBehaviour
             _currentPhase++;
             EventManager.PhaseOverEvent?.Invoke();
             AudioManager.Instance.PlayPhaseChange();
-        }
+        }*/
         else EventManager.GameOverEvent?.Invoke();
     }
 

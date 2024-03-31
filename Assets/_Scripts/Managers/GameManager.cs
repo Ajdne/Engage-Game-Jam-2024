@@ -38,8 +38,8 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.StopAudio();
         AudioManager.Instance.PlayEnd();
         CalculateWinner();
-        new WaitForSecondsRealtime(2);
-        Time.timeScale = 0.2f;
+
+        Time.timeScale = 0f;
     }
     private void CalculateWinner()
     {
