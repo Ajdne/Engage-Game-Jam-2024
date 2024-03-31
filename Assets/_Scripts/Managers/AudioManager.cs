@@ -5,11 +5,21 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip[] audioClips;
+//make 6 individual serializable audioclip fields, for theme, startgame, end, sheep, bump, phasechange
+    [SerializeField] private AudioClip theme;
+    [SerializeField] private AudioClip startGame;
+    [SerializeField] private AudioClip end;
+    [SerializeField] private AudioClip sheep;
+    [SerializeField] private AudioClip bump;
+    [SerializeField] private AudioClip phaseChange;
+    [SerializeField] private AudioClip clockSound;
+
+
+
 
     public void PlayTheme()
     {
-        PlayAudio(audioClips[1]);
+        PlayAudio(theme);
     }
 
     private void PlayAudio(int index)
@@ -74,32 +84,32 @@ public class AudioManager : MonoBehaviour
     int index;
     public void PlayStartGame()
     {
-        PlayAudio(audioClips[1]);
+        PlayAudio(startGame);
     }
 
     public void PlayEnd()
     {
-        PlayAudio(audioClips[2]);
+        PlayAudio(end);
     }
 
     public void PlaySheepSound()
     {
-        PlayAudio(audioClips[3]);
+        PlayAudio(sheep);
     }
 
     public void PlayBumpSound()
     {
-        PlayAudio(audioClips[4]);
+        PlayAudio(bump);
     }
 
     public void PlayPhaseChange()
     {
-        PlayAudio(audioClips[5]);
+        PlayAudio(phaseChange);
     }
 
     //play clock sound
     public void PlayClockSound()
     {
-        PlayAudio(audioClips[6]);
+        PlayAudio(clockSound);
     }
 }
