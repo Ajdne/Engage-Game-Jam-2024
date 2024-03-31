@@ -4,7 +4,11 @@ using UnityEngine;
 public class AmbientManager : MonoBehaviour
 {
     [SerializeField][Range(0, 1)] public double DreamSlider;
-    public Material SkyboxMaterial;
+    [SerializeField] private Material skyboxMaterial;
+
+    private Material SkyboxMaterialStateSave;
+
+
     [SerializeField] private Color _dreamColor;
     [SerializeField] private Color _nightmareColor;
     [SerializeField] private Color _currentColor;
@@ -20,10 +24,18 @@ public class AmbientManager : MonoBehaviour
 
     private void Awake()
     {
-        RenderSettings.skybox = SkyboxMaterial;
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+        RenderSettings.skybox = skyboxMaterial;
         _currentColor = Color.Lerp(_nightmareColor, _dreamColor, (float)DreamSlider);
         // Set the initial sky color
-        SkyboxMaterial.SetColor("_Tint", _currentColor);
+        skyboxMaterial.SetColor("_Tint", _currentColor);
     }
 
     private void HandleTransition()
@@ -33,8 +45,8 @@ public class AmbientManager : MonoBehaviour
             _transitionTimer += Time.deltaTime;
             float t = Mathf.Clamp01(_transitionTimer / TransitionDuration);
             _currentColor = Color.Lerp(_currentColor, _targetColor, t);
-            SkyboxMaterial.SetColor("_SkyColor", _currentColor); // Update the skybox material color using the correct property name
-            RenderSettings.skybox = SkyboxMaterial;
+            skyboxMaterial.SetColor("_SkyColor", _currentColor); // Update the skybox material color using the correct property name
+            RenderSettings.skybox = skyboxMaterial;
 
             if (_transitionTimer >= TransitionDuration)
             {
@@ -83,6 +95,7 @@ public class AmbientManager : MonoBehaviour
     {
         _gameManager = GameManager.Instance;
         _phaseManager = PhaseManager.Instance;
+        SkyboxMaterialStateSave = skyboxMaterial;
     }
 
     public void Update()
@@ -101,5 +114,12 @@ public class AmbientManager : MonoBehaviour
         return dreamPoints / totalPoints;
     }
 
+    //singleton‚
+    public static AmbientManager Instance;
 
+    //reset skybox material
+    public void ResetSkyboxMaterial()
+    {
+        skyboxMaterial = SkyboxMaterialStateSave;
+    }
 }
