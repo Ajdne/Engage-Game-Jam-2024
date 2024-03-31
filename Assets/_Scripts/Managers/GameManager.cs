@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //PhaseManager.ResetGame();
+        AudioManager.Instance.PlayStartGame();
+        AudioManager.Instance.PlayTheme();
     }
 
     public void End()

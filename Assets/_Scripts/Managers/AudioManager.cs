@@ -47,4 +47,25 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.loop = loop;
     }
+
+    // make singleton
+    public static AudioManager Instance;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
+    int index;
+    public void PlayStartGame()
+    {
+        PlayAudio(1);
+    }
 }
