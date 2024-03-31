@@ -86,4 +86,15 @@ public class AudioManager : MonoBehaviour
     {
         PlayAudio(audioClips[3]);
     }
+
+    public void PlayPhaseChange()
+    {
+        PlayAudio(audioClips[4]);
+    }
+
+    //play bump sound
+    public void PlayBumpSound()
+    {
+        PlayAudio(audioClips[5]);
+    }
 }
