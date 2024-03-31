@@ -11,6 +11,11 @@ public class Tile : MonoBehaviour
     [SerializeField] private bool isIcy;
     public bool IsIcy => isIcy;
 
+    public void Freeze()
+    {
+        isIcy = true;
+    }
+
     public bool isPlayer;
     public bool isPickable;
     public bool isStun;

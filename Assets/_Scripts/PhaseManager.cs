@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class PhaseManager : MonoBehaviour
 {
+    public static PhaseManager Instance;
     private int _currentPhase;
     private int _currentRound;
+
+    public int CurrentPhase => _currentPhase;
+    public int CurrentRound => _currentRound;
 
     [SerializeField] private List<Phase> phases = new List<Phase>();
 
@@ -17,6 +21,19 @@ public class PhaseManager : MonoBehaviour
     {
         EventManager.StartMovementEvent -= NextRound;
     }
+    #region Singleton
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+    #endregion
 
     public int GetMaxMoves()
     {
