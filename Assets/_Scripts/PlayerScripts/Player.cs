@@ -74,6 +74,12 @@ public class Player : MonoBehaviour
         return Points;
     }
 
+    // get tile number
+    public int GetTileNumber()
+    {
+        return numberOfTiles;
+    }
+
     public void LosePoints(int direction) // 0 = forward, 1 = back , 2 = right/left
     {
         if (direction == 0)
