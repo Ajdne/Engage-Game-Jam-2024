@@ -41,49 +41,9 @@ public class PhaseManager : MonoBehaviour
         if (_currentPhase < phases.Count-1)
         {
             _currentPhase++;
-            print("Rounds  " + phases[_currentPhase].Rounds[_currentRound]);
         }
         else GameManager.Instance.End();
     }
-
-    //public void CalculateMoveNumber()
-    //{
-    //    if (CurrentPhase == 1)
-    //    {
-    //        moveNumber = 1;
-    //    }
-    //    else if (CurrentPhase == 2)
-    //    {
-    //        moveNumber = 2;
-    //    }
-    //    else if (CurrentPhase == 3)
-    //    {
-    //        moveNumber = 3;
-    //    }
-    //}
-
-
-    //public static void ResetGame()
-    //{
-    //    CurrentPhase = 1;
-    //    CurrentRound = 1;
-    //}
-
-    ////make getter for everything
-    //public static int GetCurrentPhase()
-    //{
-    //    return CurrentPhase;
-    //}
-
-    //public static int GetCurrentRound()
-    //{
-    //    return CurrentRound;
-    //}
-
-    //public int GetMoveNumber()
-    //{
-    //    return moveNumber;
-    //}
 }
 
 [System.Serializable]

@@ -11,12 +11,12 @@ public class InputCountdownTimerUI : MonoBehaviour
     private void OnEnable()
     {
         EventManager.GameLoadedEvent += StartCountdownCoroutine;
-        EventManager.MovementOverEvent += StartCountdownCoroutine;
+        EventManager.RoundOverEvent += StartCountdownCoroutine;
     }
     private void OnDisable()
     {
         EventManager.GameLoadedEvent -= StartCountdownCoroutine;
-        EventManager.MovementOverEvent -= StartCountdownCoroutine;
+        EventManager.RoundOverEvent -= StartCountdownCoroutine;
     }
 
     private void Start()

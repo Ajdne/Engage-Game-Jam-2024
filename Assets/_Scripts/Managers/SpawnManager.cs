@@ -13,6 +13,15 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     public GameObject Stun;
 
+    private void OnEnable()
+    {
+        EventManager.RoundOverEvent += SpawnSheep;
+    }
+    private void OnDisable()
+    {
+        EventManager.RoundOverEvent -= SpawnSheep;
+    }
+
     public Tile SelectRandomTile()
     {
         int randomIndex = Random.Range(0, tiles.Count);
@@ -35,25 +44,30 @@ public class SpawnManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             SpawnFog();
         }
     }
-    public void spawnSheep()
+    public void SpawnSheep()
     {
-        Tile tile = new Tile();
-        //selektuj tile bez playera
-        do
-        {
-            tile = SelectRandomTile();
-        } while (tile.isPlayer || tile.isPickable || tile.isStun);
+        int randomNumber = Random.Range(1, 5);
 
-        //stvoriti fog iznad ovog tilea
-        tile.isPickable = true;
-        Instantiate(Sheep, tile.transform.position, Quaternion.identity);
+        for (int i = 0; i < randomNumber; i++)
+        {
+            Tile tile = new Tile();
+            tile = SelectRandomTile();
+            if (tile.isPlayer || tile.isPickable || tile.isStun) return;
+
+            tile.isPickable = true;
+
+            GameObject tisSheep = Instantiate(Sheep, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+
+            tisSheep.transform.Rotate(new Vector3(0, 90* Random.Range(1, 5), 0));
+        }
     }
-    public void spawnStun()
+
+    public void SpawnStun()
     {
         Tile tile = new Tile();
         //selektuj tile bez playera
@@ -64,7 +78,7 @@ public class SpawnManager : MonoBehaviour
 
         //stvoriti fog iznad ovog tilea
         tile.isStun = true;
-        Instantiate(Stun, tile.transform.position, Quaternion.identity);
+        Instantiate(Stun, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
     }
 
 }

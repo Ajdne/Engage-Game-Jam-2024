@@ -10,11 +10,11 @@ public class ArrowsUI : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.MovementOverEvent += ResetArrows;
+        EventManager.RoundOverEvent += ResetArrows;
     }
     private void OnDisable()
     {
-        EventManager.MovementOverEvent -= ResetArrows;
+        EventManager.RoundOverEvent -= ResetArrows;
     }
     private void Start()
     {

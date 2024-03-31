@@ -98,7 +98,7 @@ public class InputManager : MonoBehaviour
         _p1Commands.Clear();
         _p2Commands.Clear();
 
-        EventManager.MovementOverEvent?.Invoke();
+        EventManager.RoundOverEvent?.Invoke();
 
         /////////////////////////////////////////
         StartInputCoroutine();
