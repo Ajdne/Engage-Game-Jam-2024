@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int Id;
-    
     [SerializeField] private int team; //0 = none; 1 = p1; 2 =p2;
     public int Team => team;
 

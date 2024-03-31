@@ -24,7 +24,7 @@ public class CubeLifter : MonoBehaviour
         for (int i = 0; i < liftObjects.Count; i++)
         {
             liftObjects[i].position += new Vector3(0, UnityEngine.Random.Range(-5, -11), 0);
-
+            liftObjects[i].GetComponent<BoxCollider>().enabled = false;
             //liftObjects[i].DOMoveY(_initialPositionsY[i], UnityEngine.Random.Range(0.5f, 2f));
 
             Transform trans = liftObjects[i];
@@ -35,6 +35,7 @@ public class CubeLifter : MonoBehaviour
                     trans.DOMoveY(0, 0.3f)
                     .SetEase(Ease.InSine)
                     ;
+                    liftObjects[i].GetComponent<BoxCollider>().enabled = true;
                 })
                 ;
         }
@@ -51,6 +52,7 @@ public class CubeLifter : MonoBehaviour
                     .OnComplete(() =>
                     {
                         trans.DOMove(trans.position + new Vector3(0, 25, 0), UnityEngine.Random.Range(0.5f, 3f));
+
                     });
             }
 
