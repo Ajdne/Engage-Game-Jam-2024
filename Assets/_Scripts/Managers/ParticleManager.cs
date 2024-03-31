@@ -5,7 +5,6 @@ using UnityEngine;
 public class ParticleManager : MonoBehaviour
 {
     public static ParticleManager Instance;
-    [SerializeField] private GameObject _particlePrefab;
     [SerializeField] private GameObject _bumpParticle;
     [SerializeField] private GameObject _slideParticle;
 
