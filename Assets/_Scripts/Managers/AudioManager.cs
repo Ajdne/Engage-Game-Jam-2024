@@ -22,12 +22,6 @@ public class AudioManager : MonoBehaviour
         PlayAudio(theme);
     }
 
-    private void PlayAudio(int index)
-    {
-        audioSource.clip = audioClips[index];
-        audioSource.Play();
-    }
-
     public void StopAudio()
     {
         audioSource.Stop();
