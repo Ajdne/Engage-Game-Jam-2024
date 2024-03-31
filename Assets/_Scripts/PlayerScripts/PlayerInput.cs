@@ -39,6 +39,10 @@ public class PlayerInput : MonoBehaviour
                 {
                     arrowsUI.AddInputArrow(arrowImagesSO.UpArrowPrefab);
                 }
+                else
+                {
+                    moveUp.Execute();
+                }
 
             }
             else if (Input.GetKeyDown(playerDownButton))
@@ -47,6 +51,7 @@ public class PlayerInput : MonoBehaviour
 
                 ICommand moveDown = _pMovement.MoveDownCommand;
                 if (_IM.AddCommand(moveDown, this)) arrowsUI.AddInputArrow(arrowImagesSO.DownArrowPrefab);
+                else moveDown.Execute();
             }
             else if (Input.GetKeyDown(playerRightButton))
             {
@@ -55,6 +60,7 @@ public class PlayerInput : MonoBehaviour
                 // Right swipe;
                 ICommand moveRight = _pMovement.MoveRightCommand;
                 if (_IM.AddCommand(moveRight, this)) arrowsUI.AddInputArrow(arrowImagesSO.RightArrowPrefab);
+                else moveRight.Execute();
             }
             else if (Input.GetKeyDown(playerLeftButton))
             {
@@ -63,6 +69,7 @@ public class PlayerInput : MonoBehaviour
                 // Left swipe
                 ICommand moveLeft = _pMovement.MoveLeftCommand;
                 if (_IM.AddCommand(moveLeft, this)) arrowsUI.AddInputArrow(arrowImagesSO.LeftArrowPrefab);
+                else moveLeft.Execute();
             }
 
         }
