@@ -11,6 +11,7 @@ public class Tile : MonoBehaviour
     [SerializeField] private Material defaultMaterial;
 
     private int _team; //0 = none; 1 = p1; 2 =p2;
+    public int Team => _team;
     public bool isFoggy;
 
     [SerializeField] private bool isIcy;

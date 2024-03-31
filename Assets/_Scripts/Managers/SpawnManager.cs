@@ -47,6 +47,21 @@ public class SpawnManager : MonoBehaviour
             tile.isFoggy = true;
             Instantiate(Fog, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }        
+
+    }
+    public void ClearTiles()
+    {
+        int randomNumber = Random.Range(2, 5);
+
+        for (int i = 0; i < randomNumber; i++)
+        {
+            Tile tile = new Tile();
+            tile = SelectRandomTile();
+            if (tile.isPlayer) return;
+
+            int team = tile.Team;
+            tile.RemoveTilePaint(team);
+        }
     }
     public void SpawnSheep()
     {
@@ -111,10 +126,12 @@ public class SpawnManager : MonoBehaviour
                 break;
             case 3: //stan
                 SpawnStun();
+                ClearTiles();
                 break;
             case 4: //rem faza
                 break;
         }
     }
+
 
 }
