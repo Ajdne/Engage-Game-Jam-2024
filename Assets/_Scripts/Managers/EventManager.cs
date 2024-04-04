@@ -14,4 +14,6 @@ public class EventManager : MonoBehaviour
     public static Action PhaseOverEvent;
 
     public static Action GameOverEvent;
+
+    public static Action SheepPickupEvent;
 }
