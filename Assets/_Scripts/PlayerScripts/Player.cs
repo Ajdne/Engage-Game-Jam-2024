@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int team; //0 = none; 1 = p1; 2 =p2;
     public int Team => team;
-[SerializeField] private TextMeshProUGUI scoreText; 
+    [SerializeField] private TextMeshProUGUI scoreText; 
     public int numberOfTiles; // Broj polja koja igrač poseduje
     public double numberOfSheep; // Broj ovaca koje igrač poseduje
     public bool isStunned; // Da li je igrač paralizovan

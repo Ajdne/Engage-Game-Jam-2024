@@ -59,6 +59,8 @@ public class SpawnManager : MonoBehaviour
             tile = SelectRandomTile();
             if (tile.isPlayer) return;
 
+            Debug.Log("Obriso tile: " + tile.Team);
+
             int team = tile.Team;
             tile.RemoveTilePaint(team);
         }
