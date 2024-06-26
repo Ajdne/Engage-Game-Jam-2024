@@ -30,9 +30,8 @@ public class GameManager : NonPersistentSingleton<GameManager>
 
     public void End()
     {
+        Time.timeScale = 0f;
         Debug.Log("Game Over");
-        AudioManager.Instance.StopAudio();
-        AudioManager.Instance.PlayEnd();
         CalculateWinner();
         AmbientManager.Instance.ResetSkyboxMaterial();
 
@@ -52,6 +51,7 @@ public class GameManager : NonPersistentSingleton<GameManager>
         {
             UIManager.instance.Winner.text = "Sleep paralysis";
         }
+        return;
     }
 
 }
