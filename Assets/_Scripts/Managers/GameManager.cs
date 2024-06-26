@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : PersistentSingleton<GameManager>
 {
-    public static GameManager Instance;
-
     [SerializeField] private Player dreamPlayer;
     public Player DreamPlayer => dreamPlayer;
     [SerializeField] private Player nightmarePlayer;
@@ -12,14 +10,7 @@ public class GameManager : MonoBehaviour
     #region Singleton
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
+        Initialize();
     }
     #endregion
 

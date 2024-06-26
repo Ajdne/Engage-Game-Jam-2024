@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InputManager : MonoBehaviour
+public class InputManager : PersistentSingleton<InputManager>
 {
-    public static InputManager Instance;
-
     private bool _canReadInput;
     public bool CanReadInput { get => _canReadInput; }
 
@@ -25,7 +23,7 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        Initialize();
     }
     private void OnEnable()
     {
