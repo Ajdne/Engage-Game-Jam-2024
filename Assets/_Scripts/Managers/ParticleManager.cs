@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-public class ParticleManager : PersistentSingleton<ParticleManager>
+public class ParticleManager : NonPersistentSingleton<ParticleManager>
 {
     [SerializeField] private GameObject _bumpParticle;
     [SerializeField] private GameObject _slideParticle;

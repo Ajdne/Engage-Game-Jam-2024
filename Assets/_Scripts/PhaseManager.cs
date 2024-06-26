@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhaseManager : PersistentSingleton<PhaseManager>
+public class PhaseManager : NonPersistentSingleton<PhaseManager>
 {
     private int _currentPhase;
     private int _currentRound;
