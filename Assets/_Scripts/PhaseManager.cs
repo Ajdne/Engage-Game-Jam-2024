@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhaseManager : MonoBehaviour
+public class PhaseManager : PersistentSingleton<PhaseManager>
 {
-    public static PhaseManager Instance;
     private int _currentPhase;
     private int _currentRound;
 
     public int CurrentPhase => _currentPhase;
     public int CurrentRound => _currentRound;
+
+    private void Awake() {
+        Initialize();
+    }
 
     [SerializeField] private List<Phase> phases = new List<Phase>();
 
@@ -21,19 +24,6 @@ public class PhaseManager : MonoBehaviour
     {
         EventManager.StartMovementEvent -= NextRound;
     }
-    #region Singleton
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
-    }
-    #endregion
 
     public int GetMaxMoves()
     {

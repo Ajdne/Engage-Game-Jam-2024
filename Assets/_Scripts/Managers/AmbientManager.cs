@@ -1,13 +1,12 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class AmbientManager : MonoBehaviour
+public class AmbientManager : PersistentSingleton<AmbientManager>
 {
     [SerializeField][Range(0, 1)] public double DreamSlider;
     [SerializeField] private Material skyboxMaterial;
 
     private Material SkyboxMaterialStateSave;
-
 
     [SerializeField] private Color _dreamColor;
     [SerializeField] private Color _nightmareColor;
@@ -16,26 +15,14 @@ public class AmbientManager : MonoBehaviour
     public float TransitionDuration = 1f;
     private float _transitionTimer = 0f;
     private bool _transitioning = false;
-    
+
     private GameManager _gameManager;
     //phase manager filed
     private PhaseManager _phaseManager;
-    
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
-        RenderSettings.skybox = skyboxMaterial;
-        _currentColor = Color.Lerp(_nightmareColor, _dreamColor, (float)DreamSlider);
-        // Set the initial sky color
-        skyboxMaterial.SetColor("_Tint", _currentColor);
+        Initialize();
     }
 
     private void HandleTransition()
@@ -86,22 +73,19 @@ public class AmbientManager : MonoBehaviour
 
     public void Update()
     {
+        CalculateDreamSlider(); // Ensure DreamSlider is calculated in real-time
         HandleTransition();
         ManageTransition();
     }
-
 
     private void CalculateDreamSlider()
     {
         double dreamPoints = _gameManager.DreamPlayer.GetTileNumber();
         double nightmarePoints = _gameManager.NightmarePlayer.GetTileNumber();
         double totalPoints = dreamPoints + nightmarePoints;
-        Debug.Log("Izracunao dream slider");
-        DreamSlider = dreamPoints / totalPoints;
+        Debug.Log("Calculated DreamSlider");
+        DreamSlider = totalPoints > 0 ? dreamPoints / totalPoints : 0.5; // Avoid division by zero
     }
-
-    //singleton‚
-    public static AmbientManager Instance;
 
     //reset skybox material
     public void ResetSkyboxMaterial()

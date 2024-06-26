@@ -21574,9 +21574,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DreamSlider: 0
   skyboxMaterial: {fileID: 2100000, guid: d0523d8917957bb429a32997cb0e52b2, type: 2}
-  _dreamColor: {r: 0.9245283, g: 0.48319682, b: 0.48319682, a: 0}
+  _dreamColor: {r: 0.6745098, g: 0.5647059, b: 0.6627451, a: 0}
   _nightmareColor: {r: 0.115058735, g: 0.15092829, b: 0.3018868, a: 0}
-  _currentColor: {r: 0.69803923, g: 0.59607846, b: 0.6901961, a: 0}
+  _currentColor: {r: 0.5372549, g: 0.27058825, b: 0.27058825, a: 0}
   _targetColor: {r: 0.5377358, g: 0.2708971, b: 0.2708971, a: 0}
   TransitionDuration: 1
 --- !u!4 &1878543008

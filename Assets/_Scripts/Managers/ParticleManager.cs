@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
-public class ParticleManager : MonoBehaviour
+public class ParticleManager : PersistentSingleton<ParticleManager>
 {
-    public static ParticleManager Instance;
     [SerializeField] private GameObject _bumpParticle;
     [SerializeField] private GameObject _slideParticle;
 
@@ -47,14 +47,7 @@ public class ParticleManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
+        Initialize();
     }
 
     public void SpawnParticles(GameObject particle, Vector3 position)
