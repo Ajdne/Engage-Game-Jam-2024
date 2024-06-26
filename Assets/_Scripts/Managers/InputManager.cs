@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InputManager : PersistentSingleton<InputManager>
+public class InputManager : NonPersistentSingleton<InputManager>
 {
     private bool _canReadInput;
     public bool CanReadInput { get => _canReadInput; }

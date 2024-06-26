@@ -1,18 +1,16 @@
 using UnityEngine;
 
-public class GameManager : PersistentSingleton<GameManager>
+public class GameManager : NonPersistentSingleton<GameManager>
 {
     [SerializeField] private Player dreamPlayer;
     public Player DreamPlayer => dreamPlayer;
     [SerializeField] private Player nightmarePlayer;
     public Player NightmarePlayer => nightmarePlayer;
 
-    #region Singleton
     private void Awake()
     {
         Initialize();
     }
-    #endregion
 
     private void OnEnable()
     {

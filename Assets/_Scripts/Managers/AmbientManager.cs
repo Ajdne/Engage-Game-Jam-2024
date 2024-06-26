@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class AmbientManager : PersistentSingleton<AmbientManager>
+public class AmbientManager : NonPersistentSingleton<AmbientManager>
 {
     [SerializeField][Range(0, 1)] public double DreamSlider;
     [SerializeField] private Material skyboxMaterial;

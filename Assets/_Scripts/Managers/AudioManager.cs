@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : NonPersistentSingleton<AudioManager>
 {
     [SerializeField] private AudioSource audioSource;
 //make 6 individual serializable audioclip fields, for theme, startgame, end, sheep, bump, phasechange
@@ -13,9 +13,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip bump;
     [SerializeField] private AudioClip phaseChange;
     [SerializeField] private AudioClip clockSound;
-
-
-
 
     public void PlayTheme()
     {
@@ -60,19 +57,9 @@ public class AudioManager : MonoBehaviour
         audioSource.loop = loop;
     }
 
-    // make singleton
-    public static AudioManager Instance;
-
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
+        Initialize();
     }
 
     int index;

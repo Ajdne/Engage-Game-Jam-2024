@@ -134,6 +134,4 @@ public class SpawnManager : MonoBehaviour
                 break;
         }
     }
-
-
 }
