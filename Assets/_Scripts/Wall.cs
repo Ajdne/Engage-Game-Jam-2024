@@ -14,7 +14,7 @@ public class Wall : MonoBehaviour
                 pMovement.UndoMove();
                 _trigerred = true;
 
-                TimersManager.SetTimer(this, 0.5f, delegate ()
+                TimersManager.SetTimer(this, 0.3f, delegate ()
                 {
                     _trigerred = false;
                 });

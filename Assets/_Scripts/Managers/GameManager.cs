@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -24,6 +22,15 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+
+    private void OnEnable()
+    {
+        EventManager.GameOverEvent += End;
+    }
+    private void OnDisable()
+    {
+        EventManager.GameOverEvent -= End;
+    }
 
     private void Start()
     {
@@ -57,12 +64,5 @@ public class GameManager : MonoBehaviour
             UIManager.instance.Winner.text = "Sleep paralysis";
         }
     }
-    private void OnEnable()
-    {
-        EventManager.GameOverEvent += End;
-    }
-    private void OnDisable()
-    {
-        EventManager.GameOverEvent -= End;
-    }
+
 }
