@@ -52,5 +52,15 @@ namespace Assets._Scripts.Managers.Audio
                 sfxSource.PlayOneShot(s.Clip);
             }
         }
+        private void OnEnable()
+        {
+            EventManager.SFXEvent += PlaySFX;
+            EventManager.SoundEvent += PlayMusic;
+        }
+        private void OnDisable()
+        {
+            EventManager.SFXEvent -= PlaySFX;
+            EventManager.SoundEvent -= PlayMusic;
+        }
     }
 }
