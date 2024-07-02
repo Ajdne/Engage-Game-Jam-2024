@@ -13171,23 +13171,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd3bbd009deb8346a2b9da32cd5404a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSounds:
-  - Name: 
-    Clip: {fileID: 0}
-  - Name: 
-    Clip: {fileID: 0}
-  - Name: 
-    Clip: {fileID: 0}
-  - Name: 
-    Clip: {fileID: 0}
-  - Name: 
-    Clip: {fileID: 0}
+  musicSounds: []
   sfxSounds:
   - Name: Bump
     Clip: {fileID: 8300000, guid: a1b78ed71f5dd184786894d2c281fd91, type: 3}
-  - Name: GameStart
+  - Name: Start
     Clip: {fileID: 8300000, guid: 57f3adde03df41846bd3ba724e278543, type: 3}
-  - Name: GameEnd
+  - Name: End
     Clip: {fileID: 8300000, guid: 31df89ac6c0660e4daccb7935078827a, type: 3}
   - Name: Phase
     Clip: {fileID: 8300000, guid: 7eb011108eaa77f4b893afa8cbfd282b, type: 3}
@@ -13371,6 +13361,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fcdc333cca66d4290e37eca1c50800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1156190450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1156190452}
+  - component: {fileID: 1156190451}
+  m_Layer: 0
+  m_Name: EventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1156190451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156190450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08583fffd75e2d40bd954c4a4089da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1156190452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156190450}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8564157, y: 0.18278259, z: 9.898419}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1159601661
 GameObject:
   m_ObjectHideFlags: 0
@@ -20607,7 +20641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1822871752}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PhaseClock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
