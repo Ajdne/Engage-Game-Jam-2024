@@ -35,11 +35,17 @@ public class EventManager : MonoBehaviour
 
     public static Action<string> SFXEvent;
 
+    //kad zoves ovaj event prosledjujes ime zvuka koji zelis da se cuje
+    //Bump
+    //Sheep
+    //Start
+    //End
+    //Phase
     public void startSFXEvent(string SFXSound)
     {
         SFXEvent?.Invoke(SFXSound);
     }
-
+    //ovo zoves za muziku kad je ubacis kasavice
     public void startSoundEvent(string SFXSound)
     {
         SoundEvent?.Invoke(SFXSound);

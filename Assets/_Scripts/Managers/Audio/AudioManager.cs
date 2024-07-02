@@ -53,18 +53,22 @@ namespace Assets._Scripts.Managers.Audio
                 sfxSource.PlayOneShot(s.Clip);
             }
         }
+        //funkcija za music mute dugme
         public void ToggleMusic()
         {
             musicSource.mute = !musicSource.mute;
         }
+        //funkcija za sfx mute dugme
         public void ToggleSFX()
         {
             sfxSource.mute = !sfxSource.mute;
         }
+        //funkcija za music volume slider
         public void MusicVolume(float volume)
         {
             musicSource.volume = volume;
         }
+        //funkcija za sfx volume slider
         public void SFXVolume(float volume)
         {
             sfxSource.volume = volume;
