@@ -48,7 +48,8 @@ public class PhaseManager : NonPersistentSingleton<PhaseManager>
         {
             _currentPhase++;
             EventManager.PhaseOverEvent?.Invoke();
-            AudioManager.Instance.PlayPhaseChange();
+            //AudioManager.Instance.PlayPhaseChange
+            EventManager.Instance.startSFXEvent("PhaseChange");
         }
         /*else if (_currentPhase == phases.Count-1) 
         {

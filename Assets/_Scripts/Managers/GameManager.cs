@@ -24,8 +24,10 @@ public class GameManager : NonPersistentSingleton<GameManager>
     private void Start()
     {
         Time.timeScale = 1f;
-        AudioManager.Instance.PlayStartGame();
-        AudioManager.Instance.PlayTheme();
+        //AudioManager.Instance.PlayStartGame();
+        //AudioManager.Instance.PlayTheme();
+        EventManager.Instance.startSFXEvent("Start");
+        //EventManager.Instance.startSoundEvent("InGameTheme");
     }
 
     public void End()

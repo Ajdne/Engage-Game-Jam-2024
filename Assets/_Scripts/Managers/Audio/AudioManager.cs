@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Assets._Scripts.Managers.Audio
 {
@@ -51,6 +52,22 @@ namespace Assets._Scripts.Managers.Audio
             {
                 sfxSource.PlayOneShot(s.Clip);
             }
+        }
+        public void ToggleMusic()
+        {
+            musicSource.mute = !musicSource.mute;
+        }
+        public void ToggleSFX()
+        {
+            sfxSource.mute = !sfxSource.mute;
+        }
+        public void MusicVolume(float volume)
+        {
+            musicSource.volume = volume;
+        }
+        public void SFXVolume(float volume)
+        {
+            sfxSource.volume = volume;
         }
         private void OnEnable()
         {
