@@ -59,7 +59,7 @@ public class SpawnManager : MonoBehaviour
             tile = SelectRandomTile();
             if (tile.isPlayer) return;
 
-            Debug.Log("Obriso tile: " + tile.Team);
+            //Debug.Log("Obriso tile: " + tile.Team);
 
             int team = tile.Team;
             tile.RemoveTilePaint(team);
@@ -71,7 +71,7 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < randomNumber; i++)
         {
-            Debug.Log("Ovca");
+            //Debug.Log("Ovca");
             Tile tile = new Tile();
             tile = SelectRandomTile();
             if (tile.isPlayer || tile.isPickable || tile.isStun) return;
