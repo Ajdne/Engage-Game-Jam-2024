@@ -40,8 +40,7 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < randomNumber; i++)
         {
-            Tile tile = new Tile();
-            tile = SelectRandomTile();
+            Tile tile = SelectRandomTile();
             if (tile.IsPlayer || tile.IsFoggy) return;
 
             tile.SetFog();
@@ -55,8 +54,7 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < randomNumber; i++)
         {
-            Tile tile = new Tile();
-            tile = SelectRandomTile();
+            Tile tile = SelectRandomTile();
             if (tile.IsPlayer) return;
 
             //Debug.Log("Obriso tile: " + tile.Team);
