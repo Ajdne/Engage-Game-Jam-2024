@@ -14,6 +14,22 @@ public class AudioManager : NonPersistentSingleton<AudioManager>
     [SerializeField] private AudioClip phaseChange;
     [SerializeField] private AudioClip clockSound;
 
+    private void OnEnable()
+    {
+        EventManager.GameLoadedEvent += PlayTheme;
+        EventManager.GameOverEvent += StopAudio;
+        EventManager.GameOverEvent += PlayEnd;
+        EventManager.PhaseOverEvent += PlayPhaseChange;
+    }
+
+    private void OnDisable() 
+    {
+        EventManager.GameLoadedEvent -= PlayTheme;
+        EventManager.GameOverEvent -= StopAudio;
+        EventManager.GameOverEvent -= PlayEnd;
+        EventManager.PhaseOverEvent -= PlayPhaseChange;
+    }
+
     public void PlayTheme()
     {
         PlayAudio(theme);
