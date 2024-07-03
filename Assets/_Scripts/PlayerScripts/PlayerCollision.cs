@@ -19,7 +19,7 @@ public class PlayerCollision : MonoBehaviour
         {
             CameraShake.instance.ShakeCamera();
             //AudioManager.Instance.PlayBumpSound();
-            EventManager.Instance.startSFXEvent("Bump");
+            EventManager.startSFXEvent("Bump");
             ParticleManager.Instance.PlayBumpParticle(this.transform.position );
             thisplayer.LosePoints();
 

@@ -38,7 +38,7 @@ public class InputCountdownTimerUI : MonoBehaviour
             countdownText.text = i.ToString();
             countdownText.rectTransform.DOPunchScale(Vector3.one * 0.7f, 1f, 5);
             //AudioManager.Instance.PlayClockSound();
-            EventManager.Instance.startSFXEvent("Clock");
+            EventManager.startSFXEvent("Clock");
             yield return new WaitForSeconds(1f);
         }
         countdownText.enabled = false;

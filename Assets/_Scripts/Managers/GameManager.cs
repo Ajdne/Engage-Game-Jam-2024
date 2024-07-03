@@ -26,7 +26,7 @@ public class GameManager : NonPersistentSingleton<GameManager>
         Time.timeScale = 1f;
         //AudioManager.Instance.PlayStartGame();
         //AudioManager.Instance.PlayTheme();
-        EventManager.Instance.startSFXEvent("Start");
+        EventManager.startSFXEvent("Start");
         //EventManager.Instance.startSoundEvent("InGameTheme");
     }
 
@@ -36,14 +36,12 @@ public class GameManager : NonPersistentSingleton<GameManager>
         Debug.Log("Game Over");
         CalculateWinner();
         AmbientManager.Instance.ResetSkyboxMaterial();
-
-        Time.timeScale = 0f;
     }
     private void CalculateWinner()
     {
         if (dreamPlayer.Points > nightmarePlayer.Points)
         {
-            UIManager.instance.Winner.text = "Nightmare wins";
+            UIManager.instance.Winner.text = "Good Dream wins";
         }
         else if (dreamPlayer.Points < nightmarePlayer.Points)
         {
