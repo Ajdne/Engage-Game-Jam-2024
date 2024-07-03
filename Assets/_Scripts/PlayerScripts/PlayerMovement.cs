@@ -40,11 +40,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _endingVector;
 
     #region Move Commands
-    private MoveUpCommand _moveUpCommand;
-    public MoveUpCommand MoveUpCommand => _moveUpCommand;
+    private MoveForwardCommand _moveUpCommand;
+    public MoveForwardCommand MoveUpCommand => _moveUpCommand;
 
-    private MoveDownCommand _moveDownCommand;
-    public MoveDownCommand MoveDownCommand => _moveDownCommand;
+    private MoveBackwardCommand _moveDownCommand;
+    public MoveBackwardCommand MoveDownCommand => _moveDownCommand;
 
     private MoveLeftCommand _moveLeftCommand;
     public MoveLeftCommand MoveLeftCommand => _moveLeftCommand;
@@ -52,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
     private MoveRightCommand _moveRightCommand;
     public MoveRightCommand MoveRightCommand => _moveRightCommand;
     #endregion Move Commands
+
+    private GridManager _grid;
 
     private void OnEnable()
     {
@@ -69,10 +71,12 @@ public class PlayerMovement : MonoBehaviour
 
         _rb = gameObject.GetComponent<Rigidbody>();
 
-        _moveUpCommand = GetComponent<MoveUpCommand>();
-        _moveDownCommand = GetComponent<MoveDownCommand>();
+        _moveUpCommand = GetComponent<MoveForwardCommand>();
+        _moveDownCommand = GetComponent<MoveBackwardCommand>();
         _moveLeftCommand = GetComponent<MoveLeftCommand>();
         _moveRightCommand = GetComponent<MoveRightCommand>();
+
+        _grid = GridManager.Instance;
     }
 
     private void SpawnPlayerModel()
@@ -84,19 +88,19 @@ public class PlayerMovement : MonoBehaviour
         });
     }
 
-    public void MoveDown()  // Called as input movement method
+    public void MoveBackward()  // Called as input movement method
     {
         _canMove = false;
 
         _startingVector = transform.position;
-        _endingVector = transform.position + new Vector3(0, 0, -1);
+        _endingVector = transform.position + new Vector3(0, 0, -(1 + _grid.HalfYSpacing));
 
         transform.DOKill();
 
         // ComboJumpEvent?
         //EventManager.JumpEvent?.Invoke(jumpComboCount);
 
-        transform.DOJump(transform.position + new Vector3(0, 0, -1), playerMovementSO.JumpPower, 1, playerMovementSO.NormalJumpDuration)
+        transform.DOJump(_endingVector, playerMovementSO.JumpPower, 1, playerMovementSO.NormalJumpDuration)
             .OnComplete(() =>
             {
                 FinishJump();
@@ -164,13 +168,13 @@ public class PlayerMovement : MonoBehaviour
     //    _endingVector = pickablePos + jumpVect;
     //}
     #endregion OLD CODE - DOUBLE JUMP
-  
-    public void MoveUp()  // Called as input movement
+
+    public void MoveForward()  // Called as input movement
     {
         _canMove = false;
 
         _startingVector = transform.position;
-        _endingVector = transform.position + new Vector3(0, 0, 1);
+        _endingVector = transform.position + new Vector3(0, 0, 1 + _grid.HalfYSpacing);
 
         transform.parent = null;
         transform.DOKill();
@@ -181,7 +185,7 @@ public class PlayerMovement : MonoBehaviour
         // ComboJumpEvent?
         //EventManager.JumpEvent?.Invoke(jumpComboCount);
 
-        transform.DOJump(transform.position + new Vector3(0, 0, 1), playerMovementSO.JumpPower, 1, playerMovementSO.NormalJumpDuration)
+        transform.DOJump(_endingVector, playerMovementSO.JumpPower, 1, playerMovementSO.NormalJumpDuration)
             .OnComplete(() =>
             {
                 FinishJump();
@@ -195,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
         _canMove = false;
 
         _startingVector = transform.position;
-        _endingVector = transform.position + new Vector3(-1, 0, 0);
+        _endingVector = transform.position + new Vector3(-(1 + _grid.HalfXSpacing), 0, 0);
 
         transform.parent = null;
         transform.DOKill();
@@ -225,7 +229,7 @@ public class PlayerMovement : MonoBehaviour
         _canMove = false;
 
         _startingVector = transform.position;
-        _endingVector = transform.position + new Vector3(1, 0, 0);
+        _endingVector = transform.position + new Vector3(1 + _grid.HalfXSpacing, 0, 0);
 
         transform.parent = null;
         transform.DOKill();
@@ -260,21 +264,26 @@ public class PlayerMovement : MonoBehaviour
         // Increment jump count
         jumpComboCount++;
 
-        transform.DOJump(_startingVector, playerMovementSO.JumpPower / 2, 1, playerMovementSO.NormalJumpDuration * 0.6f)
-            .OnComplete(() =>
-            {
-                FinishJump();
-            });
+        if (_startingVector != Vector3.zero)
+        {
+            transform.DOJump(_startingVector, playerMovementSO.JumpPower / 2, 1, playerMovementSO.NormalJumpDuration * 0.6f)
+                .OnComplete(() =>
+                {
+                    FinishJump();
+                });
+        }
+        else ChangeCanMove();
     }
     private void FinishJump()
     {
         // Calling this to update score with combo jumps and reset the combo value.
         InvokeJumpOverEvent();
 
-        if (transform.position.y > 1.51f)
-        {
-            transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
-        }    
+        _startingVector = Vector3.zero;
+        //if (transform.position.y > 1.51f)
+        //{
+        //    transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
+        //}    
         ChangeCanMove();
     }
 
@@ -320,18 +329,6 @@ public class PlayerMovement : MonoBehaviour
                 FinishJump();
             });
     }
-    public void DynamitePlungerJump(Vector3 targetPos)
-    {
-        _canMove = false;
-
-        transform.parent = null;
-        transform.DOKill();
-
-        // Increment jump count
-        jumpComboCount++;
-
-        transform.DORotate(new Vector3(0, 0, 0), playerMovementSO.NormalJumpDuration, RotateMode.Fast);
-    }
 
     public void HandleFall()
     {
@@ -349,32 +346,6 @@ public class PlayerMovement : MonoBehaviour
             _rb.useGravity = true;
             _rb.isKinematic = false;
             _rb.velocity += new Vector3(0, -5, 0);
-
-            // deactivate this script
-            this.enabled = false;
-        }
-    }
-
-    public void HandleBomb()
-    {
-        if (!_fallTriggered)
-        {
-            // de-parent
-            transform.SetParent(null);
-            transform.DOKill();
-
-            // Prevent the player from moving
-            _canMove = false;
-
-            _fallTriggered = true;
-
-            float randomVal = UnityEngine.Random.Range(-1f, 3f);
-            _rb.useGravity = true;
-            _rb.isKinematic = false;
-            _rb.AddExplosionForce(800, transform.position + new Vector3(randomVal, -2f, randomVal * 2), 13);
-
-            // Invoke the Falling Event
-            //EventManager.PlayerFallingEvent?.Invoke();
 
             // deactivate this script
             this.enabled = false;
@@ -415,11 +386,6 @@ public class PlayerMovement : MonoBehaviour
     private void ChangeCanMove()
     {
         _canMove = !_canMove;
-    }
-
-    public void ExplodeByBomb()
-    {
-        HandleBomb();
     }
 
     #region ------------- JUMP AUDIO ---------------

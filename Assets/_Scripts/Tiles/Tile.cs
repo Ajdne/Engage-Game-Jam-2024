@@ -49,7 +49,7 @@ public class Tile : MonoBehaviour
         _isFoggy = true;
     }
 
-    private Renderer _renderer; 
+    private Renderer _renderer;
 
     public Player playerInstance;
 
@@ -108,19 +108,21 @@ public class Tile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out Player player))
+        if (other.TryGetComponent(out Player player))
         {
             //put tile movement here
-            if(_isIcy)
+            if (_isIcy)
             {
                 player.GetComponent<PlayerMovement>().SlideMovement(transform.position);
                 //add slide partcle
             }
-            else if(_team != player.Team)
+            else
             {
+                player.transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
                 PaintTile(player.Team);
-                //add paint particle
+                // Add paint particle
             }
+
             _isPlayer = true;
             _isPickable = false;
         }

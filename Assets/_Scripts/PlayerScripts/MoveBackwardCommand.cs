@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveUpCommand : MonoBehaviour, ICommand
+public class MoveBackwardCommand : MonoBehaviour, ICommand
 {
     private PlayerMovement _playerMovement;
     private void Start()
@@ -12,6 +12,6 @@ public class MoveUpCommand : MonoBehaviour, ICommand
 
     public void Execute()
     {
-        _playerMovement.MoveUp();
+        _playerMovement.MoveBackward();
     }
 }

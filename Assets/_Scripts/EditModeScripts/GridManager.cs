@@ -18,7 +18,10 @@ public class GridManager : MonoBehaviour
 
     [Space(5)]
     [SerializeField] private float xSpacing = 0.1f;
+    public float HalfXSpacing => xSpacing;
+
     [SerializeField] private float ySpacing = 0.2f;
+    public float HalfYSpacing => ySpacing;
 
     [Space(10)]
     [SerializeField] private Grid grid;
@@ -31,6 +34,13 @@ public class GridManager : MonoBehaviour
     [SerializeField] private List<GameObject> _gridObjs;
     public List<GameObject> GridObjs { get => _gridObjs; set => _gridObjs = value; }
 
+    public static GridManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
 #if UNITY_EDITOR
 
     private void LateUpdate()
@@ -40,6 +50,7 @@ public class GridManager : MonoBehaviour
 
         CheckForMissingElements();  // If one of the scene objects get deleted, this we reset the grid
         PositionGridElements();
+
     }
 
 #endif
@@ -48,14 +59,6 @@ public class GridManager : MonoBehaviour
     private void SetGrid()
     {
         DeleteGrid();
-
-        // Check if there are too many or too little sprites assigned
-        //if (spritesToDistribute.Count < numberOfRows * numberOfColumns)
-        //{
-        //    Debug.LogError("Not enough spritess assigned! Will not generate grid! The needed number of sprites is " + numberOfRows * numberOfColumns);
-        //    return;
-        //}
-        //if (spritesToDistribute.Count > numberOfRows * numberOfColumns) Debug.LogWarning("Too many sprites assigned! Some of them will not be distributed!");
 
         for (int i = 0; i < numberOfRows; i++)
         {
@@ -107,6 +110,7 @@ public class GridManager : MonoBehaviour
     [ButtonGroup("Set_Grid")]
     private void DeleteGrid()
     {
+        // Just in case, delete all child objects from this parent
         for (int i = _gridObjs.Count - 1; i >= 0; i--)
         {
             //print("Deleted grid object number: " + i);
@@ -114,25 +118,14 @@ public class GridManager : MonoBehaviour
             _gridObjs.Remove(obj);
             DestroyImmediate(obj.gameObject);
         }
-    }
 
-    /// <summary>
-    /// The grid layout stays the same, but the sprites are assigned randomly.
-    /// </summary>
-    //[Button]
-    //private void RandomizeGrid()
-    //{
-    //    if(_gridObjs.Count == 0)
-    //    {
-    //        Debug.LogWarning("Can not randomize an empty grid!");
-    //        return;
-    //    }
-    //    var rand = new Random();
-    //    int index = 0;
-    //    foreach (var sprite in spritesToDistribute.OrderBy(t => rand.Next()).Take(_gridObjs.Count))
-    //    {
-    //        _gridObjs[index].GetComponent<SpriteRenderer>().sprite = sprite;
-    //        index++;
-    //    }
-    //}
+        Transform[] childrens = transform.GetComponentsInChildren<Transform>();
+        if (childrens.Length > 1)    // The first one is parent obj
+        {
+            for (int i = 1; i < childrens.Length; i++)
+            {
+                DestroyImmediate(childrens[i].gameObject);
+            }
+        }
+    }
 }
