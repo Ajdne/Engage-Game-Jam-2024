@@ -5,6 +5,7 @@ using UnityEngine;
 public class PhaseManager : NonPersistentSingleton<PhaseManager>
 {
     private int _currentPhase;
+
     private int _currentRound;
 
     public int CurrentPhase => _currentPhase;
