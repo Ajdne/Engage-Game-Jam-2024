@@ -22297,23 +22297,38 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3154958774678844298, guid: ebea08d956ef68c42a7724c54fe34423,
         type: 3}
+      propertyPath: _targetColor.b
+      value: 0.48235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 3154958774678844298, guid: ebea08d956ef68c42a7724c54fe34423,
+        type: 3}
+      propertyPath: _targetColor.g
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 3154958774678844298, guid: ebea08d956ef68c42a7724c54fe34423,
+        type: 3}
+      propertyPath: _targetColor.r
+      value: 0.39607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3154958774678844298, guid: ebea08d956ef68c42a7724c54fe34423,
+        type: 3}
       propertyPath: skyboxMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 76b364866acef824b941035c2c68107e, type: 2}
     - target: {fileID: 3154958774678844298, guid: ebea08d956ef68c42a7724c54fe34423,
         type: 3}
       propertyPath: _currentColor.b
-      value: 0.67058825
+      value: 0.48235294
       objectReference: {fileID: 0}
     - target: {fileID: 3154958774678844298, guid: ebea08d956ef68c42a7724c54fe34423,
         type: 3}
       propertyPath: _currentColor.g
-      value: 0.5803922
+      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 3154958774678844298, guid: ebea08d956ef68c42a7724c54fe34423,
         type: 3}
       propertyPath: _currentColor.r
-      value: 0.67058825
+      value: 0.39607844
       objectReference: {fileID: 0}
     - target: {fileID: 6263182789462287298, guid: ebea08d956ef68c42a7724c54fe34423,
         type: 3}
