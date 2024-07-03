@@ -71,7 +71,7 @@ public class AmbientManager : NonPersistentSingleton<AmbientManager>
         SkyboxMaterialStateSave = skyboxMaterial;
     }
 
-    public void UpdateBackground()
+    public void Update()
     {
         CalculateDreamSlider(); // Ensure DreamSlider is calculated in real-time
         HandleTransition();
@@ -92,12 +92,12 @@ public class AmbientManager : NonPersistentSingleton<AmbientManager>
     {
         skyboxMaterial = SkyboxMaterialStateSave;
     }
-    private void OnEnable()
+    /*private void OnEnable()
     {
         EventManager.RoundOverEvent += UpdateBackground;
     }
     private void OnDisable()
     {
         EventManager.RoundOverEvent -= UpdateBackground;
-    }
+    }*/
 }

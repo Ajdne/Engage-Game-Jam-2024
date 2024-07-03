@@ -36,6 +36,8 @@ public class GameManager : NonPersistentSingleton<GameManager>
         Debug.Log("Game Over");
         CalculateWinner();
         AmbientManager.Instance.ResetSkyboxMaterial();
+
+        Time.timeScale = 0f;
     }
     private void CalculateWinner()
     {
