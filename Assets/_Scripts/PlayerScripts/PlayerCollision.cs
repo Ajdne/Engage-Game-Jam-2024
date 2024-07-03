@@ -18,7 +18,8 @@ public class PlayerCollision : MonoBehaviour
         if(collision.gameObject.layer == 3) // player layer
         {
             CameraShake.instance.ShakeCamera();
-            AudioManager.Instance.PlayBumpSound();
+            //AudioManager.Instance.PlayBumpSound();
+            EventManager.Instance.startSFXEvent("Bump");
             ParticleManager.Instance.PlayBumpParticle(this.transform.position );
             thisplayer.LosePoints();
 
