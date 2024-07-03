@@ -49,7 +49,7 @@ public class PhaseManager : NonPersistentSingleton<PhaseManager>
             _currentPhase++;
             EventManager.PhaseOverEvent?.Invoke();
             //AudioManager.Instance.PlayPhaseChange
-            EventManager.startSFXEvent("PhaseChange");
+            EventManager.startSFXEvent("Phase");
         }
         /*else if (_currentPhase == phases.Count-1) 
         {

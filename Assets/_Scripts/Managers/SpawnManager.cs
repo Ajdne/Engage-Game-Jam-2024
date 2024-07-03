@@ -42,9 +42,9 @@ public class SpawnManager : MonoBehaviour
         {
             Tile tile = new Tile();
             tile = SelectRandomTile();
-            if (tile.isPlayer || tile.isFoggy) return;
+            if (tile.IsPlayer || tile.IsFoggy) return;
 
-            tile.isFoggy = true;
+            tile.SetFog();
             Instantiate(Fog, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }        
 
@@ -57,7 +57,7 @@ public class SpawnManager : MonoBehaviour
         {
             Tile tile = new Tile();
             tile = SelectRandomTile();
-            if (tile.isPlayer) return;
+            if (tile.IsPlayer) return;
 
             //Debug.Log("Obriso tile: " + tile.Team);
 
@@ -72,11 +72,10 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < randomNumber; i++)
         {
             //Debug.Log("Ovca");
-            Tile tile = new Tile();
-            tile = SelectRandomTile();
-            if (tile.isPlayer || tile.isPickable || tile.isStun) return;
+            Tile tile = SelectRandomTile();
+            if (tile.IsPlayer || tile.IsPickable || tile.IsStun) return;
 
-            tile.isPickable = true;
+            tile.SetPicakble();
 
             GameObject tisSheep = Instantiate(Sheep, tile.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
 
@@ -90,9 +89,8 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < randomNumber; i++)
         {
-            Tile tile = new Tile();
-            tile = SelectRandomTile();
-            if (tile.isPlayer || tile.IsIcy) return;
+            Tile tile = SelectRandomTile();
+            if (tile.IsPlayer || tile.IsIcy) return;
 
             tile.Freeze();
 
@@ -106,11 +104,10 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < randomNumber; i++)
         {
-            Tile tile = new Tile();
-            tile = SelectRandomTile();
-            if (tile.isPlayer || tile.isPickable || tile.isStun || tile.IsIcy) return;
+            Tile tile = SelectRandomTile();
+            if (tile.IsPlayer || tile.IsPickable || tile.IsStun || tile.IsIcy) return;
 
-            tile.isStun = true;
+            tile.SetStun();
             Instantiate(Stun, tile.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
         }  
     }
