@@ -24,10 +24,7 @@ public class GameManager : NonPersistentSingleton<GameManager>
     private void Start()
     {
         Time.timeScale = 1f;
-        //AudioManager.Instance.PlayStartGame();
-        //AudioManager.Instance.PlayTheme();
         EventManager.startSFXEvent("Start");
-        //EventManager.Instance.startSoundEvent("InGameTheme");
     }
 
     public void End()
@@ -43,15 +40,15 @@ public class GameManager : NonPersistentSingleton<GameManager>
     {
         if (dreamPlayer.Points > nightmarePlayer.Points)
         {
-            UIManager.instance.Winner.text = "Good Dream wins";
+            UIManager.Instance.WinnerText.text = "Good Dream wins";
         }
         else if (dreamPlayer.Points < nightmarePlayer.Points)
         {
-            UIManager.instance.Winner.text = "Nightmare wins";
+            UIManager.Instance.WinnerText.text = "Nightmare wins";
         }
         else
         {
-            UIManager.instance.Winner.text = "Sleep paralysis";
+            UIManager.Instance.WinnerText.text = "Sleep paralysis";
         }
         return;
     }

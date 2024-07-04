@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager : NonPersistentSingleton<SpawnManager>
 {
     [SerializeField]
-    public List<Tile> tiles = new();
+    private List<Tile> tiles = new();
     [SerializeField]
     public GameObject Fog;
     [SerializeField]
@@ -16,6 +16,10 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     public GameObject Ice;
 
+    private void Awake()
+    {
+        Initialize();
+    }
     private void OnEnable()
     {
         EventManager.RoundOverEvent += SpawnSheep;

@@ -8,25 +8,14 @@ using UnityEngine.Rendering;
 
 namespace Assets._Scripts.Managers.Audio
 {
-    public class AudioManager : MonoBehaviour
+    public class AudioManager : NonPersistentSingleton<AudioManager>
     {
-        public static AudioManager Instance;
-
         public Sound[] musicSounds, sfxSounds;
         public AudioSource musicSource, sfxSource;
 
-
         private void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            Initialize();
         }
         public void PlayMusic(string name)
         {
